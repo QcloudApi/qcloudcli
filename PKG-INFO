@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: qcloudcli
+Version: 1.8.1
+Summary: Universal Command Line Environment for qcloud
+Home-page: http://www.qcloud.com/
+Author: cj
+Author-email: xxx
+License: UNKNOWN
+Description: UNKNOWN
+Platform: unix
+Platform: linux
+Platform: win64
