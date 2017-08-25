@@ -54,6 +54,12 @@ class CreateBmLoadBalancerRequest(Request):
 	def set_tgwSetType(self, tgwSetType):
 		self.add_param('tgwSetType', tgwSetType)
 
+	def get_vipIspId(self):
+		return self.get_params().get('vipIspId')
+
+	def set_vipIspId(self, vipIspId):
+		self.add_param('vipIspId', vipIspId)
+
 	def get_unVpcId(self):
 		return self.get_params().get('unVpcId')
 
@@ -101,4 +107,10 @@ class CreateBmLoadBalancerRequest(Request):
 
 	def set_tgwSetType(self, tgwSetType):
 		self.add_param('tgwSetType', tgwSetType)
+
+	def get_vipIspId(self):
+		return self.get_params().get('vipIspId')
+
+	def set_vipIspId(self, vipIspId):
+		self.add_param('vipIspId', vipIspId)
 

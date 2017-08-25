@@ -12,3 +12,9 @@ class DescribeBmSubnetByCpmIdRequest(Request):
 	def set_instanceId(self, instanceId):
 		self.add_param('instanceId', instanceId)
 
+	def get_instanceId(self):
+		return self.get_params().get('instanceId')
+
+	def set_instanceId(self, instanceId):
+		self.add_param('instanceId', instanceId)
+

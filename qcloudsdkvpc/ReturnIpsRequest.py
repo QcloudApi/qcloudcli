@@ -18,3 +18,15 @@ class ReturnIpsRequest(Request):
 	def set_ips(self, ips):
 		self.add_param('ips', ips)
 
+	def get_vpcId(self):
+		return self.get_params().get('vpcId')
+
+	def set_vpcId(self, vpcId):
+		self.add_param('vpcId', vpcId)
+
+	def get_ips(self):
+		return self.get_params().get('ips')
+
+	def set_ips(self, ips):
+		self.add_param('ips', ips)
+

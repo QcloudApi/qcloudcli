@@ -12,3 +12,9 @@ class QueryBmTaskResultRequest(Request):
 	def set_taskId(self, taskId):
 		self.add_param('taskId', taskId)
 
+	def get_taskId(self):
+		return self.get_params().get('taskId')
+
+	def set_taskId(self, taskId):
+		self.add_param('taskId', taskId)
+

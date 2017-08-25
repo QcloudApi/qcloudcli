@@ -19,7 +19,7 @@ class Sign:
     def make(self, requestHost, requestUri, params, method = 'GET'):
         list = {}
         for param_key in params:
-            if method == 'post' and str(params[param_key])[0:1] == "@":
+            if method.upper() == 'POST' and str(params[param_key])[0:1] == "@":
                 continue
             if(type(params[param_key]) == type([1,1])):
                 for i in range(0, len(params[param_key])):

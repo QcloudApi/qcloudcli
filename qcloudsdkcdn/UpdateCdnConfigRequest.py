@@ -138,3 +138,15 @@ class UpdateCdnConfigRequest(Request):
 	def set_furlCache(self, furlCache):
 		self.add_param('furlCache', furlCache)
 
+	def get_capping(self):
+		return self.get_params().get('capping')
+
+	def set_capping(self, capping):
+		self.add_param('capping', capping)
+
+	def get_videoSwitch(self):
+		return self.get_params().get('videoSwitch')
+
+	def set_videoSwitch(self, videoSwitch):
+		self.add_param('videoSwitch', videoSwitch)
+
