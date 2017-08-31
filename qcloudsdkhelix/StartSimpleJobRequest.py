@@ -66,15 +66,27 @@ class StartSimpleJobRequest(Request):
 	def set_dataDiskSize(self, dataDiskSize):
 		self.add_param('dataDiskSize', dataDiskSize)
 
-	def get_network(self):
-		return self.get_params().get('network')
+	def get_vpcid(self):
+		return self.get_params().get('vpcid')
 
-	def set_network(self, network):
-		self.add_param('network', network)
+	def set_vpcid(self, vpcid):
+		self.add_param('vpcid', vpcid)
 
-	def get_extPathMap(self):
-		return self.get_params().get('extPathMap')
+	def get_subnetid(self):
+		return self.get_params().get('subnetid')
 
-	def set_extPathMap(self, extPathMap):
-		self.add_param('extPathMap', extPathMap)
+	def set_subnetid(self, subnetid):
+		self.add_param('subnetid', subnetid)
+
+	def get_extMountPathMap(self):
+		return self.get_params().get('extMountPathMap')
+
+	def set_extMountPathMap(self, extMountPathMap):
+		self.add_param('extMountPathMap', extMountPathMap)
+
+	def get_extOutputPathMap(self):
+		return self.get_params().get('extOutputPathMap')
+
+	def set_extOutputPathMap(self, extOutputPathMap):
+		self.add_param('extOutputPathMap', extOutputPathMap)
 

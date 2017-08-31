@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from qcloudsdkcore.request import Request
-class ListToolsRequest(Request):
+class QuerySimpleJobRequest(Request):
 
 	def __init__(self):
-		Request.__init__(self, 'helix', 'qcloudcliV1', 'ListTools', 'helix.api.qcloud.com')
+		Request.__init__(self, 'helix', 'qcloudcliV1', 'QuerySimpleJob', 'helix.api.qcloud.com')
 
 	def get_projectId(self):
 		return self.get_params().get('projectId')
@@ -12,9 +12,9 @@ class ListToolsRequest(Request):
 	def set_projectId(self, projectId):
 		self.add_param('projectId', projectId)
 
-	def get_uin(self):
-		return self.get_params().get('uin')
+	def get_jobId(self):
+		return self.get_params().get('jobId')
 
-	def set_uin(self, uin):
-		self.add_param('uin', uin)
+	def set_jobId(self, jobId):
+		self.add_param('jobId', jobId)
 
