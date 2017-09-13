@@ -60,3 +60,9 @@ class AddCdnHostRequest(Request):
 	def set_cache(self, cache):
 		self.add_param('cache', cache)
 
+	def get_advancedCache(self):
+		return self.get_params().get('advancedCache')
+
+	def set_advancedCache(self, advancedCache):
+		self.add_param('advancedCache', advancedCache)
+

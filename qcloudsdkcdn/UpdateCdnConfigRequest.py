@@ -150,3 +150,21 @@ class UpdateCdnConfigRequest(Request):
 	def set_videoSwitch(self, videoSwitch):
 		self.add_param('videoSwitch', videoSwitch)
 
+	def get_ignoreCacheControl(self):
+		return self.get_params().get('ignoreCacheControl')
+
+	def set_ignoreCacheControl(self, ignoreCacheControl):
+		self.add_param('ignoreCacheControl', ignoreCacheControl)
+
+	def get_ignoreSetCookie(self):
+		return self.get_params().get('ignoreSetCookie')
+
+	def set_ignoreSetCookie(self, ignoreSetCookie):
+		self.add_param('ignoreSetCookie', ignoreSetCookie)
+
+	def get_pathRefer(self):
+		return self.get_params().get('pathRefer')
+
+	def set_pathRefer(self, pathRefer):
+		self.add_param('pathRefer', pathRefer)
+

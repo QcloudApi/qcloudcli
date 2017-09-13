@@ -90,3 +90,15 @@ class StartSimpleJobRequest(Request):
 	def set_extOutputPathMap(self, extOutputPathMap):
 		self.add_param('extOutputPathMap', extOutputPathMap)
 
+	def get_name(self):
+		return self.get_params().get('name')
+
+	def set_name(self, name):
+		self.add_param('name', name)
+
+	def get_priority(self):
+		return self.get_params().get('priority')
+
+	def set_priority(self, priority):
+		self.add_param('priority', priority)
+
