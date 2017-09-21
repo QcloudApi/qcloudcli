@@ -4,7 +4,7 @@ from qcloudsdkcore.request import Request
 class GetDeviceShadowRequest(Request):
 
 	def __init__(self):
-		Request.__init__(self, 'iiot', 'qcloudcliV1', 'GetDeviceShadow', 'iiot.api.qcloud.com')
+		Request.__init__(self, 'iothub', 'qcloudcliV1', 'GetDeviceShadow', 'iothub.api.qcloud.com')
 
 	def get_deviceName(self):
 		return self.get_params().get('deviceName')

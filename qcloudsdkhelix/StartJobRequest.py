@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from qcloudsdkcore.request import Request
-class StartSimpleJobRequest(Request):
+class StartJobRequest(Request):
 
 	def __init__(self):
-		Request.__init__(self, 'helix', 'qcloudcliV1', 'StartSimpleJob', 'helix.api.qcloud.com')
+		Request.__init__(self, 'helix', 'qcloudcliV1', 'StartJob', 'helix.api.qcloud.com')
 
 	def get_projectId(self):
 		return self.get_params().get('projectId')
@@ -24,11 +24,17 @@ class StartSimpleJobRequest(Request):
 	def set_secretKey(self, secretKey):
 		self.add_param('secretKey', secretKey)
 
-	def get_desc(self):
-		return self.get_params().get('desc')
+	def get_jobDesc(self):
+		return self.get_params().get('jobDesc')
 
-	def set_desc(self, desc):
-		self.add_param('desc', desc)
+	def set_jobDesc(self, jobDesc):
+		self.add_param('jobDesc', jobDesc)
+
+	def get_jobName(self):
+		return self.get_params().get('jobName')
+
+	def set_jobName(self, jobName):
+		self.add_param('jobName', jobName)
 
 	def get_timeout(self):
 		return self.get_params().get('timeout')
@@ -90,11 +96,11 @@ class StartSimpleJobRequest(Request):
 	def set_extOutputPathMap(self, extOutputPathMap):
 		self.add_param('extOutputPathMap', extOutputPathMap)
 
-	def get_name(self):
-		return self.get_params().get('name')
+	def get_taskName(self):
+		return self.get_params().get('taskName')
 
-	def set_name(self, name):
-		self.add_param('name', name)
+	def set_taskName(self, taskName):
+		self.add_param('taskName', taskName)
 
 	def get_priority(self):
 		return self.get_params().get('priority')
@@ -119,4 +125,16 @@ class StartSimpleJobRequest(Request):
 
 	def set_projectLocalPath(self, projectLocalPath):
 		self.add_param('projectLocalPath', projectLocalPath)
+
+	def get_tasks(self):
+		return self.get_params().get('tasks')
+
+	def set_tasks(self, tasks):
+		self.add_param('tasks', tasks)
+
+	def get_depend(self):
+		return self.get_params().get('depend')
+
+	def set_depend(self, depend):
+		self.add_param('depend', depend)
 

@@ -24,12 +24,6 @@ class CreateBmSubnetRequest(Request):
 	def set_vlanId(self, vlanId):
 		self.add_param('vlanId', vlanId)
 
-	def get_dockerFlag(self):
-		return self.get_params().get('dockerFlag')
-
-	def set_dockerFlag(self, dockerFlag):
-		self.add_param('dockerFlag', dockerFlag)
-
 	def get_vpcId(self):
 		return self.get_params().get('vpcId')
 

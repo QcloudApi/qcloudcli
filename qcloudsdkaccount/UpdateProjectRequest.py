@@ -4,7 +4,7 @@ from qcloudsdkcore.request import Request
 class UpdateProjectRequest(Request):
 
 	def __init__(self):
-		Request.__init__(self, 'helix', 'qcloudcliV1', 'UpdateProject', 'helix.api.qcloud.com')
+		Request.__init__(self, 'account', 'qcloudcliV1', 'UpdateProject', 'account.api.qcloud.com')
 
 	def get_projectName(self):
 		return self.get_params().get('projectName')
