@@ -108,3 +108,9 @@ class DescribeLoadBalancersRequest(Request):
 	def set_withRs(self, withRs):
 		self.add_param('withRs', withRs)
 
+	def get_securityGroupId(self):
+		return self.get_params().get('securityGroupId')
+
+	def set_securityGroupId(self, securityGroupId):
+		self.add_param('securityGroupId', securityGroupId)
+

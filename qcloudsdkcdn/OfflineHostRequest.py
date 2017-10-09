@@ -18,3 +18,9 @@ class OfflineHostRequest(Request):
 	def set_host(self, host):
 		self.add_param('host', host)
 
+	def get_hostIds(self):
+		return self.get_params().get('hostIds')
+
+	def set_hostIds(self, hostIds):
+		self.add_param('hostIds', hostIds)
+

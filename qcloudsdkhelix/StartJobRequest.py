@@ -24,17 +24,17 @@ class StartJobRequest(Request):
 	def set_secretKey(self, secretKey):
 		self.add_param('secretKey', secretKey)
 
-	def get_jobDesc(self):
-		return self.get_params().get('jobDesc')
+	def get_desc(self):
+		return self.get_params().get('desc')
 
-	def set_jobDesc(self, jobDesc):
-		self.add_param('jobDesc', jobDesc)
+	def set_desc(self, desc):
+		self.add_param('desc', desc)
 
-	def get_jobName(self):
-		return self.get_params().get('jobName')
+	def get_name(self):
+		return self.get_params().get('name')
 
-	def set_jobName(self, jobName):
-		self.add_param('jobName', jobName)
+	def set_name(self, name):
+		self.add_param('name', name)
 
 	def get_timeout(self):
 		return self.get_params().get('timeout')
@@ -137,4 +137,16 @@ class StartJobRequest(Request):
 
 	def set_depend(self, depend):
 		self.add_param('depend', depend)
+
+	def get_sysDiskType(self):
+		return self.get_params().get('sysDiskType')
+
+	def set_sysDiskType(self, sysDiskType):
+		self.add_param('sysDiskType', sysDiskType)
+
+	def get_taskDesc(self):
+		return self.get_params().get('taskDesc')
+
+	def set_taskDesc(self, taskDesc):
+		self.add_param('taskDesc', taskDesc)
 

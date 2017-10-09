@@ -18,3 +18,15 @@ class UpdatePrincipalPolicyRequest(Request):
 	def set_principal(self, principal):
 		self.add_param('principal', principal)
 
+	def get_policyName(self):
+		return self.get_params().get('policyName')
+
+	def set_policyName(self, policyName):
+		self.add_param('policyName', policyName)
+
+	def get_principal(self):
+		return self.get_params().get('principal')
+
+	def set_principal(self, principal):
+		self.add_param('principal', principal)
+

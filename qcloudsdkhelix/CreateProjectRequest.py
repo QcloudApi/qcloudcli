@@ -24,3 +24,15 @@ class CreateProjectRequest(Request):
 	def set_desc(self, desc):
 		self.add_param('desc', desc)
 
+	def get_secretId(self):
+		return self.get_params().get('secretId')
+
+	def set_secretId(self, secretId):
+		self.add_param('secretId', secretId)
+
+	def get_secretKey(self):
+		return self.get_params().get('secretKey')
+
+	def set_secretKey(self, secretKey):
+		self.add_param('secretKey', secretKey)
+

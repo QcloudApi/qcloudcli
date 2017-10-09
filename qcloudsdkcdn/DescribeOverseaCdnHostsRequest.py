@@ -18,3 +18,9 @@ class DescribeOverseaCdnHostsRequest(Request):
 	def set_limit(self, limit):
 		self.add_param('limit', limit)
 
+	def get_projects(self):
+		return self.get_params().get('projects')
+
+	def set_projects(self, projects):
+		self.add_param('projects', projects)
+

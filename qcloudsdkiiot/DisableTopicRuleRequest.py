@@ -12,3 +12,9 @@ class DisableTopicRuleRequest(Request):
 	def set_ruleName(self, ruleName):
 		self.add_param('ruleName', ruleName)
 
+	def get_ruleName(self):
+		return self.get_params().get('ruleName')
+
+	def set_ruleName(self, ruleName):
+		self.add_param('ruleName', ruleName)
+

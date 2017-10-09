@@ -18,3 +18,9 @@ class GetPolicyRequest(Request):
 	def set_policyName(self, policyName):
 		self.add_param('policyName', policyName)
 
+	def get_policyName(self):
+		return self.get_params().get('policyName')
+
+	def set_policyName(self, policyName):
+		self.add_param('policyName', policyName)
+

@@ -120,3 +120,9 @@ class StartSimpleJobRequest(Request):
 	def set_projectLocalPath(self, projectLocalPath):
 		self.add_param('projectLocalPath', projectLocalPath)
 
+	def get_sysDiskType(self):
+		return self.get_params().get('sysDiskType')
+
+	def set_sysDiskType(self, sysDiskType):
+		self.add_param('sysDiskType', sysDiskType)
+

@@ -24,6 +24,12 @@ class UpdateDeviceShadowRequest(Request):
 	def set_version(self, version):
 		self.add_param('version', version)
 
+	def get_productName(self):
+		return self.get_params().get('productName')
+
+	def set_productName(self, productName):
+		self.add_param('productName', productName)
+
 	def get_deviceName(self):
 		return self.get_params().get('deviceName')
 
@@ -41,4 +47,10 @@ class UpdateDeviceShadowRequest(Request):
 
 	def set_version(self, version):
 		self.add_param('version', version)
+
+	def get_productName(self):
+		return self.get_params().get('productName')
+
+	def set_productName(self, productName):
+		self.add_param('productName', productName)
 

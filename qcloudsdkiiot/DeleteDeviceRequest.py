@@ -18,3 +18,15 @@ class DeleteDeviceRequest(Request):
 	def set_expectedVersion(self, expectedVersion):
 		self.add_param('expectedVersion', expectedVersion)
 
+	def get_deviceName(self):
+		return self.get_params().get('deviceName')
+
+	def set_deviceName(self, deviceName):
+		self.add_param('deviceName', deviceName)
+
+	def get_expectedVersion(self):
+		return self.get_params().get('expectedVersion')
+
+	def set_expectedVersion(self, expectedVersion):
+		self.add_param('expectedVersion', expectedVersion)
+

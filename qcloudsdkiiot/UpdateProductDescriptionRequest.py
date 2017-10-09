@@ -18,3 +18,15 @@ class UpdateProductDescriptionRequest(Request):
 	def set_productName(self, productName):
 		self.add_param('productName', productName)
 
+	def get_description(self):
+		return self.get_params().get('description')
+
+	def set_description(self, description):
+		self.add_param('description', description)
+
+	def get_productName(self):
+		return self.get_params().get('productName')
+
+	def set_productName(self, productName):
+		self.add_param('productName', productName)
+

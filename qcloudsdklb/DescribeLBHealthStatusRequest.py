@@ -18,3 +18,9 @@ class DescribeLBHealthStatusRequest(Request):
 	def set_listenerId(self, listenerId):
 		self.add_param('listenerId', listenerId)
 
+	def get_loadBalancerId(self):
+		return self.get_params().get('loadBalancerId')
+
+	def set_loadBalancerId(self, loadBalancerId):
+		self.add_param('loadBalancerId', loadBalancerId)
+

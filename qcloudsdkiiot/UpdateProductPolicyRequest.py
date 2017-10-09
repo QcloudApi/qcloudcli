@@ -18,3 +18,15 @@ class UpdateProductPolicyRequest(Request):
 	def set_productName(self, productName):
 		self.add_param('productName', productName)
 
+	def get_defaultPolicyName(self):
+		return self.get_params().get('defaultPolicyName')
+
+	def set_defaultPolicyName(self, defaultPolicyName):
+		self.add_param('defaultPolicyName', defaultPolicyName)
+
+	def get_productName(self):
+		return self.get_params().get('productName')
+
+	def set_productName(self, productName):
+		self.add_param('productName', productName)
+

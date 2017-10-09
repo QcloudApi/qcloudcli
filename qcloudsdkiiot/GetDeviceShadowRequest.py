@@ -12,9 +12,21 @@ class GetDeviceShadowRequest(Request):
 	def set_deviceName(self, deviceName):
 		self.add_param('deviceName', deviceName)
 
+	def get_productName(self):
+		return self.get_params().get('productName')
+
+	def set_productName(self, productName):
+		self.add_param('productName', productName)
+
 	def get_deviceName(self):
 		return self.get_params().get('deviceName')
 
 	def set_deviceName(self, deviceName):
 		self.add_param('deviceName', deviceName)
+
+	def get_productName(self):
+		return self.get_params().get('productName')
+
+	def set_productName(self, productName):
+		self.add_param('productName', productName)
 

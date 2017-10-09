@@ -12,3 +12,9 @@ class DescribeCertificateRequest(Request):
 	def set_certificateId(self, certificateId):
 		self.add_param('certificateId', certificateId)
 
+	def get_certificateId(self):
+		return self.get_params().get('certificateId')
+
+	def set_certificateId(self, certificateId):
+		self.add_param('certificateId', certificateId)
+

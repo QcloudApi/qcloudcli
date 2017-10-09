@@ -12,3 +12,9 @@ class DeleteProductRequest(Request):
 	def set_productName(self, productName):
 		self.add_param('productName', productName)
 
+	def get_productName(self):
+		return self.get_params().get('productName')
+
+	def set_productName(self, productName):
+		self.add_param('productName', productName)
+

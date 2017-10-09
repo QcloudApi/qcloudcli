@@ -12,3 +12,9 @@ class GetRuleCertRequest(Request):
 	def set_commonName(self, commonName):
 		self.add_param('commonName', commonName)
 
+	def get_commonName(self):
+		return self.get_params().get('commonName')
+
+	def set_commonName(self, commonName):
+		self.add_param('commonName', commonName)
+

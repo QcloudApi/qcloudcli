@@ -30,3 +30,21 @@ class UpdatePolicyRequest(Request):
 	def set_policyDocument(self, policyDocument):
 		self.add_param('policyDocument', policyDocument)
 
+	def get_policyName(self):
+		return self.get_params().get('policyName')
+
+	def set_policyName(self, policyName):
+		self.add_param('policyName', policyName)
+
+	def get_policyRemark(self):
+		return self.get_params().get('policyRemark')
+
+	def set_policyRemark(self, policyRemark):
+		self.add_param('policyRemark', policyRemark)
+
+	def get_policyDocument(self):
+		return self.get_params().get('policyDocument')
+
+	def set_policyDocument(self, policyDocument):
+		self.add_param('policyDocument', policyDocument)
+

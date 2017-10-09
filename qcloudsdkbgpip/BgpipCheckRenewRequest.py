@@ -42,3 +42,9 @@ class BgpipCheckRenewRequest(Request):
 	def set_extendTime(self, extendTime):
 		self.add_param('extendTime', extendTime)
 
+	def get_bandwidth(self):
+		return self.get_params().get('bandwidth')
+
+	def set_bandwidth(self, bandwidth):
+		self.add_param('bandwidth', bandwidth)
+
