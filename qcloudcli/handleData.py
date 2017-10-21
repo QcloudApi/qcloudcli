@@ -1,5 +1,7 @@
+import datetime
 import os
 import sys,imp,uuid
+from qcloudcli import configure
 from . import handleCmd
 from . import handleParameter
 import json
@@ -24,8 +26,7 @@ class handleData():
         self.handleCmd = handleCmd.handleCmd()
         self.parser = handleParameter.handleParameter()
 
-# get all modules
-    def getAllmodules(self):
+    def getAllModules(self):
         #from distutils.sysconfig import get_python_lib
         site_packages_path = get_python_lib()
         all_python_packages = os.listdir(site_packages_path)
@@ -39,38 +40,36 @@ class handleData():
         modules.append("configure")
         return modules
 
-    def getApiCmdsLower(self):
-        cmds = self.getAllmodules()
-        lowerCmds = set()
-        for cmd in cmds:
-            lowerCmds.add(cmd)
-        return lowerCmds
-
-# check the module name
-    def isLegalModule(self, module):
-        if module is None:
-            return  False
-        allmodules = self.getAllmodules()
-        if module in allmodules:
-            return True
-        else:
-            return False
-
-    # get all actions for one module
     def getModuleActions(self, module):
+        config = configure.QcloudConfig().getConfig()
+        version = config.get(module, '')
+
+        sitepath = get_python_lib()
+        modpath = os.path.join(sitepath, 'qcloudsdk' + module)
+        versionpath = os.path.join(modpath, version)
+        if not os.path.exists(versionpath):
+            validVersions = []
+            for element in os.listdir(modpath):
+                if not os.path.isdir(os.path.join(modpath, element)):
+                    continue
+                try:
+                    datetime.datetime.strptime(element, '%Y-%m-%d')
+                    validVersions.append(element)
+                except ValueError:
+                    pass
+            validVersions = ','.join(validVersions)
+            print('ERROR: Unknown version %s for module %s, valid '
+                  'version(s): %s' % (version, module, validVersions))
+            raise SystemExit(1)
+        self.path = versionpath
+
         actions = []
-        #from distutils.sysconfig import get_python_lib
-        sitepackages_path = get_python_lib()
-        pre_module='qcloudsdk'
-        module = pre_module+module
-        moudle_path=os.path.join(sitepackages_path,module)
-        for root, dirs, files in os.walk(moudle_path):
-            for file_name in files:
-                if file_name.endswith('Request.py'):
-                    action=file_name.split('Request.py',1)[0]
-                    if len(action) >0:
-                        self.path = root
-                        actions.append(action)
+        for element in os.listdir(versionpath):
+            if os.path.isdir(os.path.join(versionpath, element)):
+                continue
+            if element.endswith('Request.py'):
+                actions.append(element.rsplit('Request.py', 1)[0])
+
         return actions
 
     # get all actions for one module
@@ -126,7 +125,7 @@ class handleData():
                     except Exception as err:
                         print(err)
         except Exception as err:
-            pass
+            print(err)
         return None
 
     def makeClass(self,module,action):
@@ -146,7 +145,7 @@ class handleData():
                     except Exception as err:
                         print(err)
         except Exception as err:
-            pass
+            print(err)
         return None
 
     def checkInputIsEmpty(self,keyValues):

@@ -29,9 +29,9 @@ class Completer(object):
                  if n.startswith(cw)]
             retval = l
         elif self.current_word == self.qcloudcli:
-            retval = self._documented(self.handleData.getApiCmdsLower())
+            retval = self._documented(self.handleData.getAllModules())
         else:
-            retval = self._documented(self.handleData.getApiCmdsLower(),
+            retval = self._documented(self.handleData.getAllModules(),
                                       startswith=self.current_word)
         return retval
 
@@ -140,7 +140,7 @@ class Completer(object):
         self.non_options = [w for w in self.words if not w.startswith('-')]
         self.options = [w for w in self.words if w.startswith('-')]
         for w in self.non_options:
-            if w in self.handleData.getApiCmdsLower() or w in self.handleData.getAllmodules(): # cmd check
+            if w in self.handleData.getAllModules(): # cmd check
                 self.command_name = w
                 cmd_obj = self.handleData.getModuleActions(self.command_name)
                 if not cmd_obj is None:

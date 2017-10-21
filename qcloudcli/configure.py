@@ -217,8 +217,9 @@ class ConfigFileWriter(object):
             line = contents[num]
             if line.strip():
                 if line.strip().startswith(('#', ';')):
+                    num += 1
                     continue
-                if  line.find('[') >=0 and line.find(']') :
+                if line.find('[') >=0 and line.find(']') :
                     return num
             num = num +1
         return k

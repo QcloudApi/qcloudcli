@@ -100,14 +100,13 @@ class QcloudCLI:
             if outPutFormat is None or outPutFormat == "":
                 outPutFormat = 'json'
 
-        if self.handleData.isLegalModule(module):
-            if self.handleData.isLegalAction(module, action):
+        if module in self.handleData.getAllModules():
+            moduleAllActions = self.handleData.getModuleActions(module)
+            if action in moduleAllActions:
                 instance = self.handleData.makeInstance(module, action)
                 instance_version = self.handleData.makeInstance(module, action)
                 in_class = self.handleData.makeClass(module, action)
                 in_class_version = self.handleData.makeClass(module, action)
-                moduleAllActions = []
-                moduleAllActions = self.handleData.getModuleActions(module)
                 is_version = 0
                 if module == 'cvm' and action+'V3' in moduleAllActions:
                     is_version = 1

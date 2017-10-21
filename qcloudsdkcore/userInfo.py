@@ -4,7 +4,7 @@ import sys
 parent_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, parent_dir)
 
-class UserInfo:
+class UserInfo(object):
 	def __init__(self, secret_id, secret_key, method, region_id, auto_retry=True, max_retry_time=3, user_agent=None,port = 80):
 		pass
 	def set_user_info(self,secret_id, secret_key, method, region_id, auto_retry=True, max_retry_time=3, user_agent=None,port = 80):

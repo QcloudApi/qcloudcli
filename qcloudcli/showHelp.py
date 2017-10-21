@@ -27,23 +27,16 @@ class showHelp:
     def showModuleError(self):
         self.showComMes()
         print("The module name you input is error! qcloudcli support the valid module as follows:\n")
-        modules = self.handleData.getAllmodules()
+        modules = self.handleData.getAllModules()
         self.showAsTwoLines(modules)
 
 
     def showActionError(self, module):
         self.showComMes()
         operations = []
-        if module == "cvm":
-            operations, newoperations = self.handleData.getModuleActionsForVersion(module)
-            print("The action name you input is error!\nThe old API for module "+self.red + "["+module+"]"+self.end+" support the valid action as follows:\n")
-            self.showAsTwoLines(operations)
-            print("\nThe new API for module " + self.red + "[" + module + "]" + self.end + " support the valid action as follows(\"Verison\" parameters must be passed in ):\n")
-            self.showAsTwoLines(newoperations)
-        else:
-            print("The action name you input is error! The module " + self.red + "[" + module + "]" + self.end + " support the valid action as follows:\n")
-            operations = self.handleData.getModuleActions(module)
-            self.showAsTwoLines(operations)
+        print("The action name you input is error! The module " + self.red + "[" + module + "]" + self.end + " support the valid action as follows:\n")
+        operations = self.handleData.getModuleActions(module)
+        self.showAsTwoLines(operations)
 
     def showParameterError(self, module, action, is_version, parameterlist0, parameterlist1, parameterlist2, parameterlist3):
         self.showComMes()

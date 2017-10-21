@@ -17,6 +17,7 @@ warnings.filterwarnings("ignore")
 from .sign import Sign
 from .userInfo import UserInfo
 
+from qcloudcli import configure
 from . import enum
 from .base import BaseModule
 from .base import BaseMonitorDimension
@@ -98,6 +99,7 @@ class Request(UserInfo):
         self.__params = {}
         self.__product = product
         self.__version = version
+        self.api_version = configure.QcloudConfig().getConfig().get(product, '')
         self.__action_name = action_name
         self.__debug = 0
         self.__files = {}
@@ -131,6 +133,8 @@ class Request(UserInfo):
 
     def getUrl(self):
         self.checkParams(self.__action_name, self.__params)
+        if self.api_version:
+            self.__params['Version'] = self.api_version
         self.__params['RequestSource'] = self.__version
         sign = Sign(self.secret_id, self.secret_key)
         self.__params['Signature'] = sign.make(self.__requestHost, self.__requestUri, self.__params, self.request_method)
@@ -143,6 +147,8 @@ class Request(UserInfo):
 
     def call(self):
         self.checkParams(self.__action_name, self.__params)
+        if self.api_version:
+            self.__params['Version'] = self.api_version
         self.__params['RequestSource'] = self.__version
         sign = Sign(self.secret_id, self.secret_key)
         self.__params['Signature'] = sign.make(self.__requestHost, self.__requestUri, self.__params, self.request_method)
