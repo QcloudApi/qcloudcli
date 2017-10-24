@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 
 try:
-    from urllib.parse import urlencode
+    from urllib.parse import urlencode, urlparse
 except ImportError:
     from urllib import urlencode
+    from urlparse import urlparse
 import copy
 import time
 import random
@@ -28,6 +29,16 @@ except ImportError:
 
 class MyHTTPSConnection(HTTPSConnection):
     def __init__(self, host, port=None):
+        self.has_proxy = False
+        self.request_host = host
+        https_proxy = os.environ.get('https_proxy') or os.environ.get('HTTPS_PROXY')
+        if https_proxy:
+            url = urlparse(https_proxy)
+            if not url.hostname:
+                url = urlparse('https://' + https_proxy)
+            host = url.hostname
+            port = url.port
+            self.has_proxy = True
         HTTPSConnection.__init__(self, host, port)
         self.request_length = 0
 
@@ -37,6 +48,8 @@ class MyHTTPSConnection(HTTPSConnection):
 
     def request(self, method, url, body=None, headers={}):
         self.request_length = 0
+        if self.has_proxy:
+            self.set_tunnel(self.request_host, 443)
         HTTPSConnection.request(self, method, url, body, headers)
 
 
@@ -139,7 +152,7 @@ class Request(UserInfo):
 
         if (self.request_method.upper() == 'GET'):
             #req = requests.get(url, params=self.__params, timeout=self.timeout, verify=False)
-            req_inter_url = '%s?%s' % (url, params)
+            req_inter_url = '%s?%s' % (self.__requestUri, params)
             self.__conn.request('GET', req_inter_url, None, {})
             if (self.__debug):
                 print('url:', req_inter_url, '\n')
