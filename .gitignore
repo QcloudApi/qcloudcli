@@ -3,3 +3,6 @@
 # for python
 *.pyc
 
+.venv/
+dist/
+qcloudcli.egg-info/
