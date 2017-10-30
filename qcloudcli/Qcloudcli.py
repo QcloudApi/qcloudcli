@@ -1,14 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import errno
+import socket
+import sys
+import time
+import traceback
+
 from . import handleParameter
 from . import handleData
 from . import handleCmd
 from . import result
 from . import showHelp
 from . import autoComplete
-import sys
-import time
 
 try:
     reload(sys)  # Python 2.7
@@ -130,8 +134,17 @@ class QcloudCLI:
                         if outcome is None:
                             return
                         result.display_result(action, outcome, outPutFormat, keyValues)
+                    except socket.error as e:
+                        print(e)
+                        if e.errno == errno.ETIMEDOUT:
+                            print('Connection aborted due to timeout exception.')
+                            print('Please check your network connection, firewall and router settings.')
+                            print('If you are behind a proxy, you need to set the https_proxy environment variable.')
+                        else:
+                            print(traceback.format_exc())
                     except Exception as e:
                         print(e)
+                        print(traceback.format_exc())
                 else:
                     print('qcloudcli internal error, please try again.')
             else:
