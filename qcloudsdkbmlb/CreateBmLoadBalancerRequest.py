@@ -1,116 +1,63 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 from qcloudsdkcore.request import Request
+
 class CreateBmLoadBalancerRequest(Request):
 
-	def __init__(self):
-		Request.__init__(self, 'bmlb', 'qcloudcliV1', 'CreateBmLoadBalancer', 'bmlb.api.qcloud.com')
+    def __init__(self):
+        super(CreateBmLoadBalancerRequest, self).__init__(
+            'bmlb', 'qcloudcliV1', 'CreateBmLoadBalancer', 'bmlb.api.qcloud.com')
 
-	def get_unVpcId(self):
-		return self.get_params().get('unVpcId')
+    def get_unVpcId(self):
+        return self.get_params().get('unVpcId')
 
-	def set_unVpcId(self, unVpcId):
-		self.add_param('unVpcId', unVpcId)
+    def set_unVpcId(self, unVpcId):
+        self.add_param('unVpcId', unVpcId)
 
-	def get_unSubnetId(self):
-		return self.get_params().get('unSubnetId')
+    def get_unSubnetId(self):
+        return self.get_params().get('unSubnetId')
 
-	def set_unSubnetId(self, unSubnetId):
-		self.add_param('unSubnetId', unSubnetId)
+    def set_unSubnetId(self, unSubnetId):
+        self.add_param('unSubnetId', unSubnetId)
 
-	def get_projectId(self):
-		return self.get_params().get('projectId')
+    def get_projectId(self):
+        return self.get_params().get('projectId')
 
-	def set_projectId(self, projectId):
-		self.add_param('projectId', projectId)
+    def set_projectId(self, projectId):
+        self.add_param('projectId', projectId)
 
-	def get_loadBalancerType(self):
-		return self.get_params().get('loadBalancerType')
+    def get_loadBalancerType(self):
+        return self.get_params().get('loadBalancerType')
 
-	def set_loadBalancerType(self, loadBalancerType):
-		self.add_param('loadBalancerType', loadBalancerType)
+    def set_loadBalancerType(self, loadBalancerType):
+        self.add_param('loadBalancerType', loadBalancerType)
 
-	def get_goodsNum(self):
-		return self.get_params().get('goodsNum')
+    def get_goodsNum(self):
+        return self.get_params().get('goodsNum')
 
-	def set_goodsNum(self, goodsNum):
-		self.add_param('goodsNum', goodsNum)
+    def set_goodsNum(self, goodsNum):
+        self.add_param('goodsNum', goodsNum)
 
-	def get_payMode(self):
-		return self.get_params().get('payMode')
+    def get_payMode(self):
+        return self.get_params().get('payMode')
 
-	def set_payMode(self, payMode):
-		self.add_param('payMode', payMode)
+    def set_payMode(self, payMode):
+        self.add_param('payMode', payMode)
 
-	def get_exclusive(self):
-		return self.get_params().get('exclusive')
+    def get_exclusive(self):
+        return self.get_params().get('exclusive')
 
-	def set_exclusive(self, exclusive):
-		self.add_param('exclusive', exclusive)
+    def set_exclusive(self, exclusive):
+        self.add_param('exclusive', exclusive)
 
-	def get_tgwSetType(self):
-		return self.get_params().get('tgwSetType')
+    def get_tgwSetType(self):
+        return self.get_params().get('tgwSetType')
 
-	def set_tgwSetType(self, tgwSetType):
-		self.add_param('tgwSetType', tgwSetType)
+    def set_tgwSetType(self, tgwSetType):
+        self.add_param('tgwSetType', tgwSetType)
 
-	def get_vipIspId(self):
-		return self.get_params().get('vipIspId')
+    def get_vipIspId(self):
+        return self.get_params().get('vipIspId')
 
-	def set_vipIspId(self, vipIspId):
-		self.add_param('vipIspId', vipIspId)
-
-	def get_unVpcId(self):
-		return self.get_params().get('unVpcId')
-
-	def set_unVpcId(self, unVpcId):
-		self.add_param('unVpcId', unVpcId)
-
-	def get_unSubnetId(self):
-		return self.get_params().get('unSubnetId')
-
-	def set_unSubnetId(self, unSubnetId):
-		self.add_param('unSubnetId', unSubnetId)
-
-	def get_projectId(self):
-		return self.get_params().get('projectId')
-
-	def set_projectId(self, projectId):
-		self.add_param('projectId', projectId)
-
-	def get_loadBalancerType(self):
-		return self.get_params().get('loadBalancerType')
-
-	def set_loadBalancerType(self, loadBalancerType):
-		self.add_param('loadBalancerType', loadBalancerType)
-
-	def get_goodsNum(self):
-		return self.get_params().get('goodsNum')
-
-	def set_goodsNum(self, goodsNum):
-		self.add_param('goodsNum', goodsNum)
-
-	def get_payMode(self):
-		return self.get_params().get('payMode')
-
-	def set_payMode(self, payMode):
-		self.add_param('payMode', payMode)
-
-	def get_exclusive(self):
-		return self.get_params().get('exclusive')
-
-	def set_exclusive(self, exclusive):
-		self.add_param('exclusive', exclusive)
-
-	def get_tgwSetType(self):
-		return self.get_params().get('tgwSetType')
-
-	def set_tgwSetType(self, tgwSetType):
-		self.add_param('tgwSetType', tgwSetType)
-
-	def get_vipIspId(self):
-		return self.get_params().get('vipIspId')
-
-	def set_vipIspId(self, vipIspId):
-		self.add_param('vipIspId', vipIspId)
-
+    def set_vipIspId(self, vipIspId):
+        self.add_param('vipIspId', vipIspId)

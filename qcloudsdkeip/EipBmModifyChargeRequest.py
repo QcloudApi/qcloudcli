@@ -1,44 +1,27 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 from qcloudsdkcore.request import Request
+
 class EipBmModifyChargeRequest(Request):
 
-	def __init__(self):
-		Request.__init__(self, 'eip', 'qcloudcliV1', 'EipBmModifyCharge', 'eip.api.qcloud.com')
+    def __init__(self):
+        super(EipBmModifyChargeRequest, self).__init__(
+            'eip', 'qcloudcliV1', 'EipBmModifyCharge', 'eip.api.qcloud.com')
 
-	def get_eipIds(self):
-		return self.get_params().get('eipIds')
+    def get_eipIds(self):
+        return self.get_params().get('eipIds')
 
-	def set_eipIds(self, eipIds):
-		self.add_param('eipIds', eipIds)
+    def set_eipIds(self, eipIds):
+        self.add_param('eipIds', eipIds)
 
-	def get_payMode(self):
-		return self.get_params().get('payMode')
+    def get_payMode(self):
+        return self.get_params().get('payMode')
 
-	def set_payMode(self, payMode):
-		self.add_param('payMode', payMode)
+    def set_payMode(self, payMode):
+        self.add_param('payMode', payMode)
 
-	def get_bandwidth(self):
-		return self.get_params().get('bandwidth')
+    def get_bandwidth(self):
+        return self.get_params().get('bandwidth')
 
-	def set_bandwidth(self, bandwidth):
-		self.add_param('bandwidth', bandwidth)
-
-	def get_eipIds(self):
-		return self.get_params().get('eipIds')
-
-	def set_eipIds(self, eipIds):
-		self.add_param('eipIds', eipIds)
-
-	def get_payMode(self):
-		return self.get_params().get('payMode')
-
-	def set_payMode(self, payMode):
-		self.add_param('payMode', payMode)
-
-	def get_bandwidth(self):
-		return self.get_params().get('bandwidth')
-
-	def set_bandwidth(self, bandwidth):
-		self.add_param('bandwidth', bandwidth)
-
+    def set_bandwidth(self, bandwidth):
+        self.add_param('bandwidth', bandwidth)

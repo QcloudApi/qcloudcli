@@ -1,44 +1,33 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 from qcloudsdkcore.request import Request
+
 class EipUnBindBmNatGatewayRequest(Request):
 
-	def __init__(self):
-		Request.__init__(self, 'bmvpc', 'qcloudcliV1', 'EipUnBindBmNatGateway', 'bmvpc.api.qcloud.com')
+    def __init__(self):
+        super(EipUnBindBmNatGatewayRequest, self).__init__(
+            'bmvpc', 'qcloudcliV1', 'EipUnBindBmNatGateway', 'bmvpc.api.qcloud.com')
 
-	def get_natId(self):
-		return self.get_params().get('natId')
+    def get_natId(self):
+        return self.get_params().get('natId')
 
-	def set_natId(self, natId):
-		self.add_param('natId', natId)
+    def set_natId(self, natId):
+        self.add_param('natId', natId)
 
-	def get_vpcId(self):
-		return self.get_params().get('vpcId')
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
 
-	def set_vpcId(self, vpcId):
-		self.add_param('vpcId', vpcId)
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)
 
-	def get_assignedEipSet(self):
-		return self.get_params().get('assignedEipSet')
+    def get_assignedEipSet(self):
+        return self.get_params().get('assignedEipSet')
 
-	def set_assignedEipSet(self, assignedEipSet):
-		self.add_param('assignedEipSet', assignedEipSet)
+    def set_assignedEipSet(self, assignedEipSet):
+        self.add_param('assignedEipSet', assignedEipSet)
 
-	def get_natId(self):
-		return self.get_params().get('natId')
+    def get_unVpcId(self):
+        return self.get_params().get('unVpcId')
 
-	def set_natId(self, natId):
-		self.add_param('natId', natId)
-
-	def get_vpcId(self):
-		return self.get_params().get('vpcId')
-
-	def set_vpcId(self, vpcId):
-		self.add_param('vpcId', vpcId)
-
-	def get_assignedEipSet(self):
-		return self.get_params().get('assignedEipSet')
-
-	def set_assignedEipSet(self, assignedEipSet):
-		self.add_param('assignedEipSet', assignedEipSet)
-
+    def set_unVpcId(self, unVpcId):
+        self.add_param('unVpcId', unVpcId)

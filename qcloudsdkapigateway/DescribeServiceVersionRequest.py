@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+
+from qcloudsdkcore.request import Request
+
+class DescribeServiceVersionRequest(Request):
+
+    def __init__(self):
+        super(DescribeServiceVersionRequest, self).__init__(
+            'apigateway', 'qcloudcliV1', 'DescribeServiceVersion', 'apigateway.api.qcloud.com')
+
+    def get_serviceId(self):
+        return self.get_params().get('serviceId')
+
+    def set_serviceId(self, serviceId):
+        self.add_param('serviceId', serviceId)
+
+    def get_offset(self):
+        return self.get_params().get('offset')
+
+    def set_offset(self, offset):
+        self.add_param('offset', offset)
+
+    def get_limit(self):
+        return self.get_params().get('limit')
+
+    def set_limit(self, limit):
+        self.add_param('limit', limit)

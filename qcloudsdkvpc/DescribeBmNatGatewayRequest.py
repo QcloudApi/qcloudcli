@@ -1,92 +1,51 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 from qcloudsdkcore.request import Request
+
 class DescribeBmNatGatewayRequest(Request):
 
-	def __init__(self):
-		Request.__init__(self, 'vpc', 'qcloudcliV1', 'DescribeBmNatGateway', 'vpc.api.qcloud.com')
+    def __init__(self):
+        super(DescribeBmNatGatewayRequest, self).__init__(
+            'vpc', 'qcloudcliV1', 'DescribeBmNatGateway', 'vpc.api.qcloud.com')
 
-	def get_offset(self):
-		return self.get_params().get('offset')
+    def get_offset(self):
+        return self.get_params().get('offset')
 
-	def set_offset(self, offset):
-		self.add_param('offset', offset)
+    def set_offset(self, offset):
+        self.add_param('offset', offset)
 
-	def get_limit(self):
-		return self.get_params().get('limit')
+    def get_limit(self):
+        return self.get_params().get('limit')
 
-	def set_limit(self, limit):
-		self.add_param('limit', limit)
+    def set_limit(self, limit):
+        self.add_param('limit', limit)
 
-	def get_orderFeild(self):
-		return self.get_params().get('orderFeild')
+    def get_orderFeild(self):
+        return self.get_params().get('orderFeild')
 
-	def set_orderFeild(self, orderFeild):
-		self.add_param('orderFeild', orderFeild)
+    def set_orderFeild(self, orderFeild):
+        self.add_param('orderFeild', orderFeild)
 
-	def get_orderDirection(self):
-		return self.get_params().get('orderDirection')
+    def get_orderDirection(self):
+        return self.get_params().get('orderDirection')
 
-	def set_orderDirection(self, orderDirection):
-		self.add_param('orderDirection', orderDirection)
+    def set_orderDirection(self, orderDirection):
+        self.add_param('orderDirection', orderDirection)
 
-	def get_natId(self):
-		return self.get_params().get('natId')
+    def get_natId(self):
+        return self.get_params().get('natId')
 
-	def set_natId(self, natId):
-		self.add_param('natId', natId)
+    def set_natId(self, natId):
+        self.add_param('natId', natId)
 
-	def get_natName(self):
-		return self.get_params().get('natName')
+    def get_natName(self):
+        return self.get_params().get('natName')
 
-	def set_natName(self, natName):
-		self.add_param('natName', natName)
+    def set_natName(self, natName):
+        self.add_param('natName', natName)
 
-	def get_vpcId(self):
-		return self.get_params().get('vpcId')
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
 
-	def set_vpcId(self, vpcId):
-		self.add_param('vpcId', vpcId)
-
-	def get_offset(self):
-		return self.get_params().get('offset')
-
-	def set_offset(self, offset):
-		self.add_param('offset', offset)
-
-	def get_limit(self):
-		return self.get_params().get('limit')
-
-	def set_limit(self, limit):
-		self.add_param('limit', limit)
-
-	def get_orderFeild(self):
-		return self.get_params().get('orderFeild')
-
-	def set_orderFeild(self, orderFeild):
-		self.add_param('orderFeild', orderFeild)
-
-	def get_orderDirection(self):
-		return self.get_params().get('orderDirection')
-
-	def set_orderDirection(self, orderDirection):
-		self.add_param('orderDirection', orderDirection)
-
-	def get_natId(self):
-		return self.get_params().get('natId')
-
-	def set_natId(self, natId):
-		self.add_param('natId', natId)
-
-	def get_natName(self):
-		return self.get_params().get('natName')
-
-	def set_natName(self, natName):
-		self.add_param('natName', natName)
-
-	def get_vpcId(self):
-		return self.get_params().get('vpcId')
-
-	def set_vpcId(self, vpcId):
-		self.add_param('vpcId', vpcId)
-
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

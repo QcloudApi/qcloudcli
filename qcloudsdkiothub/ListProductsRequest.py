@@ -1,32 +1,21 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 from qcloudsdkcore.request import Request
+
 class ListProductsRequest(Request):
 
-	def __init__(self):
-		Request.__init__(self, 'iothub', 'qcloudcliV1', 'ListProducts', 'iothub.api.qcloud.com')
+    def __init__(self):
+        super(ListProductsRequest, self).__init__(
+            'iothub', 'qcloudcliV1', 'ListProducts', 'iothub.api.qcloud.com')
 
-	def get_nextToken(self):
-		return self.get_params().get('nextToken')
+    def get_pageNum(self):
+        return self.get_params().get('pageNum')
 
-	def set_nextToken(self, nextToken):
-		self.add_param('nextToken', nextToken)
+    def set_pageNum(self, pageNum):
+        self.add_param('pageNum', pageNum)
 
-	def get_maxResults(self):
-		return self.get_params().get('maxResults')
+    def get_pageSize(self):
+        return self.get_params().get('pageSize')
 
-	def set_maxResults(self, maxResults):
-		self.add_param('maxResults', maxResults)
-
-	def get_nextToken(self):
-		return self.get_params().get('nextToken')
-
-	def set_nextToken(self, nextToken):
-		self.add_param('nextToken', nextToken)
-
-	def get_maxResults(self):
-		return self.get_params().get('maxResults')
-
-	def set_maxResults(self, maxResults):
-		self.add_param('maxResults', maxResults)
-
+    def set_pageSize(self, pageSize):
+        self.add_param('pageSize', pageSize)
