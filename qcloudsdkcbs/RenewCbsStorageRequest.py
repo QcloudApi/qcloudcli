@@ -8,14 +8,14 @@ class RenewCbsStorageRequest(Request):
         super(RenewCbsStorageRequest, self).__init__(
             'cbs', 'qcloudcliV1', 'RenewCbsStorage', 'cbs.api.qcloud.com')
 
-    def get_storageId(self):
-        return self.get_params().get('storageId')
-
-    def set_storageId(self, storageId):
-        self.add_param('storageId', storageId)
-
     def get_period(self):
         return self.get_params().get('period')
 
     def set_period(self, period):
         self.add_param('period', period)
+
+    def get_storageId(self):
+        return self.get_params().get('storageId')
+
+    def set_storageId(self, storageId):
+        self.add_param('storageId', storageId)

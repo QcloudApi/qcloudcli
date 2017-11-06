@@ -19,3 +19,9 @@ class DeleteDeviceRequest(Request):
 
     def set_expectedVersion(self, expectedVersion):
         self.add_param('expectedVersion', expectedVersion)
+
+    def get_productName(self):
+        return self.get_params().get('productName')
+
+    def set_productName(self, productName):
+        self.add_param('productName', productName)

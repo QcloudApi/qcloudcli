@@ -14,11 +14,11 @@ class DescribeVodCoverRequest(Request):
     def set_fileId(self, fileId):
         self.add_param('fileId', fileId)
 
-    def get_type(self):
-        return self.get_params().get('type')
+    def get_imageData(self):
+        return self.get_params().get('imageData')
 
-    def set_type(self, type):
-        self.add_param('type', type)
+    def set_imageData(self, imageData):
+        self.add_param('imageData', imageData)
 
     def get_para(self):
         return self.get_params().get('para')
@@ -26,8 +26,8 @@ class DescribeVodCoverRequest(Request):
     def set_para(self, para):
         self.add_param('para', para)
 
-    def get_imageData(self):
-        return self.get_params().get('imageData')
+    def get_type(self):
+        return self.get_params().get('type')
 
-    def set_imageData(self, imageData):
-        self.add_param('imageData', imageData)
+    def set_type(self, type):
+        self.add_param('type', type)

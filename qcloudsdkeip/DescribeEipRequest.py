@@ -20,35 +20,29 @@ class DescribeEipRequest(Request):
     def set_eips(self, eips):
         self.add_param('eips', eips)
 
-    def get_unInstanceIds(self):
-        return self.get_params().get('unInstanceIds')
+    def get_limit(self):
+        return self.get_params().get('limit')
 
-    def set_unInstanceIds(self, unInstanceIds):
-        self.add_param('unInstanceIds', unInstanceIds)
+    def set_limit(self, limit):
+        self.add_param('limit', limit)
 
-    def get_searchKey(self):
-        return self.get_params().get('searchKey')
+    def get_mode(self):
+        return self.get_params().get('mode')
 
-    def set_searchKey(self, searchKey):
-        self.add_param('searchKey', searchKey)
+    def set_mode(self, mode):
+        self.add_param('mode', mode)
 
-    def get_status(self):
-        return self.get_params().get('status')
+    def get_networkInterfaceIds(self):
+        return self.get_params().get('networkInterfaceIds')
 
-    def set_status(self, status):
-        self.add_param('status', status)
+    def set_networkInterfaceIds(self, networkInterfaceIds):
+        self.add_param('networkInterfaceIds', networkInterfaceIds)
 
     def get_offset(self):
         return self.get_params().get('offset')
 
     def set_offset(self, offset):
         self.add_param('offset', offset)
-
-    def get_limit(self):
-        return self.get_params().get('limit')
-
-    def set_limit(self, limit):
-        self.add_param('limit', limit)
 
     def get_orderBy(self):
         return self.get_params().get('orderBy')
@@ -62,26 +56,32 @@ class DescribeEipRequest(Request):
     def set_orderType(self, orderType):
         self.add_param('orderType', orderType)
 
-    def get_type(self):
-        return self.get_params().get('type')
-
-    def set_type(self, type):
-        self.add_param('type', type)
-
-    def get_networkInterfaceIds(self):
-        return self.get_params().get('networkInterfaceIds')
-
-    def set_networkInterfaceIds(self, networkInterfaceIds):
-        self.add_param('networkInterfaceIds', networkInterfaceIds)
-
     def get_privateIpAddress(self):
         return self.get_params().get('privateIpAddress')
 
     def set_privateIpAddress(self, privateIpAddress):
         self.add_param('privateIpAddress', privateIpAddress)
 
-    def get_mode(self):
-        return self.get_params().get('mode')
+    def get_searchKey(self):
+        return self.get_params().get('searchKey')
 
-    def set_mode(self, mode):
-        self.add_param('mode', mode)
+    def set_searchKey(self, searchKey):
+        self.add_param('searchKey', searchKey)
+
+    def get_status(self):
+        return self.get_params().get('status')
+
+    def set_status(self, status):
+        self.add_param('status', status)
+
+    def get_type(self):
+        return self.get_params().get('type')
+
+    def set_type(self, type):
+        self.add_param('type', type)
+
+    def get_unInstanceIds(self):
+        return self.get_params().get('unInstanceIds')
+
+    def set_unInstanceIds(self, unInstanceIds):
+        self.add_param('unInstanceIds', unInstanceIds)

@@ -8,12 +8,6 @@ class DeleteLocalIPTranslationNatRuleRequest(Request):
         super(DeleteLocalIPTranslationNatRuleRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'DeleteLocalIPTranslationNatRule', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_directConnectGatewayId(self):
         return self.get_params().get('directConnectGatewayId')
 
@@ -25,3 +19,9 @@ class DeleteLocalIPTranslationNatRuleRequest(Request):
 
     def set_localIPTranslation(self, localIPTranslation):
         self.add_param('localIPTranslation', localIPTranslation)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

@@ -14,17 +14,17 @@ class TerminateTaskInstanceRequest(Request):
     def set_JobId(self, JobId):
         self.add_param('JobId', JobId)
 
-    def get_TaskName(self):
-        return self.get_params().get('TaskName')
-
-    def set_TaskName(self, TaskName):
-        self.add_param('TaskName', TaskName)
-
     def get_TaskInstanceIndex(self):
         return self.get_params().get('TaskInstanceIndex')
 
     def set_TaskInstanceIndex(self, TaskInstanceIndex):
         self.add_param('TaskInstanceIndex', TaskInstanceIndex)
+
+    def get_TaskName(self):
+        return self.get_params().get('TaskName')
+
+    def set_TaskName(self, TaskName):
+        self.add_param('TaskName', TaskName)
 
     def get_Version(self):
         return self.get_params().get('Version')

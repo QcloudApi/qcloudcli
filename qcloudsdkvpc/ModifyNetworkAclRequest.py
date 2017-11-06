@@ -8,12 +8,6 @@ class ModifyNetworkAclRequest(Request):
         super(ModifyNetworkAclRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'ModifyNetworkAcl', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_networkAclId(self):
         return self.get_params().get('networkAclId')
 
@@ -25,3 +19,9 @@ class ModifyNetworkAclRequest(Request):
 
     def set_networkAclName(self, networkAclName):
         self.add_param('networkAclName', networkAclName)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

@@ -8,11 +8,11 @@ class AttachNetworkInterfaceRequest(Request):
         super(AttachNetworkInterfaceRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'AttachNetworkInterface', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
+    def get_instanceId(self):
+        return self.get_params().get('instanceId')
 
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
+    def set_instanceId(self, instanceId):
+        self.add_param('instanceId', instanceId)
 
     def get_networkInterfaceId(self):
         return self.get_params().get('networkInterfaceId')
@@ -20,8 +20,8 @@ class AttachNetworkInterfaceRequest(Request):
     def set_networkInterfaceId(self, networkInterfaceId):
         self.add_param('networkInterfaceId', networkInterfaceId)
 
-    def get_instanceId(self):
-        return self.get_params().get('instanceId')
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
 
-    def set_instanceId(self, instanceId):
-        self.add_param('instanceId', instanceId)
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

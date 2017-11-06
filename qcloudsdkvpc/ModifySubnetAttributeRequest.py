@@ -8,11 +8,11 @@ class ModifySubnetAttributeRequest(Request):
         super(ModifySubnetAttributeRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'ModifySubnetAttribute', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
+    def get_broadcast(self):
+        return self.get_params().get('broadcast')
 
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
+    def set_broadcast(self, broadcast):
+        self.add_param('broadcast', broadcast)
 
     def get_subnetId(self):
         return self.get_params().get('subnetId')
@@ -26,8 +26,8 @@ class ModifySubnetAttributeRequest(Request):
     def set_subnetName(self, subnetName):
         self.add_param('subnetName', subnetName)
 
-    def get_broadcast(self):
-        return self.get_params().get('broadcast')
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
 
-    def set_broadcast(self, broadcast):
-        self.add_param('broadcast', broadcast)
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

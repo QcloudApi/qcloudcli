@@ -8,11 +8,11 @@ class GetCdnHostsDetailStatisticsRequest(Request):
         super(GetCdnHostsDetailStatisticsRequest, self).__init__(
             'cdn', 'qcloudcliV1', 'GetCdnHostsDetailStatistics', 'cdn.api.qcloud.com')
 
-    def get_startTime(self):
-        return self.get_params().get('startTime')
+    def get_detail(self):
+        return self.get_params().get('detail')
 
-    def set_startTime(self, startTime):
-        self.add_param('startTime', startTime)
+    def set_detail(self, detail):
+        self.add_param('detail', detail)
 
     def get_endTime(self):
         return self.get_params().get('endTime')
@@ -20,20 +20,20 @@ class GetCdnHostsDetailStatisticsRequest(Request):
     def set_endTime(self, endTime):
         self.add_param('endTime', endTime)
 
-    def get_statType(self):
-        return self.get_params().get('statType')
-
-    def set_statType(self, statType):
-        self.add_param('statType', statType)
-
     def get_hosts(self):
         return self.get_params().get('hosts')
 
     def set_hosts(self, hosts):
         self.add_param('hosts', hosts)
 
-    def get_detail(self):
-        return self.get_params().get('detail')
+    def get_startTime(self):
+        return self.get_params().get('startTime')
 
-    def set_detail(self, detail):
-        self.add_param('detail', detail)
+    def set_startTime(self, startTime):
+        self.add_param('startTime', startTime)
+
+    def get_statType(self):
+        return self.get_params().get('statType')
+
+    def set_statType(self, statType):
+        self.add_param('statType', statType)

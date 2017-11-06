@@ -8,6 +8,12 @@ class RenewVpnRequest(Request):
         super(RenewVpnRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'RenewVpn', 'vpc.api.qcloud.com')
 
+    def get_period(self):
+        return self.get_params().get('period')
+
+    def set_period(self, period):
+        self.add_param('period', period)
+
     def get_vpcId(self):
         return self.get_params().get('vpcId')
 
@@ -19,9 +25,3 @@ class RenewVpnRequest(Request):
 
     def set_vpnGwId(self, vpnGwId):
         self.add_param('vpnGwId', vpnGwId)
-
-    def get_period(self):
-        return self.get_params().get('period')
-
-    def set_period(self, period):
-        self.add_param('period', period)

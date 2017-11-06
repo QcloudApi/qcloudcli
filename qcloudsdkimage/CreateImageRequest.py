@@ -8,17 +8,17 @@ class CreateImageRequest(Request):
         super(CreateImageRequest, self).__init__(
             'image', 'qcloudcliV1', 'CreateImage', 'image.api.qcloud.com')
 
-    def get_instanceId(self):
-        return self.get_params().get('instanceId')
+    def get_autoPowerOffFlag(self):
+        return self.get_params().get('autoPowerOffFlag')
 
-    def set_instanceId(self, instanceId):
-        self.add_param('instanceId', instanceId)
+    def set_autoPowerOffFlag(self, autoPowerOffFlag):
+        self.add_param('autoPowerOffFlag', autoPowerOffFlag)
 
-    def get_imageName(self):
-        return self.get_params().get('imageName')
+    def get_hardFlag(self):
+        return self.get_params().get('hardFlag')
 
-    def set_imageName(self, imageName):
-        self.add_param('imageName', imageName)
+    def set_hardFlag(self, hardFlag):
+        self.add_param('hardFlag', hardFlag)
 
     def get_imageDescription(self):
         return self.get_params().get('imageDescription')
@@ -26,17 +26,17 @@ class CreateImageRequest(Request):
     def set_imageDescription(self, imageDescription):
         self.add_param('imageDescription', imageDescription)
 
-    def get_sysprep(self):
-        return self.get_params().get('sysprep')
+    def get_imageName(self):
+        return self.get_params().get('imageName')
 
-    def set_sysprep(self, sysprep):
-        self.add_param('sysprep', sysprep)
+    def set_imageName(self, imageName):
+        self.add_param('imageName', imageName)
 
-    def get_autoPowerOffFlag(self):
-        return self.get_params().get('autoPowerOffFlag')
+    def get_instanceId(self):
+        return self.get_params().get('instanceId')
 
-    def set_autoPowerOffFlag(self, autoPowerOffFlag):
-        self.add_param('autoPowerOffFlag', autoPowerOffFlag)
+    def set_instanceId(self, instanceId):
+        self.add_param('instanceId', instanceId)
 
     def get_rebootFlag(self):
         return self.get_params().get('rebootFlag')
@@ -44,8 +44,8 @@ class CreateImageRequest(Request):
     def set_rebootFlag(self, rebootFlag):
         self.add_param('rebootFlag', rebootFlag)
 
-    def get_hardFlag(self):
-        return self.get_params().get('hardFlag')
+    def get_sysprep(self):
+        return self.get_params().get('sysprep')
 
-    def set_hardFlag(self, hardFlag):
-        self.add_param('hardFlag', hardFlag)
+    def set_sysprep(self, sysprep):
+        self.add_param('sysprep', sysprep)

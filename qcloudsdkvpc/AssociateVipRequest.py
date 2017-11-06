@@ -8,11 +8,11 @@ class AssociateVipRequest(Request):
         super(AssociateVipRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'AssociateVip', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
+    def get_lanIp(self):
+        return self.get_params().get('lanIp')
 
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
+    def set_lanIp(self, lanIp):
+        self.add_param('lanIp', lanIp)
 
     def get_vipId(self):
         return self.get_params().get('vipId')
@@ -20,8 +20,8 @@ class AssociateVipRequest(Request):
     def set_vipId(self, vipId):
         self.add_param('vipId', vipId)
 
-    def get_lanIp(self):
-        return self.get_params().get('lanIp')
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
 
-    def set_lanIp(self, lanIp):
-        self.add_param('lanIp', lanIp)
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

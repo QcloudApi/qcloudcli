@@ -8,11 +8,11 @@ class ModifyLocalSourceIPPortTranslationNatRuleRequest(Request):
         super(ModifyLocalSourceIPPortTranslationNatRuleRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'ModifyLocalSourceIPPortTranslationNatRule', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
+    def get_description(self):
+        return self.get_params().get('description')
 
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
+    def set_description(self, description):
+        self.add_param('description', description)
 
     def get_directConnectGatewayId(self):
         return self.get_params().get('directConnectGatewayId')
@@ -32,8 +32,8 @@ class ModifyLocalSourceIPPortTranslationNatRuleRequest(Request):
     def set_translationIPPool(self, translationIPPool):
         self.add_param('translationIPPool', translationIPPool)
 
-    def get_description(self):
-        return self.get_params().get('description')
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
 
-    def set_description(self, description):
-        self.add_param('description', description)
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

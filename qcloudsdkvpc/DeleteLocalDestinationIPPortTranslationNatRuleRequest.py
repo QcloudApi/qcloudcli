@@ -8,12 +8,6 @@ class DeleteLocalDestinationIPPortTranslationNatRuleRequest(Request):
         super(DeleteLocalDestinationIPPortTranslationNatRuleRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'DeleteLocalDestinationIPPortTranslationNatRule', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_directConnectGatewayId(self):
         return self.get_params().get('directConnectGatewayId')
 
@@ -25,3 +19,9 @@ class DeleteLocalDestinationIPPortTranslationNatRuleRequest(Request):
 
     def set_localDestinationIPPortTranslation(self, localDestinationIPPortTranslation):
         self.add_param('localDestinationIPPortTranslation', localDestinationIPPortTranslation)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

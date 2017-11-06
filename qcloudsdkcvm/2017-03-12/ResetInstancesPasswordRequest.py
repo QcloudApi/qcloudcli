@@ -8,6 +8,12 @@ class ResetInstancesPasswordRequest(Request):
         super(ResetInstancesPasswordRequest, self).__init__(
             'cvm', 'qcloudcliV1', 'ResetInstancesPassword', 'cvm.api.qcloud.com')
 
+    def get_ForceStop(self):
+        return self.get_params().get('ForceStop')
+
+    def set_ForceStop(self, ForceStop):
+        self.add_param('ForceStop', ForceStop)
+
     def get_InstanceIds(self):
         return self.get_params().get('InstanceIds')
 
@@ -25,9 +31,3 @@ class ResetInstancesPasswordRequest(Request):
 
     def set_UserName(self, UserName):
         self.add_param('UserName', UserName)
-
-    def get_ForceStop(self):
-        return self.get_params().get('ForceStop')
-
-    def set_ForceStop(self, ForceStop):
-        self.add_param('ForceStop', ForceStop)

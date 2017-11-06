@@ -14,14 +14,14 @@ class DeleteVpnConnRequest(Request):
     def set_vpcId(self, vpcId):
         self.add_param('vpcId', vpcId)
 
-    def get_vpnGwId(self):
-        return self.get_params().get('vpnGwId')
-
-    def set_vpnGwId(self, vpnGwId):
-        self.add_param('vpnGwId', vpnGwId)
-
     def get_vpnConnId(self):
         return self.get_params().get('vpnConnId')
 
     def set_vpnConnId(self, vpnConnId):
         self.add_param('vpnConnId', vpnConnId)
+
+    def get_vpnGwId(self):
+        return self.get_params().get('vpnGwId')
+
+    def set_vpnGwId(self, vpnGwId):
+        self.add_param('vpnGwId', vpnGwId)

@@ -20,11 +20,11 @@ class InvokeFunctionRequest(Request):
     def set_invokeType(self, invokeType):
         self.add_param('invokeType', invokeType)
 
-    def get_version(self):
-        return self.get_params().get('version')
+    def get_logType(self):
+        return self.get_params().get('logType')
 
-    def set_version(self, version):
-        self.add_param('version', version)
+    def set_logType(self, logType):
+        self.add_param('logType', logType)
 
     def get_param(self):
         return self.get_params().get('param')
@@ -32,8 +32,8 @@ class InvokeFunctionRequest(Request):
     def set_param(self, param):
         self.add_param('param', param)
 
-    def get_logType(self):
-        return self.get_params().get('logType')
+    def get_version(self):
+        return self.get_params().get('version')
 
-    def set_logType(self, logType):
-        self.add_param('logType', logType)
+    def set_version(self, version):
+        self.add_param('version', version)

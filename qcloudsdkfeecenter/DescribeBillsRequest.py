@@ -8,24 +8,6 @@ class DescribeBillsRequest(Request):
         super(DescribeBillsRequest, self).__init__(
             'feecenter', 'qcloudcliV1', 'DescribeBills', 'feecenter.api.qcloud.com')
 
-    def get_payerUin(self):
-        return self.get_params().get('payerUin')
-
-    def set_payerUin(self, payerUin):
-        self.add_param('payerUin', payerUin)
-
-    def get_payType(self):
-        return self.get_params().get('payType')
-
-    def set_payType(self, payType):
-        self.add_param('payType', payType)
-
-    def get_startTime(self):
-        return self.get_params().get('startTime')
-
-    def set_startTime(self, startTime):
-        self.add_param('startTime', startTime)
-
     def get_endTime(self):
         return self.get_params().get('endTime')
 
@@ -37,3 +19,21 @@ class DescribeBillsRequest(Request):
 
     def set_order(self, order):
         self.add_param('order', order)
+
+    def get_payType(self):
+        return self.get_params().get('payType')
+
+    def set_payType(self, payType):
+        self.add_param('payType', payType)
+
+    def get_payerUin(self):
+        return self.get_params().get('payerUin')
+
+    def set_payerUin(self, payerUin):
+        self.add_param('payerUin', payerUin)
+
+    def get_startTime(self):
+        return self.get_params().get('startTime')
+
+    def set_startTime(self, startTime):
+        self.add_param('startTime', startTime)

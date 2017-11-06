@@ -8,12 +8,6 @@ class UpdateProjectRequest(Request):
         super(UpdateProjectRequest, self).__init__(
             'account', 'qcloudcliV1', 'UpdateProject', 'account.api.qcloud.com')
 
-    def get_projectName(self):
-        return self.get_params().get('projectName')
-
-    def set_projectName(self, projectName):
-        self.add_param('projectName', projectName)
-
     def get_projectDesc(self):
         return self.get_params().get('projectDesc')
 
@@ -25,3 +19,9 @@ class UpdateProjectRequest(Request):
 
     def set_projectId(self, projectId):
         self.add_param('projectId', projectId)
+
+    def get_projectName(self):
+        return self.get_params().get('projectName')
+
+    def set_projectName(self, projectName):
+        self.add_param('projectName', projectName)

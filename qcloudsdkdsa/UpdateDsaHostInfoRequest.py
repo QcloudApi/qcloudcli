@@ -14,11 +14,11 @@ class UpdateDsaHostInfoRequest(Request):
     def set_hostId(self, hostId):
         self.add_param('hostId', hostId)
 
-    def get_projectId(self):
-        return self.get_params().get('projectId')
+    def get_https(self):
+        return self.get_params().get('https')
 
-    def set_projectId(self, projectId):
-        self.add_param('projectId', projectId)
+    def set_https(self, https):
+        self.add_param('https', https)
 
     def get_origin(self):
         return self.get_params().get('origin')
@@ -26,11 +26,11 @@ class UpdateDsaHostInfoRequest(Request):
     def set_origin(self, origin):
         self.add_param('origin', origin)
 
-    def get_https(self):
-        return self.get_params().get('https')
+    def get_projectId(self):
+        return self.get_params().get('projectId')
 
-    def set_https(self, https):
-        self.add_param('https', https)
+    def set_projectId(self, projectId):
+        self.add_param('projectId', projectId)
 
     def get_rspHeader(self):
         return self.get_params().get('rspHeader')

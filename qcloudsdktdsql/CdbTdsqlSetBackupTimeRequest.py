@@ -14,14 +14,14 @@ class CdbTdsqlSetBackupTimeRequest(Request):
     def set_cdbInstanceId(self, cdbInstanceId):
         self.add_param('cdbInstanceId', cdbInstanceId)
 
-    def get_sBackupTime(self):
-        return self.get_params().get('sBackupTime')
-
-    def set_sBackupTime(self, sBackupTime):
-        self.add_param('sBackupTime', sBackupTime)
-
     def get_eBackupTime(self):
         return self.get_params().get('eBackupTime')
 
     def set_eBackupTime(self, eBackupTime):
         self.add_param('eBackupTime', eBackupTime)
+
+    def get_sBackupTime(self):
+        return self.get_params().get('sBackupTime')
+
+    def set_sBackupTime(self, sBackupTime):
+        self.add_param('sBackupTime', sBackupTime)

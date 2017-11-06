@@ -20,14 +20,14 @@ class SealDelRequest(Request):
     def set_operation(self, operation):
         self.add_param('operation', operation)
 
-    def get_userId(self):
-        return self.get_params().get('userId')
-
-    def set_userId(self, userId):
-        self.add_param('userId', userId)
-
     def get_sealId(self):
         return self.get_params().get('sealId')
 
     def set_sealId(self, sealId):
         self.add_param('sealId', sealId)
+
+    def get_userId(self):
+        return self.get_params().get('userId')
+
+    def set_userId(self, userId):
+        self.add_param('userId', userId)

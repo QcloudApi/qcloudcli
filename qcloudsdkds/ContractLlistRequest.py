@@ -20,17 +20,17 @@ class ContractLlistRequest(Request):
     def set_operation(self, operation):
         self.add_param('operation', operation)
 
-    def get_pageSize(self):
-        return self.get_params().get('pageSize')
-
-    def set_pageSize(self, pageSize):
-        self.add_param('pageSize', pageSize)
-
     def get_pageIndex(self):
         return self.get_params().get('pageIndex')
 
     def set_pageIndex(self, pageIndex):
         self.add_param('pageIndex', pageIndex)
+
+    def get_pageSize(self):
+        return self.get_params().get('pageSize')
+
+    def set_pageSize(self, pageSize):
+        self.add_param('pageSize', pageSize)
 
     def get_search(self):
         return self.get_params().get('search')

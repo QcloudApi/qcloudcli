@@ -8,12 +8,6 @@ class CreateVpcRequest(Request):
         super(CreateVpcRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'CreateVpc', 'vpc.api.qcloud.com')
 
-    def get_vpcName(self):
-        return self.get_params().get('vpcName')
-
-    def set_vpcName(self, vpcName):
-        self.add_param('vpcName', vpcName)
-
     def get_cidrBlock(self):
         return self.get_params().get('cidrBlock')
 
@@ -25,3 +19,9 @@ class CreateVpcRequest(Request):
 
     def set_subnetSet(self, subnetSet):
         self.add_param('subnetSet', subnetSet)
+
+    def get_vpcName(self):
+        return self.get_params().get('vpcName')
+
+    def set_vpcName(self, vpcName):
+        self.add_param('vpcName', vpcName)

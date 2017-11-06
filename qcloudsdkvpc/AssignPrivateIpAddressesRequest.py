@@ -8,12 +8,6 @@ class AssignPrivateIpAddressesRequest(Request):
         super(AssignPrivateIpAddressesRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'AssignPrivateIpAddresses', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_networkInterfaceId(self):
         return self.get_params().get('networkInterfaceId')
 
@@ -31,3 +25,9 @@ class AssignPrivateIpAddressesRequest(Request):
 
     def set_secondaryPrivateIpAddressCount(self, secondaryPrivateIpAddressCount):
         self.add_param('secondaryPrivateIpAddressCount', secondaryPrivateIpAddressCount)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

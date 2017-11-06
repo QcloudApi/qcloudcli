@@ -8,6 +8,18 @@ class DescribeScheduledTaskRequest(Request):
         super(DescribeScheduledTaskRequest, self).__init__(
             'scaling', 'qcloudcliV1', 'DescribeScheduledTask', 'scaling.api.qcloud.com')
 
+    def get_limit(self):
+        return self.get_params().get('limit')
+
+    def set_limit(self, limit):
+        self.add_param('limit', limit)
+
+    def get_offset(self):
+        return self.get_params().get('offset')
+
+    def set_offset(self, offset):
+        self.add_param('offset', offset)
+
     def get_scalingGroupId(self):
         return self.get_params().get('scalingGroupId')
 
@@ -25,15 +37,3 @@ class DescribeScheduledTaskRequest(Request):
 
     def set_scalingScheduledTaskName(self, scalingScheduledTaskName):
         self.add_param('scalingScheduledTaskName', scalingScheduledTaskName)
-
-    def get_offset(self):
-        return self.get_params().get('offset')
-
-    def set_offset(self, offset):
-        self.add_param('offset', offset)
-
-    def get_limit(self):
-        return self.get_params().get('limit')
-
-    def set_limit(self, limit):
-        self.add_param('limit', limit)

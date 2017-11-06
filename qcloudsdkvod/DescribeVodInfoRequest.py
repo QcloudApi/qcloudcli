@@ -8,6 +8,12 @@ class DescribeVodInfoRequest(Request):
         super(DescribeVodInfoRequest, self).__init__(
             'vod', 'qcloudcliV1', 'DescribeVodInfo', 'vod.api.qcloud.com')
 
+    def get_classId(self):
+        return self.get_params().get('classId')
+
+    def set_classId(self, classId):
+        self.add_param('classId', classId)
+
     def get_fileIds(self):
         return self.get_params().get('fileIds')
 
@@ -20,23 +26,17 @@ class DescribeVodInfoRequest(Request):
     def set_from(self, from):
         self.add_param('from', from)
 
-    def get_to(self):
-        return self.get_params().get('to')
-
-    def set_to(self, to):
-        self.add_param('to', to)
-
-    def get_status(self):
-        return self.get_params().get('status')
-
-    def set_status(self, status):
-        self.add_param('status', status)
-
     def get_orderby(self):
         return self.get_params().get('orderby')
 
     def set_orderby(self, orderby):
         self.add_param('orderby', orderby)
+
+    def get_orderkey(self):
+        return self.get_params().get('orderkey')
+
+    def set_orderkey(self, orderkey):
+        self.add_param('orderkey', orderkey)
 
     def get_pageNo(self):
         return self.get_params().get('pageNo')
@@ -50,14 +50,14 @@ class DescribeVodInfoRequest(Request):
     def set_pageSize(self, pageSize):
         self.add_param('pageSize', pageSize)
 
-    def get_classId(self):
-        return self.get_params().get('classId')
+    def get_status(self):
+        return self.get_params().get('status')
 
-    def set_classId(self, classId):
-        self.add_param('classId', classId)
+    def set_status(self, status):
+        self.add_param('status', status)
 
-    def get_orderkey(self):
-        return self.get_params().get('orderkey')
+    def get_to(self):
+        return self.get_params().get('to')
 
-    def set_orderkey(self, orderkey):
-        self.add_param('orderkey', orderkey)
+    def set_to(self, to):
+        self.add_param('to', to)

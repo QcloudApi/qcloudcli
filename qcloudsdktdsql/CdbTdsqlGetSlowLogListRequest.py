@@ -14,23 +14,11 @@ class CdbTdsqlGetSlowLogListRequest(Request):
     def set_cdbInstanceId(self, cdbInstanceId):
         self.add_param('cdbInstanceId', cdbInstanceId)
 
-    def get_start(self):
-        return self.get_params().get('start')
+    def get_db(self):
+        return self.get_params().get('db')
 
-    def set_start(self, start):
-        self.add_param('start', start)
-
-    def get_num(self):
-        return self.get_params().get('num')
-
-    def set_num(self, num):
-        self.add_param('num', num)
-
-    def get_startTime(self):
-        return self.get_params().get('startTime')
-
-    def set_startTime(self, startTime):
-        self.add_param('startTime', startTime)
+    def set_db(self, db):
+        self.add_param('db', db)
 
     def get_endTime(self):
         return self.get_params().get('endTime')
@@ -38,11 +26,11 @@ class CdbTdsqlGetSlowLogListRequest(Request):
     def set_endTime(self, endTime):
         self.add_param('endTime', endTime)
 
-    def get_db(self):
-        return self.get_params().get('db')
+    def get_num(self):
+        return self.get_params().get('num')
 
-    def set_db(self, db):
-        self.add_param('db', db)
+    def set_num(self, num):
+        self.add_param('num', num)
 
     def get_orderBy(self):
         return self.get_params().get('orderBy')
@@ -55,3 +43,15 @@ class CdbTdsqlGetSlowLogListRequest(Request):
 
     def set_orderByType(self, orderByType):
         self.add_param('orderByType', orderByType)
+
+    def get_start(self):
+        return self.get_params().get('start')
+
+    def set_start(self, start):
+        self.add_param('start', start)
+
+    def get_startTime(self):
+        return self.get_params().get('startTime')
+
+    def set_startTime(self, startTime):
+        self.add_param('startTime', startTime)

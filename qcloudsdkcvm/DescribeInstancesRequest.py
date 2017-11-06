@@ -20,11 +20,11 @@ class DescribeInstancesRequest(Request):
     def set_lanIps(self, lanIps):
         self.add_param('lanIps', lanIps)
 
-    def get_searchWord(self):
-        return self.get_params().get('searchWord')
+    def get_limit(self):
+        return self.get_params().get('limit')
 
-    def set_searchWord(self, searchWord):
-        self.add_param('searchWord', searchWord)
+    def set_limit(self, limit):
+        self.add_param('limit', limit)
 
     def get_offset(self):
         return self.get_params().get('offset')
@@ -32,29 +32,29 @@ class DescribeInstancesRequest(Request):
     def set_offset(self, offset):
         self.add_param('offset', offset)
 
-    def get_limit(self):
-        return self.get_params().get('limit')
-
-    def set_limit(self, limit):
-        self.add_param('limit', limit)
-
-    def get_status(self):
-        return self.get_params().get('status')
-
-    def set_status(self, status):
-        self.add_param('status', status)
-
     def get_projectId(self):
         return self.get_params().get('projectId')
 
     def set_projectId(self, projectId):
         self.add_param('projectId', projectId)
 
+    def get_searchWord(self):
+        return self.get_params().get('searchWord')
+
+    def set_searchWord(self, searchWord):
+        self.add_param('searchWord', searchWord)
+
     def get_simplify(self):
         return self.get_params().get('simplify')
 
     def set_simplify(self, simplify):
         self.add_param('simplify', simplify)
+
+    def get_status(self):
+        return self.get_params().get('status')
+
+    def set_status(self, status):
+        self.add_param('status', status)
 
     def get_zoneId(self):
         return self.get_params().get('zoneId')

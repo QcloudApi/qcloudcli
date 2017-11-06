@@ -20,11 +20,11 @@ class DescribeCmemRequest(Request):
     def set_offset(self, offset):
         self.add_param('offset', offset)
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
+    def get_sizeInfo(self):
+        return self.get_params().get('sizeInfo')
 
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
+    def set_sizeInfo(self, sizeInfo):
+        self.add_param('sizeInfo', sizeInfo)
 
     def get_subnetId(self):
         return self.get_params().get('subnetId')
@@ -32,8 +32,8 @@ class DescribeCmemRequest(Request):
     def set_subnetId(self, subnetId):
         self.add_param('subnetId', subnetId)
 
-    def get_sizeInfo(self):
-        return self.get_params().get('sizeInfo')
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
 
-    def set_sizeInfo(self, sizeInfo):
-        self.add_param('sizeInfo', sizeInfo)
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

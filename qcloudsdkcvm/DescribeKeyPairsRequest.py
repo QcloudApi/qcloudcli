@@ -20,17 +20,17 @@ class DescribeKeyPairsRequest(Request):
     def set_keyName(self, keyName):
         self.add_param('keyName', keyName)
 
-    def get_offset(self):
-        return self.get_params().get('offset')
-
-    def set_offset(self, offset):
-        self.add_param('offset', offset)
-
     def get_limit(self):
         return self.get_params().get('limit')
 
     def set_limit(self, limit):
         self.add_param('limit', limit)
+
+    def get_offset(self):
+        return self.get_params().get('offset')
+
+    def set_offset(self, offset):
+        self.add_param('offset', offset)
 
     def get_projectId(self):
         return self.get_params().get('projectId')

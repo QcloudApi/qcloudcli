@@ -14,6 +14,12 @@ class CdbTdsqlExpandInstanceRequest(Request):
     def set_cdbInstanceUuid(self, cdbInstanceUuid):
         self.add_param('cdbInstanceUuid', cdbInstanceUuid)
 
+    def get_curDeadline(self):
+        return self.get_params().get('curDeadline')
+
+    def set_curDeadline(self, curDeadline):
+        self.add_param('curDeadline', curDeadline)
+
     def get_dbType(self):
         return self.get_params().get('dbType')
 
@@ -25,9 +31,3 @@ class CdbTdsqlExpandInstanceRequest(Request):
 
     def set_newDbType(self, newDbType):
         self.add_param('newDbType', newDbType)
-
-    def get_curDeadline(self):
-        return self.get_params().get('curDeadline')
-
-    def set_curDeadline(self, curDeadline):
-        self.add_param('curDeadline', curDeadline)

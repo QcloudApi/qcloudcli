@@ -8,17 +8,11 @@ class DescribeApiKeysStatusRequest(Request):
         super(DescribeApiKeysStatusRequest, self).__init__(
             'apigateway', 'qcloudcliV1', 'DescribeApiKeysStatus', 'apigateway.api.qcloud.com')
 
-    def get_secretIds(self):
-        return self.get_params().get('secretIds')
+    def get_filter(self):
+        return self.get_params().get('filter')
 
-    def set_secretIds(self, secretIds):
-        self.add_param('secretIds', secretIds)
-
-    def get_offset(self):
-        return self.get_params().get('offset')
-
-    def set_offset(self, offset):
-        self.add_param('offset', offset)
+    def set_filter(self, filter):
+        self.add_param('filter', filter)
 
     def get_limit(self):
         return self.get_params().get('limit')
@@ -26,11 +20,11 @@ class DescribeApiKeysStatusRequest(Request):
     def set_limit(self, limit):
         self.add_param('limit', limit)
 
-    def get_orderby(self):
-        return self.get_params().get('orderby')
+    def get_offset(self):
+        return self.get_params().get('offset')
 
-    def set_orderby(self, orderby):
-        self.add_param('orderby', orderby)
+    def set_offset(self, offset):
+        self.add_param('offset', offset)
 
     def get_order(self):
         return self.get_params().get('order')
@@ -38,11 +32,11 @@ class DescribeApiKeysStatusRequest(Request):
     def set_order(self, order):
         self.add_param('order', order)
 
-    def get_searchName(self):
-        return self.get_params().get('searchName')
+    def get_orderby(self):
+        return self.get_params().get('orderby')
 
-    def set_searchName(self, searchName):
-        self.add_param('searchName', searchName)
+    def set_orderby(self, orderby):
+        self.add_param('orderby', orderby)
 
     def get_searchId(self):
         return self.get_params().get('searchId')
@@ -50,8 +44,14 @@ class DescribeApiKeysStatusRequest(Request):
     def set_searchId(self, searchId):
         self.add_param('searchId', searchId)
 
-    def get_filter(self):
-        return self.get_params().get('filter')
+    def get_searchName(self):
+        return self.get_params().get('searchName')
 
-    def set_filter(self, filter):
-        self.add_param('filter', filter)
+    def set_searchName(self, searchName):
+        self.add_param('searchName', searchName)
+
+    def get_secretIds(self):
+        return self.get_params().get('secretIds')
+
+    def set_secretIds(self, secretIds):
+        self.add_param('secretIds', secretIds)

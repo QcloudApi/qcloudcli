@@ -14,14 +14,14 @@ class DescribeScreenShotRequest(Request):
     def set_fileId(self, fileId):
         self.add_param('fileId', fileId)
 
-    def get_width(self):
-        return self.get_params().get('width')
-
-    def set_width(self, width):
-        self.add_param('width', width)
-
     def get_height(self):
         return self.get_params().get('height')
 
     def set_height(self, height):
         self.add_param('height', height)
+
+    def get_width(self):
+        return self.get_params().get('width')
+
+    def set_width(self, width):
+        self.add_param('width', width)

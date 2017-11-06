@@ -14,20 +14,14 @@ class DescribeInstancesStatusRequest(Request):
     def set_InstanceIds(self, InstanceIds):
         self.add_param('InstanceIds', InstanceIds)
 
-    def get_Offset(self):
-        return self.get_params().get('Offset')
-
-    def set_Offset(self, Offset):
-        self.add_param('Offset', Offset)
-
     def get_Limit(self):
         return self.get_params().get('Limit')
 
     def set_Limit(self, Limit):
         self.add_param('Limit', Limit)
 
-    def get_RequestSourceUserName(self):
-        return self.get_params().get('RequestSourceUserName')
+    def get_Offset(self):
+        return self.get_params().get('Offset')
 
-    def set_RequestSourceUserName(self, RequestSourceUserName):
-        self.add_param('RequestSourceUserName', RequestSourceUserName)
+    def set_Offset(self, Offset):
+        self.add_param('Offset', Offset)

@@ -14,14 +14,14 @@ class RecordListRequest(Request):
     def set_domain(self, domain):
         self.add_param('domain', domain)
 
-    def get_offset(self):
-        return self.get_params().get('offset')
-
-    def set_offset(self, offset):
-        self.add_param('offset', offset)
-
     def get_length(self):
         return self.get_params().get('length')
 
     def set_length(self, length):
         self.add_param('length', length)
+
+    def get_offset(self):
+        return self.get_params().get('offset')
+
+    def set_offset(self, offset):
+        self.add_param('offset', offset)

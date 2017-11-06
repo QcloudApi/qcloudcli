@@ -8,12 +8,6 @@ class TextClassifyRequest(Request):
         super(TextClassifyRequest, self).__init__(
             'wenzhi', 'qcloudcliV1', 'TextClassify', 'wenzhi.api.qcloud.com')
 
-    def get_title(self):
-        return self.get_params().get('title')
-
-    def set_title(self, title):
-        self.add_param('title', title)
-
     def get_content(self):
         return self.get_params().get('content')
 
@@ -25,6 +19,12 @@ class TextClassifyRequest(Request):
 
     def set_secdNav(self, secdNav):
         self.add_param('secdNav', secdNav)
+
+    def get_title(self):
+        return self.get_params().get('title')
+
+    def set_title(self, title):
+        self.add_param('title', title)
 
     def get_url(self):
         return self.get_params().get('url')

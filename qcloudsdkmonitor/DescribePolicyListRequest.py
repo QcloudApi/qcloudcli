@@ -8,11 +8,11 @@ class DescribePolicyListRequest(Request):
         super(DescribePolicyListRequest, self).__init__(
             'monitor', 'qcloudcliV1', 'DescribePolicyList', 'monitor.api.qcloud.com')
 
-    def get_offset(self):
-        return self.get_params().get('offset')
+    def get_like(self):
+        return self.get_params().get('like')
 
-    def set_offset(self, offset):
-        self.add_param('offset', offset)
+    def set_like(self, like):
+        self.add_param('like', like)
 
     def get_limit(self):
         return self.get_params().get('limit')
@@ -20,17 +20,17 @@ class DescribePolicyListRequest(Request):
     def set_limit(self, limit):
         self.add_param('limit', limit)
 
+    def get_offset(self):
+        return self.get_params().get('offset')
+
+    def set_offset(self, offset):
+        self.add_param('offset', offset)
+
     def get_projectIds(self):
         return self.get_params().get('projectIds')
 
     def set_projectIds(self, projectIds):
         self.add_param('projectIds', projectIds)
-
-    def get_viewNames(self):
-        return self.get_params().get('viewNames')
-
-    def set_viewNames(self, viewNames):
-        self.add_param('viewNames', viewNames)
 
     def get_updateTimeOrder(self):
         return self.get_params().get('updateTimeOrder')
@@ -38,8 +38,8 @@ class DescribePolicyListRequest(Request):
     def set_updateTimeOrder(self, updateTimeOrder):
         self.add_param('updateTimeOrder', updateTimeOrder)
 
-    def get_like(self):
-        return self.get_params().get('like')
+    def get_viewNames(self):
+        return self.get_params().get('viewNames')
 
-    def set_like(self, like):
-        self.add_param('like', like)
+    def set_viewNames(self, viewNames):
+        self.add_param('viewNames', viewNames)

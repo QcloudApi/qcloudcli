@@ -8,6 +8,12 @@ class BindSubDomainRequest(Request):
         super(BindSubDomainRequest, self).__init__(
             'apigateway', 'qcloudcliV1', 'BindSubDomain', 'apigateway.api.qcloud.com')
 
+    def get_certificateId(self):
+        return self.get_params().get('certificateId')
+
+    def set_certificateId(self, certificateId):
+        self.add_param('certificateId', certificateId)
+
     def get_serviceId(self):
         return self.get_params().get('serviceId')
 
@@ -19,9 +25,3 @@ class BindSubDomainRequest(Request):
 
     def set_subDomain(self, subDomain):
         self.add_param('subDomain', subDomain)
-
-    def get_certificateId(self):
-        return self.get_params().get('certificateId')
-
-    def set_certificateId(self, certificateId):
-        self.add_param('certificateId', certificateId)

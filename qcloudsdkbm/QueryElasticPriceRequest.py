@@ -14,17 +14,41 @@ class QueryElasticPriceRequest(Request):
     def set_cpuId(self, cpuId):
         self.add_param('cpuId', cpuId)
 
-    def get_diskTypeId1(self):
-        return self.get_params().get('diskTypeId1')
+    def get_deviceClass(self):
+        return self.get_params().get('deviceClass')
 
-    def set_diskTypeId1(self, diskTypeId1):
-        self.add_param('diskTypeId1', diskTypeId1)
+    def set_deviceClass(self, deviceClass):
+        self.add_param('deviceClass', deviceClass)
 
     def get_diskNum1(self):
         return self.get_params().get('diskNum1')
 
     def set_diskNum1(self, diskNum1):
         self.add_param('diskNum1', diskNum1)
+
+    def get_diskNum2(self):
+        return self.get_params().get('diskNum2')
+
+    def set_diskNum2(self, diskNum2):
+        self.add_param('diskNum2', diskNum2)
+
+    def get_diskTypeId1(self):
+        return self.get_params().get('diskTypeId1')
+
+    def set_diskTypeId1(self, diskTypeId1):
+        self.add_param('diskTypeId1', diskTypeId1)
+
+    def get_diskTypeId2(self):
+        return self.get_params().get('diskTypeId2')
+
+    def set_diskTypeId2(self, diskTypeId2):
+        self.add_param('diskTypeId2', diskTypeId2)
+
+    def get_goodsNum(self):
+        return self.get_params().get('goodsNum')
+
+    def set_goodsNum(self, goodsNum):
+        self.add_param('goodsNum', goodsNum)
 
     def get_haveRaidCard(self):
         return self.get_params().get('haveRaidCard')
@@ -49,27 +73,3 @@ class QueryElasticPriceRequest(Request):
 
     def set_timeUnit(self, timeUnit):
         self.add_param('timeUnit', timeUnit)
-
-    def get_goodsNum(self):
-        return self.get_params().get('goodsNum')
-
-    def set_goodsNum(self, goodsNum):
-        self.add_param('goodsNum', goodsNum)
-
-    def get_deviceClass(self):
-        return self.get_params().get('deviceClass')
-
-    def set_deviceClass(self, deviceClass):
-        self.add_param('deviceClass', deviceClass)
-
-    def get_diskTypeId2(self):
-        return self.get_params().get('diskTypeId2')
-
-    def set_diskTypeId2(self, diskTypeId2):
-        self.add_param('diskTypeId2', diskTypeId2)
-
-    def get_diskNum2(self):
-        return self.get_params().get('diskNum2')
-
-    def set_diskNum2(self, diskNum2):
-        self.add_param('diskNum2', diskNum2)

@@ -8,12 +8,6 @@ class CreateSubnetAclRuleRequest(Request):
         super(CreateSubnetAclRuleRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'CreateSubnetAclRule', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_networkAclId(self):
         return self.get_params().get('networkAclId')
 
@@ -25,3 +19,9 @@ class CreateSubnetAclRuleRequest(Request):
 
     def set_subnetIds(self, subnetIds):
         self.add_param('subnetIds', subnetIds)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

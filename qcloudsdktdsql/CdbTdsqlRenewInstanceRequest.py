@@ -14,14 +14,14 @@ class CdbTdsqlRenewInstanceRequest(Request):
     def set_cdbInstanceUuid(self, cdbInstanceUuid):
         self.add_param('cdbInstanceUuid', cdbInstanceUuid)
 
-    def get_period(self):
-        return self.get_params().get('period')
-
-    def set_period(self, period):
-        self.add_param('period', period)
-
     def get_dbType(self):
         return self.get_params().get('dbType')
 
     def set_dbType(self, dbType):
         self.add_param('dbType', dbType)
+
+    def get_period(self):
+        return self.get_params().get('period')
+
+    def set_period(self, period):
+        self.add_param('period', period)

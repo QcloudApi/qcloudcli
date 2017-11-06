@@ -8,6 +8,12 @@ class CreateProjectRequest(Request):
         super(CreateProjectRequest, self).__init__(
             'helix', 'qcloudcliV1', 'CreateProject', 'helix.api.qcloud.com')
 
+    def get_desc(self):
+        return self.get_params().get('desc')
+
+    def set_desc(self, desc):
+        self.add_param('desc', desc)
+
     def get_name(self):
         return self.get_params().get('name')
 
@@ -19,12 +25,6 @@ class CreateProjectRequest(Request):
 
     def set_region(self, region):
         self.add_param('region', region)
-
-    def get_desc(self):
-        return self.get_params().get('desc')
-
-    def set_desc(self, desc):
-        self.add_param('desc', desc)
 
     def get_secretId(self):
         return self.get_params().get('secretId')

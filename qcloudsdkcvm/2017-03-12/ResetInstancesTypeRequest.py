@@ -8,11 +8,17 @@ class ResetInstancesTypeRequest(Request):
         super(ResetInstancesTypeRequest, self).__init__(
             'cvm', 'qcloudcliV1', 'ResetInstancesType', 'cvm.api.qcloud.com')
 
-    def get_Uin(self):
-        return self.get_params().get('Uin')
+    def get_DryRun(self):
+        return self.get_params().get('DryRun')
 
-    def set_Uin(self, Uin):
-        self.add_param('Uin', Uin)
+    def set_DryRun(self, DryRun):
+        self.add_param('DryRun', DryRun)
+
+    def get_ForceStop(self):
+        return self.get_params().get('ForceStop')
+
+    def set_ForceStop(self, ForceStop):
+        self.add_param('ForceStop', ForceStop)
 
     def get_InstanceIds(self):
         return self.get_params().get('InstanceIds')
@@ -26,14 +32,8 @@ class ResetInstancesTypeRequest(Request):
     def set_InstanceType(self, InstanceType):
         self.add_param('InstanceType', InstanceType)
 
-    def get_ForceStop(self):
-        return self.get_params().get('ForceStop')
+    def get_Uin(self):
+        return self.get_params().get('Uin')
 
-    def set_ForceStop(self, ForceStop):
-        self.add_param('ForceStop', ForceStop)
-
-    def get_DryRun(self):
-        return self.get_params().get('DryRun')
-
-    def set_DryRun(self, DryRun):
-        self.add_param('DryRun', DryRun)
+    def set_Uin(self, Uin):
+        self.add_param('Uin', Uin)

@@ -8,6 +8,12 @@ class SetLoadBalancerLogRequest(Request):
         super(SetLoadBalancerLogRequest, self).__init__(
             'lb', 'qcloudcliV1', 'SetLoadBalancerLog', 'lb.api.qcloud.com')
 
+    def get_bucketName(self):
+        return self.get_params().get('bucketName')
+
+    def set_bucketName(self, bucketName):
+        self.add_param('bucketName', bucketName)
+
     def get_loadBalancerId(self):
         return self.get_params().get('loadBalancerId')
 
@@ -25,12 +31,6 @@ class SetLoadBalancerLogRequest(Request):
 
     def set_period(self, period):
         self.add_param('period', period)
-
-    def get_bucketName(self):
-        return self.get_params().get('bucketName')
-
-    def set_bucketName(self, bucketName):
-        self.add_param('bucketName', bucketName)
 
     def get_switch(self):
         return self.get_params().get('switch')

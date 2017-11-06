@@ -14,11 +14,11 @@ class GetCdnProvIspDetailStatusCodeRequest(Request):
     def set_date(self, date):
         self.add_param('date', date)
 
-    def get_provs(self):
-        return self.get_params().get('provs')
+    def get_hosts(self):
+        return self.get_params().get('hosts')
 
-    def set_provs(self, provs):
-        self.add_param('provs', provs)
+    def set_hosts(self, hosts):
+        self.add_param('hosts', hosts)
 
     def get_isps(self):
         return self.get_params().get('isps')
@@ -26,8 +26,8 @@ class GetCdnProvIspDetailStatusCodeRequest(Request):
     def set_isps(self, isps):
         self.add_param('isps', isps)
 
-    def get_hosts(self):
-        return self.get_params().get('hosts')
+    def get_provs(self):
+        return self.get_params().get('provs')
 
-    def set_hosts(self, hosts):
-        self.add_param('hosts', hosts)
+    def set_provs(self, provs):
+        self.add_param('provs', provs)

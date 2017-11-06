@@ -8,11 +8,11 @@ class ModifyBmL4ListenerBackendWeightRequest(Request):
         super(ModifyBmL4ListenerBackendWeightRequest, self).__init__(
             'bmlb', 'qcloudcliV1', 'ModifyBmL4ListenerBackendWeight', 'bmlb.api.qcloud.com')
 
-    def get_loadBalancerId(self):
-        return self.get_params().get('loadBalancerId')
+    def get_instanceId(self):
+        return self.get_params().get('instanceId')
 
-    def set_loadBalancerId(self, loadBalancerId):
-        self.add_param('loadBalancerId', loadBalancerId)
+    def set_instanceId(self, instanceId):
+        self.add_param('instanceId', instanceId)
 
     def get_listenerId(self):
         return self.get_params().get('listenerId')
@@ -20,11 +20,11 @@ class ModifyBmL4ListenerBackendWeightRequest(Request):
     def set_listenerId(self, listenerId):
         self.add_param('listenerId', listenerId)
 
-    def get_instanceId(self):
-        return self.get_params().get('instanceId')
+    def get_loadBalancerId(self):
+        return self.get_params().get('loadBalancerId')
 
-    def set_instanceId(self, instanceId):
-        self.add_param('instanceId', instanceId)
+    def set_loadBalancerId(self, loadBalancerId):
+        self.add_param('loadBalancerId', loadBalancerId)
 
     def get_port(self):
         return self.get_params().get('port')

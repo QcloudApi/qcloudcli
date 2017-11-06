@@ -8,6 +8,12 @@ class GetOverseaCdnLogListRequest(Request):
         super(GetOverseaCdnLogListRequest, self).__init__(
             'cdn', 'qcloudcliV1', 'GetOverseaCdnLogList', 'cdn.api.qcloud.com')
 
+    def get_endDate(self):
+        return self.get_params().get('endDate')
+
+    def set_endDate(self, endDate):
+        self.add_param('endDate', endDate)
+
     def get_host(self):
         return self.get_params().get('host')
 
@@ -19,9 +25,3 @@ class GetOverseaCdnLogListRequest(Request):
 
     def set_startDate(self, startDate):
         self.add_param('startDate', startDate)
-
-    def get_endDate(self):
-        return self.get_params().get('endDate')
-
-    def set_endDate(self, endDate):
-        self.add_param('endDate', endDate)

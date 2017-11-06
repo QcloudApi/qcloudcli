@@ -8,11 +8,11 @@ class AssociateInstancesKeyPairsRequest(Request):
         super(AssociateInstancesKeyPairsRequest, self).__init__(
             'cvm', 'qcloudcliV1', 'AssociateInstancesKeyPairs', 'cvm.api.qcloud.com')
 
-    def get_KeyIds(self):
-        return self.get_params().get('KeyIds')
+    def get_ForceStop(self):
+        return self.get_params().get('ForceStop')
 
-    def set_KeyIds(self, KeyIds):
-        self.add_param('KeyIds', KeyIds)
+    def set_ForceStop(self, ForceStop):
+        self.add_param('ForceStop', ForceStop)
 
     def get_InstanceIds(self):
         return self.get_params().get('InstanceIds')
@@ -20,8 +20,8 @@ class AssociateInstancesKeyPairsRequest(Request):
     def set_InstanceIds(self, InstanceIds):
         self.add_param('InstanceIds', InstanceIds)
 
-    def get_ForceStop(self):
-        return self.get_params().get('ForceStop')
+    def get_KeyIds(self):
+        return self.get_params().get('KeyIds')
 
-    def set_ForceStop(self, ForceStop):
-        self.add_param('ForceStop', ForceStop)
+    def set_KeyIds(self, KeyIds):
+        self.add_param('KeyIds', KeyIds)

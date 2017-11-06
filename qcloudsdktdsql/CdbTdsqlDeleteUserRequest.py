@@ -14,11 +14,11 @@ class CdbTdsqlDeleteUserRequest(Request):
     def set_cdbInstanceId(self, cdbInstanceId):
         self.add_param('cdbInstanceId', cdbInstanceId)
 
-    def get_userName(self):
-        return self.get_params().get('userName')
+    def get_dbMode(self):
+        return self.get_params().get('dbMode')
 
-    def set_userName(self, userName):
-        self.add_param('userName', userName)
+    def set_dbMode(self, dbMode):
+        self.add_param('dbMode', dbMode)
 
     def get_host(self):
         return self.get_params().get('host')
@@ -26,8 +26,8 @@ class CdbTdsqlDeleteUserRequest(Request):
     def set_host(self, host):
         self.add_param('host', host)
 
-    def get_dbMode(self):
-        return self.get_params().get('dbMode')
+    def get_userName(self):
+        return self.get_params().get('userName')
 
-    def set_dbMode(self, dbMode):
-        self.add_param('dbMode', dbMode)
+    def set_userName(self, userName):
+        self.add_param('userName', userName)

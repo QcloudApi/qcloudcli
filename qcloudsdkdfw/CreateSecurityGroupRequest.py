@@ -8,6 +8,12 @@ class CreateSecurityGroupRequest(Request):
         super(CreateSecurityGroupRequest, self).__init__(
             'dfw', 'qcloudcliV1', 'CreateSecurityGroup', 'dfw.api.qcloud.com')
 
+    def get_projectId(self):
+        return self.get_params().get('projectId')
+
+    def set_projectId(self, projectId):
+        self.add_param('projectId', projectId)
+
     def get_sgName(self):
         return self.get_params().get('sgName')
 
@@ -19,9 +25,3 @@ class CreateSecurityGroupRequest(Request):
 
     def set_sgRemark(self, sgRemark):
         self.add_param('sgRemark', sgRemark)
-
-    def get_projectId(self):
-        return self.get_params().get('projectId')
-
-    def set_projectId(self, projectId):
-        self.add_param('projectId', projectId)

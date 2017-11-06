@@ -8,6 +8,12 @@ class DescribeAlarmRuleListRequest(Request):
         super(DescribeAlarmRuleListRequest, self).__init__(
             'monitor', 'qcloudcliV1', 'DescribeAlarmRuleList', 'monitor.api.qcloud.com')
 
+    def get_limit(self):
+        return self.get_params().get('limit')
+
+    def set_limit(self, limit):
+        self.add_param('limit', limit)
+
     def get_namespace(self):
         return self.get_params().get('namespace')
 
@@ -19,9 +25,3 @@ class DescribeAlarmRuleListRequest(Request):
 
     def set_offset(self, offset):
         self.add_param('offset', offset)
-
-    def get_limit(self):
-        return self.get_params().get('limit')
-
-    def set_limit(self, limit):
-        self.add_param('limit', limit)

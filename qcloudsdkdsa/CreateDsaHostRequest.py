@@ -14,6 +14,12 @@ class CreateDsaHostRequest(Request):
     def set_host(self, host):
         self.add_param('host', host)
 
+    def get_https(self):
+        return self.get_params().get('https')
+
+    def set_https(self, https):
+        self.add_param('https', https)
+
     def get_origin(self):
         return self.get_params().get('origin')
 
@@ -25,12 +31,6 @@ class CreateDsaHostRequest(Request):
 
     def set_projectId(self, projectId):
         self.add_param('projectId', projectId)
-
-    def get_https(self):
-        return self.get_params().get('https')
-
-    def set_https(self, https):
-        self.add_param('https', https)
 
     def get_rspHeader(self):
         return self.get_params().get('rspHeader')

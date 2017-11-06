@@ -14,11 +14,11 @@ class EipBindInstanceRequest(Request):
     def set_eipId(self, eipId):
         self.add_param('eipId', eipId)
 
-    def get_unInstanceId(self):
-        return self.get_params().get('unInstanceId')
+    def get_mode(self):
+        return self.get_params().get('mode')
 
-    def set_unInstanceId(self, unInstanceId):
-        self.add_param('unInstanceId', unInstanceId)
+    def set_mode(self, mode):
+        self.add_param('mode', mode)
 
     def get_networkInterfaceId(self):
         return self.get_params().get('networkInterfaceId')
@@ -32,8 +32,8 @@ class EipBindInstanceRequest(Request):
     def set_privateIpAddress(self, privateIpAddress):
         self.add_param('privateIpAddress', privateIpAddress)
 
-    def get_mode(self):
-        return self.get_params().get('mode')
+    def get_unInstanceId(self):
+        return self.get_params().get('unInstanceId')
 
-    def set_mode(self, mode):
-        self.add_param('mode', mode)
+    def set_unInstanceId(self, unInstanceId):
+        self.add_param('unInstanceId', unInstanceId)

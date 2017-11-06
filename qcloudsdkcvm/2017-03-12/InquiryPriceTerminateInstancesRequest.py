@@ -8,8 +8,20 @@ class InquiryPriceTerminateInstancesRequest(Request):
         super(InquiryPriceTerminateInstancesRequest, self).__init__(
             'cvm', 'qcloudcliV1', 'InquiryPriceTerminateInstances', 'cvm.api.qcloud.com')
 
+    def get_DryRun(self):
+        return self.get_params().get('DryRun')
+
+    def set_DryRun(self, DryRun):
+        self.add_param('DryRun', DryRun)
+
     def get_InstanceIds(self):
         return self.get_params().get('InstanceIds')
 
     def set_InstanceIds(self, InstanceIds):
         self.add_param('InstanceIds', InstanceIds)
+
+    def get_ReleaseAddress(self):
+        return self.get_params().get('ReleaseAddress')
+
+    def set_ReleaseAddress(self, ReleaseAddress):
+        self.add_param('ReleaseAddress', ReleaseAddress)

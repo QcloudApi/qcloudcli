@@ -8,11 +8,11 @@ class ModifyNatGatewayRequest(Request):
         super(ModifyNatGatewayRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'ModifyNatGateway', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
+    def get_bandwidth(self):
+        return self.get_params().get('bandwidth')
 
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
+    def set_bandwidth(self, bandwidth):
+        self.add_param('bandwidth', bandwidth)
 
     def get_natId(self):
         return self.get_params().get('natId')
@@ -26,8 +26,8 @@ class ModifyNatGatewayRequest(Request):
     def set_natName(self, natName):
         self.add_param('natName', natName)
 
-    def get_bandwidth(self):
-        return self.get_params().get('bandwidth')
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
 
-    def set_bandwidth(self, bandwidth):
-        self.add_param('bandwidth', bandwidth)
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

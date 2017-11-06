@@ -8,17 +8,17 @@ class CdbMysqlInitRequest(Request):
         super(CdbMysqlInitRequest, self).__init__(
             'cdb', 'qcloudcliV1', 'CdbMysqlInit', 'cdb.api.qcloud.com')
 
+    def get_cdbInstanceId(self):
+        return self.get_params().get('cdbInstanceId')
+
+    def set_cdbInstanceId(self, cdbInstanceId):
+        self.add_param('cdbInstanceId', cdbInstanceId)
+
     def get_charset(self):
         return self.get_params().get('charset')
 
     def set_charset(self, charset):
         self.add_param('charset', charset)
-
-    def get_port(self):
-        return self.get_params().get('port')
-
-    def set_port(self, port):
-        self.add_param('port', port)
 
     def get_lowerCaseTableNames(self):
         return self.get_params().get('lowerCaseTableNames')
@@ -32,8 +32,8 @@ class CdbMysqlInitRequest(Request):
     def set_password(self, password):
         self.add_param('password', password)
 
-    def get_cdbInstanceId(self):
-        return self.get_params().get('cdbInstanceId')
+    def get_port(self):
+        return self.get_params().get('port')
 
-    def set_cdbInstanceId(self, cdbInstanceId):
-        self.add_param('cdbInstanceId', cdbInstanceId)
+    def set_port(self, port):
+        self.add_param('port', port)

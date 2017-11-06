@@ -8,6 +8,12 @@ class BindInstanceKeyRequest(Request):
         super(BindInstanceKeyRequest, self).__init__(
             'cvm', 'qcloudcliV1', 'BindInstanceKey', 'cvm.api.qcloud.com')
 
+    def get_hardPowerOffFlag(self):
+        return self.get_params().get('hardPowerOffFlag')
+
+    def set_hardPowerOffFlag(self, hardPowerOffFlag):
+        self.add_param('hardPowerOffFlag', hardPowerOffFlag)
+
     def get_instanceIds(self):
         return self.get_params().get('instanceIds')
 
@@ -19,9 +25,3 @@ class BindInstanceKeyRequest(Request):
 
     def set_keyId(self, keyId):
         self.add_param('keyId', keyId)
-
-    def get_hardPowerOffFlag(self):
-        return self.get_params().get('hardPowerOffFlag')
-
-    def set_hardPowerOffFlag(self, hardPowerOffFlag):
-        self.add_param('hardPowerOffFlag', hardPowerOffFlag)

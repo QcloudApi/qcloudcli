@@ -8,12 +8,6 @@ class GetCdnStatusCodeRequest(Request):
         super(GetCdnStatusCodeRequest, self).__init__(
             'cdn', 'qcloudcliV1', 'GetCdnStatusCode', 'cdn.api.qcloud.com')
 
-    def get_startDate(self):
-        return self.get_params().get('startDate')
-
-    def set_startDate(self, startDate):
-        self.add_param('startDate', startDate)
-
     def get_endDate(self):
         return self.get_params().get('endDate')
 
@@ -25,6 +19,12 @@ class GetCdnStatusCodeRequest(Request):
 
     def set_hosts(self, hosts):
         self.add_param('hosts', hosts)
+
+    def get_period(self):
+        return self.get_params().get('period')
+
+    def set_period(self, period):
+        self.add_param('period', period)
 
     def get_projects(self):
         return self.get_params().get('projects')
@@ -38,8 +38,8 @@ class GetCdnStatusCodeRequest(Request):
     def set_sources(self, sources):
         self.add_param('sources', sources)
 
-    def get_period(self):
-        return self.get_params().get('period')
+    def get_startDate(self):
+        return self.get_params().get('startDate')
 
-    def set_period(self, period):
-        self.add_param('period', period)
+    def set_startDate(self, startDate):
+        self.add_param('startDate', startDate)

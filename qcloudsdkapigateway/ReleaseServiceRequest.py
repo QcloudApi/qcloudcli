@@ -8,12 +8,6 @@ class ReleaseServiceRequest(Request):
         super(ReleaseServiceRequest, self).__init__(
             'apigateway', 'qcloudcliV1', 'ReleaseService', 'apigateway.api.qcloud.com')
 
-    def get_serviceId(self):
-        return self.get_params().get('serviceId')
-
-    def set_serviceId(self, serviceId):
-        self.add_param('serviceId', serviceId)
-
     def get_environmentName(self):
         return self.get_params().get('environmentName')
 
@@ -25,3 +19,9 @@ class ReleaseServiceRequest(Request):
 
     def set_releaseDesc(self, releaseDesc):
         self.add_param('releaseDesc', releaseDesc)
+
+    def get_serviceId(self):
+        return self.get_params().get('serviceId')
+
+    def set_serviceId(self, serviceId):
+        self.add_param('serviceId', serviceId)

@@ -8,12 +8,6 @@ class DescribeServiceEnvironmentReleaseHistoryRequest(Request):
         super(DescribeServiceEnvironmentReleaseHistoryRequest, self).__init__(
             'apigateway', 'qcloudcliV1', 'DescribeServiceEnvironmentReleaseHistory', 'apigateway.api.qcloud.com')
 
-    def get_serviceId(self):
-        return self.get_params().get('serviceId')
-
-    def set_serviceId(self, serviceId):
-        self.add_param('serviceId', serviceId)
-
     def get_environmentName(self):
         return self.get_params().get('environmentName')
 
@@ -31,3 +25,9 @@ class DescribeServiceEnvironmentReleaseHistoryRequest(Request):
 
     def set_offset(self, offset):
         self.add_param('offset', offset)
+
+    def get_serviceId(self):
+        return self.get_params().get('serviceId')
+
+    def set_serviceId(self, serviceId):
+        self.add_param('serviceId', serviceId)

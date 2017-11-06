@@ -8,12 +8,6 @@ class DescribeYYWildcardSubHostsRequest(Request):
         super(DescribeYYWildcardSubHostsRequest, self).__init__(
             'cdn', 'qcloudcliV1', 'DescribeYYWildcardSubHosts', 'cdn.api.qcloud.com')
 
-    def get_startTime(self):
-        return self.get_params().get('startTime')
-
-    def set_startTime(self, startTime):
-        self.add_param('startTime', startTime)
-
     def get_endTime(self):
         return self.get_params().get('endTime')
 
@@ -25,3 +19,9 @@ class DescribeYYWildcardSubHostsRequest(Request):
 
     def set_host(self, host):
         self.add_param('host', host)
+
+    def get_startTime(self):
+        return self.get_params().get('startTime')
+
+    def set_startTime(self, startTime):
+        self.add_param('startTime', startTime)

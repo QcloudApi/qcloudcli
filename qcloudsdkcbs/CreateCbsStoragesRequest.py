@@ -8,12 +8,6 @@ class CreateCbsStoragesRequest(Request):
         super(CreateCbsStoragesRequest, self).__init__(
             'cbs', 'qcloudcliV1', 'CreateCbsStorages', 'cbs.api.qcloud.com')
 
-    def get_storageSize(self):
-        return self.get_params().get('storageSize')
-
-    def set_storageSize(self, storageSize):
-        self.add_param('storageSize', storageSize)
-
     def get_goodsNum(self):
         return self.get_params().get('goodsNum')
 
@@ -25,18 +19,6 @@ class CreateCbsStoragesRequest(Request):
 
     def set_period(self, period):
         self.add_param('period', period)
-
-    def get_zoneId(self):
-        return self.get_params().get('zoneId')
-
-    def set_zoneId(self, zoneId):
-        self.add_param('zoneId', zoneId)
-
-    def get_storageType(self):
-        return self.get_params().get('storageType')
-
-    def set_storageType(self, storageType):
-        self.add_param('storageType', storageType)
 
     def get_projectId(self):
         return self.get_params().get('projectId')
@@ -50,8 +32,26 @@ class CreateCbsStoragesRequest(Request):
     def set_snapshotId(self, snapshotId):
         self.add_param('snapshotId', snapshotId)
 
+    def get_storageSize(self):
+        return self.get_params().get('storageSize')
+
+    def set_storageSize(self, storageSize):
+        self.add_param('storageSize', storageSize)
+
+    def get_storageType(self):
+        return self.get_params().get('storageType')
+
+    def set_storageType(self, storageType):
+        self.add_param('storageType', storageType)
+
     def get_zone(self):
         return self.get_params().get('zone')
 
     def set_zone(self, zone):
         self.add_param('zone', zone)
+
+    def get_zoneId(self):
+        return self.get_params().get('zoneId')
+
+    def set_zoneId(self, zoneId):
+        self.add_param('zoneId', zoneId)

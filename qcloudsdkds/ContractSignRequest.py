@@ -8,6 +8,12 @@ class ContractSignRequest(Request):
         super(ContractSignRequest, self).__init__(
             'ds', 'qcloudcliV1', 'ContractSign', 'ds.api.qcloud.com')
 
+    def get_contractNo(self):
+        return self.get_params().get('contractNo')
+
+    def set_contractNo(self, contractNo):
+        self.add_param('contractNo', contractNo)
+
     def get_module(self):
         return self.get_params().get('module')
 
@@ -19,12 +25,6 @@ class ContractSignRequest(Request):
 
     def set_operation(self, operation):
         self.add_param('operation', operation)
-
-    def get_contractNo(self):
-        return self.get_params().get('contractNo')
-
-    def set_contractNo(self, contractNo):
-        self.add_param('contractNo', contractNo)
 
     def get_signInfos(self):
         return self.get_params().get('signInfos')

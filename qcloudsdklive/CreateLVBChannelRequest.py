@@ -8,17 +8,23 @@ class CreateLVBChannelRequest(Request):
         super(CreateLVBChannelRequest, self).__init__(
             'live', 'qcloudcliV1', 'CreateLVBChannel', 'live.api.qcloud.com')
 
+    def get_channelDescribe(self):
+        return self.get_params().get('channelDescribe')
+
+    def set_channelDescribe(self, channelDescribe):
+        self.add_param('channelDescribe', channelDescribe)
+
     def get_channelName(self):
         return self.get_params().get('channelName')
 
     def set_channelName(self, channelName):
         self.add_param('channelName', channelName)
 
-    def get_channelDescribe(self):
-        return self.get_params().get('channelDescribe')
+    def get_outputRate(self):
+        return self.get_params().get('outputRate')
 
-    def set_channelDescribe(self, channelDescribe):
-        self.add_param('channelDescribe', channelDescribe)
+    def set_outputRate(self, outputRate):
+        self.add_param('outputRate', outputRate)
 
     def get_outputSourceType(self):
         return self.get_params().get('outputSourceType')
@@ -43,9 +49,3 @@ class CreateLVBChannelRequest(Request):
 
     def set_watermarkId(self, watermarkId):
         self.add_param('watermarkId', watermarkId)
-
-    def get_outputRate(self):
-        return self.get_params().get('outputRate')
-
-    def set_outputRate(self, outputRate):
-        self.add_param('outputRate', outputRate)

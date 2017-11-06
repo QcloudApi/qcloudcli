@@ -8,17 +8,29 @@ class DescribeBmLoadBalancersRequest(Request):
         super(DescribeBmLoadBalancersRequest, self).__init__(
             'bmlb', 'qcloudcliV1', 'DescribeBmLoadBalancers', 'bmlb.api.qcloud.com')
 
+    def get_domain(self):
+        return self.get_params().get('domain')
+
+    def set_domain(self, domain):
+        self.add_param('domain', domain)
+
+    def get_exclusive(self):
+        return self.get_params().get('exclusive')
+
+    def set_exclusive(self, exclusive):
+        self.add_param('exclusive', exclusive)
+
+    def get_limit(self):
+        return self.get_params().get('limit')
+
+    def set_limit(self, limit):
+        self.add_param('limit', limit)
+
     def get_loadBalancerIds(self):
         return self.get_params().get('loadBalancerIds')
 
     def set_loadBalancerIds(self, loadBalancerIds):
         self.add_param('loadBalancerIds', loadBalancerIds)
-
-    def get_loadBalancerType(self):
-        return self.get_params().get('loadBalancerType')
-
-    def set_loadBalancerType(self, loadBalancerType):
-        self.add_param('loadBalancerType', loadBalancerType)
 
     def get_loadBalancerName(self):
         return self.get_params().get('loadBalancerName')
@@ -26,11 +38,11 @@ class DescribeBmLoadBalancersRequest(Request):
     def set_loadBalancerName(self, loadBalancerName):
         self.add_param('loadBalancerName', loadBalancerName)
 
-    def get_domain(self):
-        return self.get_params().get('domain')
+    def get_loadBalancerType(self):
+        return self.get_params().get('loadBalancerType')
 
-    def set_domain(self, domain):
-        self.add_param('domain', domain)
+    def set_loadBalancerType(self, loadBalancerType):
+        self.add_param('loadBalancerType', loadBalancerType)
 
     def get_loadBalancerVips(self):
         return self.get_params().get('loadBalancerVips')
@@ -43,18 +55,6 @@ class DescribeBmLoadBalancersRequest(Request):
 
     def set_offset(self, offset):
         self.add_param('offset', offset)
-
-    def get_limit(self):
-        return self.get_params().get('limit')
-
-    def set_limit(self, limit):
-        self.add_param('limit', limit)
-
-    def get_searchKey(self):
-        return self.get_params().get('searchKey')
-
-    def set_searchKey(self, searchKey):
-        self.add_param('searchKey', searchKey)
 
     def get_orderBy(self):
         return self.get_params().get('orderBy')
@@ -74,11 +74,11 @@ class DescribeBmLoadBalancersRequest(Request):
     def set_projectId(self, projectId):
         self.add_param('projectId', projectId)
 
-    def get_exclusive(self):
-        return self.get_params().get('exclusive')
+    def get_searchKey(self):
+        return self.get_params().get('searchKey')
 
-    def set_exclusive(self, exclusive):
-        self.add_param('exclusive', exclusive)
+    def set_searchKey(self, searchKey):
+        self.add_param('searchKey', searchKey)
 
     def get_tgwSetType(self):
         return self.get_params().get('tgwSetType')

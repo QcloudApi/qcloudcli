@@ -8,17 +8,17 @@ class DescribeSecurityGroupsRequest(Request):
         super(DescribeSecurityGroupsRequest, self).__init__(
             'dfw', 'qcloudcliV1', 'DescribeSecurityGroups', 'dfw.api.qcloud.com')
 
-    def get_projectId(self):
-        return self.get_params().get('projectId')
-
-    def set_projectId(self, projectId):
-        self.add_param('projectId', projectId)
-
     def get_instanceId(self):
         return self.get_params().get('instanceId')
 
     def set_instanceId(self, instanceId):
         self.add_param('instanceId', instanceId)
+
+    def get_projectId(self):
+        return self.get_params().get('projectId')
+
+    def set_projectId(self, projectId):
+        self.add_param('projectId', projectId)
 
     def get_sgId(self):
         return self.get_params().get('sgId')

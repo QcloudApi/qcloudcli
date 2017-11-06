@@ -14,23 +14,11 @@ class CdbTdsqlGetInstanceListRequest(Request):
     def set_cdbInstanceIds(self, cdbInstanceIds):
         self.add_param('cdbInstanceIds', cdbInstanceIds)
 
-    def get_originSerialIds(self):
-        return self.get_params().get('originSerialIds')
+    def get_isFilterVpc(self):
+        return self.get_params().get('isFilterVpc')
 
-    def set_originSerialIds(self, originSerialIds):
-        self.add_param('originSerialIds', originSerialIds)
-
-    def get_pageSize(self):
-        return self.get_params().get('pageSize')
-
-    def set_pageSize(self, pageSize):
-        self.add_param('pageSize', pageSize)
-
-    def get_pageNo(self):
-        return self.get_params().get('pageNo')
-
-    def set_pageNo(self, pageNo):
-        self.add_param('pageNo', pageNo)
+    def set_isFilterVpc(self, isFilterVpc):
+        self.add_param('isFilterVpc', isFilterVpc)
 
     def get_orderBy(self):
         return self.get_params().get('orderBy')
@@ -44,11 +32,23 @@ class CdbTdsqlGetInstanceListRequest(Request):
     def set_orderByType(self, orderByType):
         self.add_param('orderByType', orderByType)
 
-    def get_searchKey(self):
-        return self.get_params().get('searchKey')
+    def get_originSerialIds(self):
+        return self.get_params().get('originSerialIds')
 
-    def set_searchKey(self, searchKey):
-        self.add_param('searchKey', searchKey)
+    def set_originSerialIds(self, originSerialIds):
+        self.add_param('originSerialIds', originSerialIds)
+
+    def get_pageNo(self):
+        return self.get_params().get('pageNo')
+
+    def set_pageNo(self, pageNo):
+        self.add_param('pageNo', pageNo)
+
+    def get_pageSize(self):
+        return self.get_params().get('pageSize')
+
+    def set_pageSize(self, pageSize):
+        self.add_param('pageSize', pageSize)
 
     def get_projectIds(self):
         return self.get_params().get('projectIds')
@@ -56,17 +56,11 @@ class CdbTdsqlGetInstanceListRequest(Request):
     def set_projectIds(self, projectIds):
         self.add_param('projectIds', projectIds)
 
-    def get_isFilterVpc(self):
-        return self.get_params().get('isFilterVpc')
+    def get_searchKey(self):
+        return self.get_params().get('searchKey')
 
-    def set_isFilterVpc(self, isFilterVpc):
-        self.add_param('isFilterVpc', isFilterVpc)
-
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
+    def set_searchKey(self, searchKey):
+        self.add_param('searchKey', searchKey)
 
     def get_subnetId(self):
         return self.get_params().get('subnetId')
@@ -79,3 +73,9 @@ class CdbTdsqlGetInstanceListRequest(Request):
 
     def set_uuids(self, uuids):
         self.add_param('uuids', uuids)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

@@ -8,18 +8,6 @@ class EipBindBmNatGatewayRequest(Request):
         super(EipBindBmNatGatewayRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'EipBindBmNatGateway', 'vpc.api.qcloud.com')
 
-    def get_natId(self):
-        return self.get_params().get('natId')
-
-    def set_natId(self, natId):
-        self.add_param('natId', natId)
-
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_assignedEipSet(self):
         return self.get_params().get('assignedEipSet')
 
@@ -31,3 +19,15 @@ class EipBindBmNatGatewayRequest(Request):
 
     def set_autoAllocEipNum(self, autoAllocEipNum):
         self.add_param('autoAllocEipNum', autoAllocEipNum)
+
+    def get_natId(self):
+        return self.get_params().get('natId')
+
+    def set_natId(self, natId):
+        self.add_param('natId', natId)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

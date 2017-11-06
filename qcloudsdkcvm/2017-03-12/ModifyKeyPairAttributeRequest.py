@@ -8,6 +8,12 @@ class ModifyKeyPairAttributeRequest(Request):
         super(ModifyKeyPairAttributeRequest, self).__init__(
             'cvm', 'qcloudcliV1', 'ModifyKeyPairAttribute', 'cvm.api.qcloud.com')
 
+    def get_Description(self):
+        return self.get_params().get('Description')
+
+    def set_Description(self, Description):
+        self.add_param('Description', Description)
+
     def get_KeyId(self):
         return self.get_params().get('KeyId')
 
@@ -19,9 +25,3 @@ class ModifyKeyPairAttributeRequest(Request):
 
     def set_KeyName(self, KeyName):
         self.add_param('KeyName', KeyName)
-
-    def get_Description(self):
-        return self.get_params().get('Description')
-
-    def set_Description(self, Description):
-        self.add_param('Description', Description)

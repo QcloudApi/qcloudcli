@@ -14,17 +14,17 @@ class CdbTdsqlSetRightRequest(Request):
     def set_cdbInstanceId(self, cdbInstanceId):
         self.add_param('cdbInstanceId', cdbInstanceId)
 
-    def get_userName(self):
-        return self.get_params().get('userName')
+    def get_colName(self):
+        return self.get_params().get('colName')
 
-    def set_userName(self, userName):
-        self.add_param('userName', userName)
+    def set_colName(self, colName):
+        self.add_param('colName', colName)
 
-    def get_host(self):
-        return self.get_params().get('host')
+    def get_dbMode(self):
+        return self.get_params().get('dbMode')
 
-    def set_host(self, host):
-        self.add_param('host', host)
+    def set_dbMode(self, dbMode):
+        self.add_param('dbMode', dbMode)
 
     def get_dbName(self):
         return self.get_params().get('dbName')
@@ -32,11 +32,11 @@ class CdbTdsqlSetRightRequest(Request):
     def set_dbName(self, dbName):
         self.add_param('dbName', dbName)
 
-    def get_type(self):
-        return self.get_params().get('type')
+    def get_host(self):
+        return self.get_params().get('host')
 
-    def set_type(self, type):
-        self.add_param('type', type)
+    def set_host(self, host):
+        self.add_param('host', host)
 
     def get_object(self):
         return self.get_params().get('object')
@@ -44,11 +44,11 @@ class CdbTdsqlSetRightRequest(Request):
     def set_object(self, object):
         self.add_param('object', object)
 
-    def get_colName(self):
-        return self.get_params().get('colName')
+    def get_readOnly(self):
+        return self.get_params().get('readOnly')
 
-    def set_colName(self, colName):
-        self.add_param('colName', colName)
+    def set_readOnly(self, readOnly):
+        self.add_param('readOnly', readOnly)
 
     def get_rights(self):
         return self.get_params().get('rights')
@@ -56,14 +56,14 @@ class CdbTdsqlSetRightRequest(Request):
     def set_rights(self, rights):
         self.add_param('rights', rights)
 
-    def get_readOnly(self):
-        return self.get_params().get('readOnly')
+    def get_type(self):
+        return self.get_params().get('type')
 
-    def set_readOnly(self, readOnly):
-        self.add_param('readOnly', readOnly)
+    def set_type(self, type):
+        self.add_param('type', type)
 
-    def get_dbMode(self):
-        return self.get_params().get('dbMode')
+    def get_userName(self):
+        return self.get_params().get('userName')
 
-    def set_dbMode(self, dbMode):
-        self.add_param('dbMode', dbMode)
+    def set_userName(self, userName):
+        self.add_param('userName', userName)

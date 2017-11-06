@@ -8,14 +8,14 @@ class AttachInstanceRequest(Request):
         super(AttachInstanceRequest, self).__init__(
             'scaling', 'qcloudcliV1', 'AttachInstance', 'scaling.api.qcloud.com')
 
-    def get_scalingGroupId(self):
-        return self.get_params().get('scalingGroupId')
-
-    def set_scalingGroupId(self, scalingGroupId):
-        self.add_param('scalingGroupId', scalingGroupId)
-
     def get_instanceIds(self):
         return self.get_params().get('instanceIds')
 
     def set_instanceIds(self, instanceIds):
         self.add_param('instanceIds', instanceIds)
+
+    def get_scalingGroupId(self):
+        return self.get_params().get('scalingGroupId')
+
+    def set_scalingGroupId(self, scalingGroupId):
+        self.add_param('scalingGroupId', scalingGroupId)

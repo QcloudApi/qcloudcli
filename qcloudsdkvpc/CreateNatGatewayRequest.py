@@ -8,24 +8,6 @@ class CreateNatGatewayRequest(Request):
         super(CreateNatGatewayRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'CreateNatGateway', 'vpc.api.qcloud.com')
 
-    def get_natName(self):
-        return self.get_params().get('natName')
-
-    def set_natName(self, natName):
-        self.add_param('natName', natName)
-
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
-    def get_maxConcurrent(self):
-        return self.get_params().get('maxConcurrent')
-
-    def set_maxConcurrent(self, maxConcurrent):
-        self.add_param('maxConcurrent', maxConcurrent)
-
     def get_assignedEipSet(self):
         return self.get_params().get('assignedEipSet')
 
@@ -43,3 +25,21 @@ class CreateNatGatewayRequest(Request):
 
     def set_bandwidth(self, bandwidth):
         self.add_param('bandwidth', bandwidth)
+
+    def get_maxConcurrent(self):
+        return self.get_params().get('maxConcurrent')
+
+    def set_maxConcurrent(self, maxConcurrent):
+        self.add_param('maxConcurrent', maxConcurrent)
+
+    def get_natName(self):
+        return self.get_params().get('natName')
+
+    def set_natName(self, natName):
+        self.add_param('natName', natName)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

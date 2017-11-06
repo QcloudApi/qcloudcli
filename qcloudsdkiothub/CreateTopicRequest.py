@@ -8,12 +8,6 @@ class CreateTopicRequest(Request):
         super(CreateTopicRequest, self).__init__(
             'iothub', 'qcloudcliV1', 'CreateTopic', 'iothub.api.qcloud.com')
 
-    def get_thingtype_name(self):
-        return self.get_params().get('thingtype_name')
-
-    def set_thingtype_name(self, thingtype_name):
-        self.add_param('thingtype_name', thingtype_name)
-
     def get_action_name(self):
         return self.get_params().get('action_name')
 
@@ -25,3 +19,9 @@ class CreateTopicRequest(Request):
 
     def set_privilege(self, privilege):
         self.add_param('privilege', privilege)
+
+    def get_thingtype_name(self):
+        return self.get_params().get('thingtype_name')
+
+    def set_thingtype_name(self, thingtype_name):
+        self.add_param('thingtype_name', thingtype_name)

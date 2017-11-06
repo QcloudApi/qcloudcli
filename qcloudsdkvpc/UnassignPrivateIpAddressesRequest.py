@@ -8,12 +8,6 @@ class UnassignPrivateIpAddressesRequest(Request):
         super(UnassignPrivateIpAddressesRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'UnassignPrivateIpAddresses', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_networkInterfaceId(self):
         return self.get_params().get('networkInterfaceId')
 
@@ -25,3 +19,9 @@ class UnassignPrivateIpAddressesRequest(Request):
 
     def set_privateIpAddress(self, privateIpAddress):
         self.add_param('privateIpAddress', privateIpAddress)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

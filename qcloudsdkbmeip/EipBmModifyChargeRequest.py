@@ -8,6 +8,12 @@ class EipBmModifyChargeRequest(Request):
         super(EipBmModifyChargeRequest, self).__init__(
             'bmeip', 'qcloudcliV1', 'EipBmModifyCharge', 'bmeip.api.qcloud.com')
 
+    def get_bandwidth(self):
+        return self.get_params().get('bandwidth')
+
+    def set_bandwidth(self, bandwidth):
+        self.add_param('bandwidth', bandwidth)
+
     def get_eipIds(self):
         return self.get_params().get('eipIds')
 
@@ -19,9 +25,3 @@ class EipBmModifyChargeRequest(Request):
 
     def set_payMode(self, payMode):
         self.add_param('payMode', payMode)
-
-    def get_bandwidth(self):
-        return self.get_params().get('bandwidth')
-
-    def set_bandwidth(self, bandwidth):
-        self.add_param('bandwidth', bandwidth)

@@ -8,11 +8,11 @@ class DeleteBmForwardRulesRequest(Request):
         super(DeleteBmForwardRulesRequest, self).__init__(
             'bmlb', 'qcloudcliV1', 'DeleteBmForwardRules', 'bmlb.api.qcloud.com')
 
-    def get_loadBalancerId(self):
-        return self.get_params().get('loadBalancerId')
+    def get_domainId(self):
+        return self.get_params().get('domainId')
 
-    def set_loadBalancerId(self, loadBalancerId):
-        self.add_param('loadBalancerId', loadBalancerId)
+    def set_domainId(self, domainId):
+        self.add_param('domainId', domainId)
 
     def get_listenerId(self):
         return self.get_params().get('listenerId')
@@ -20,11 +20,11 @@ class DeleteBmForwardRulesRequest(Request):
     def set_listenerId(self, listenerId):
         self.add_param('listenerId', listenerId)
 
-    def get_domainId(self):
-        return self.get_params().get('domainId')
+    def get_loadBalancerId(self):
+        return self.get_params().get('loadBalancerId')
 
-    def set_domainId(self, domainId):
-        self.add_param('domainId', domainId)
+    def set_loadBalancerId(self, loadBalancerId):
+        self.add_param('loadBalancerId', loadBalancerId)
 
     def get_locationIds(self):
         return self.get_params().get('locationIds')

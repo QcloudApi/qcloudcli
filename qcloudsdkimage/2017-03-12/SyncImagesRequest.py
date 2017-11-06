@@ -8,14 +8,14 @@ class SyncImagesRequest(Request):
         super(SyncImagesRequest, self).__init__(
             'image', 'qcloudcliV1', 'SyncImages', 'image.api.qcloud.com')
 
+    def get_DestinationRegions(self):
+        return self.get_params().get('DestinationRegions')
+
+    def set_DestinationRegions(self, DestinationRegions):
+        self.add_param('DestinationRegions', DestinationRegions)
+
     def get_ImageIds(self):
         return self.get_params().get('ImageIds')
 
     def set_ImageIds(self, ImageIds):
         self.add_param('ImageIds', ImageIds)
-
-    def get_DestinationRegionId(self):
-        return self.get_params().get('DestinationRegionId')
-
-    def set_DestinationRegionId(self, DestinationRegionId):
-        self.add_param('DestinationRegionId', DestinationRegionId)

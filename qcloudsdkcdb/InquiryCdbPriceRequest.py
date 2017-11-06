@@ -8,12 +8,6 @@ class InquiryCdbPriceRequest(Request):
         super(InquiryCdbPriceRequest, self).__init__(
             'cdb', 'qcloudcliV1', 'InquiryCdbPrice', 'cdb.api.qcloud.com')
 
-    def get_period(self):
-        return self.get_params().get('period')
-
-    def set_period(self, period):
-        self.add_param('period', period)
-
     def get_cdbType(self):
         return self.get_params().get('cdbType')
 
@@ -26,11 +20,29 @@ class InquiryCdbPriceRequest(Request):
     def set_goodsNum(self, goodsNum):
         self.add_param('goodsNum', goodsNum)
 
+    def get_instanceRole(self):
+        return self.get_params().get('instanceRole')
+
+    def set_instanceRole(self, instanceRole):
+        self.add_param('instanceRole', instanceRole)
+
     def get_memory(self):
         return self.get_params().get('memory')
 
     def set_memory(self, memory):
         self.add_param('memory', memory)
+
+    def get_period(self):
+        return self.get_params().get('period')
+
+    def set_period(self, period):
+        self.add_param('period', period)
+
+    def get_protectMode(self):
+        return self.get_params().get('protectMode')
+
+    def set_protectMode(self, protectMode):
+        self.add_param('protectMode', protectMode)
 
     def get_volume(self):
         return self.get_params().get('volume')
@@ -43,15 +55,3 @@ class InquiryCdbPriceRequest(Request):
 
     def set_zoneId(self, zoneId):
         self.add_param('zoneId', zoneId)
-
-    def get_protectMode(self):
-        return self.get_params().get('protectMode')
-
-    def set_protectMode(self, protectMode):
-        self.add_param('protectMode', protectMode)
-
-    def get_instanceRole(self):
-        return self.get_params().get('instanceRole')
-
-    def set_instanceRole(self, instanceRole):
-        self.add_param('instanceRole', instanceRole)

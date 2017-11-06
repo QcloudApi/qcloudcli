@@ -8,18 +8,6 @@ class DescribeTaskTemplatesRequest(Request):
         super(DescribeTaskTemplatesRequest, self).__init__(
             'batch', 'qcloudcliV1', 'DescribeTaskTemplates', 'batch.api.qcloud.com')
 
-    def get_Version(self):
-        return self.get_params().get('Version')
-
-    def set_Version(self, Version):
-        self.add_param('Version', Version)
-
-    def get_TaskTemplateIds(self):
-        return self.get_params().get('TaskTemplateIds')
-
-    def set_TaskTemplateIds(self, TaskTemplateIds):
-        self.add_param('TaskTemplateIds', TaskTemplateIds)
-
     def get_Filters(self):
         return self.get_params().get('Filters')
 
@@ -37,3 +25,15 @@ class DescribeTaskTemplatesRequest(Request):
 
     def set_Offset(self, Offset):
         self.add_param('Offset', Offset)
+
+    def get_TaskTemplateIds(self):
+        return self.get_params().get('TaskTemplateIds')
+
+    def set_TaskTemplateIds(self, TaskTemplateIds):
+        self.add_param('TaskTemplateIds', TaskTemplateIds)
+
+    def get_Version(self):
+        return self.get_params().get('Version')
+
+    def set_Version(self, Version):
+        self.add_param('Version', Version)

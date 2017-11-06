@@ -8,12 +8,6 @@ class ModfiyRedisPasswordRequest(Request):
         super(ModfiyRedisPasswordRequest, self).__init__(
             'redis', 'qcloudcliV1', 'ModfiyRedisPassword', 'redis.api.qcloud.com')
 
-    def get_redisId(self):
-        return self.get_params().get('redisId')
-
-    def set_redisId(self, redisId):
-        self.add_param('redisId', redisId)
-
     def get_oldPassword(self):
         return self.get_params().get('oldPassword')
 
@@ -25,3 +19,9 @@ class ModfiyRedisPasswordRequest(Request):
 
     def set_password(self, password):
         self.add_param('password', password)
+
+    def get_redisId(self):
+        return self.get_params().get('redisId')
+
+    def set_redisId(self, redisId):
+        self.add_param('redisId', redisId)

@@ -8,17 +8,11 @@ class CreateUsagePlanRequest(Request):
         super(CreateUsagePlanRequest, self).__init__(
             'apigateway', 'qcloudcliV1', 'CreateUsagePlan', 'apigateway.api.qcloud.com')
 
-    def get_usagePlanName(self):
-        return self.get_params().get('usagePlanName')
+    def get_bindSecretIds(self):
+        return self.get_params().get('bindSecretIds')
 
-    def set_usagePlanName(self, usagePlanName):
-        self.add_param('usagePlanName', usagePlanName)
-
-    def get_usagePlanDesc(self):
-        return self.get_params().get('usagePlanDesc')
-
-    def set_usagePlanDesc(self, usagePlanDesc):
-        self.add_param('usagePlanDesc', usagePlanDesc)
+    def set_bindSecretIds(self, bindSecretIds):
+        self.add_param('bindSecretIds', bindSecretIds)
 
     def get_maxRequestNumPreSec(self):
         return self.get_params().get('maxRequestNumPreSec')
@@ -26,8 +20,14 @@ class CreateUsagePlanRequest(Request):
     def set_maxRequestNumPreSec(self, maxRequestNumPreSec):
         self.add_param('maxRequestNumPreSec', maxRequestNumPreSec)
 
-    def get_bindSecretIds(self):
-        return self.get_params().get('bindSecretIds')
+    def get_usagePlanDesc(self):
+        return self.get_params().get('usagePlanDesc')
 
-    def set_bindSecretIds(self, bindSecretIds):
-        self.add_param('bindSecretIds', bindSecretIds)
+    def set_usagePlanDesc(self, usagePlanDesc):
+        self.add_param('usagePlanDesc', usagePlanDesc)
+
+    def get_usagePlanName(self):
+        return self.get_params().get('usagePlanName')
+
+    def set_usagePlanName(self, usagePlanName):
+        self.add_param('usagePlanName', usagePlanName)

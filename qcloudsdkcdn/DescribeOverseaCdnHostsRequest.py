@@ -8,17 +8,17 @@ class DescribeOverseaCdnHostsRequest(Request):
         super(DescribeOverseaCdnHostsRequest, self).__init__(
             'cdn', 'qcloudcliV1', 'DescribeOverseaCdnHosts', 'cdn.api.qcloud.com')
 
-    def get_offset(self):
-        return self.get_params().get('offset')
-
-    def set_offset(self, offset):
-        self.add_param('offset', offset)
-
     def get_limit(self):
         return self.get_params().get('limit')
 
     def set_limit(self, limit):
         self.add_param('limit', limit)
+
+    def get_offset(self):
+        return self.get_params().get('offset')
+
+    def set_offset(self, offset):
+        self.add_param('offset', offset)
 
     def get_projects(self):
         return self.get_params().get('projects')

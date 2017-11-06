@@ -8,18 +8,6 @@ class ModifyScalingPolicyRequest(Request):
         super(ModifyScalingPolicyRequest, self).__init__(
             'scaling', 'qcloudcliV1', 'ModifyScalingPolicy', 'scaling.api.qcloud.com')
 
-    def get_scalingGroupId(self):
-        return self.get_params().get('scalingGroupId')
-
-    def set_scalingGroupId(self, scalingGroupId):
-        self.add_param('scalingGroupId', scalingGroupId)
-
-    def get_scalingPolicyName(self):
-        return self.get_params().get('scalingPolicyName')
-
-    def set_scalingPolicyName(self, scalingPolicyName):
-        self.add_param('scalingPolicyName', scalingPolicyName)
-
     def get_adjustmentType(self):
         return self.get_params().get('adjustmentType')
 
@@ -50,8 +38,20 @@ class ModifyScalingPolicyRequest(Request):
     def set_notifyIds(self, notifyIds):
         self.add_param('notifyIds', notifyIds)
 
+    def get_scalingGroupId(self):
+        return self.get_params().get('scalingGroupId')
+
+    def set_scalingGroupId(self, scalingGroupId):
+        self.add_param('scalingGroupId', scalingGroupId)
+
     def get_scalingPolicyId(self):
         return self.get_params().get('scalingPolicyId')
 
     def set_scalingPolicyId(self, scalingPolicyId):
         self.add_param('scalingPolicyId', scalingPolicyId)
+
+    def get_scalingPolicyName(self):
+        return self.get_params().get('scalingPolicyName')
+
+    def set_scalingPolicyName(self, scalingPolicyName):
+        self.add_param('scalingPolicyName', scalingPolicyName)

@@ -8,6 +8,12 @@ class ModifySnapshotRequest(Request):
         super(ModifySnapshotRequest, self).__init__(
             'snapshot', 'qcloudcliV1', 'ModifySnapshot', 'snapshot.api.qcloud.com')
 
+    def get_isPermanent(self):
+        return self.get_params().get('isPermanent')
+
+    def set_isPermanent(self, isPermanent):
+        self.add_param('isPermanent', isPermanent)
+
     def get_snapshotId(self):
         return self.get_params().get('snapshotId')
 
@@ -19,9 +25,3 @@ class ModifySnapshotRequest(Request):
 
     def set_snapshotName(self, snapshotName):
         self.add_param('snapshotName', snapshotName)
-
-    def get_isPermanent(self):
-        return self.get_params().get('isPermanent')
-
-    def set_isPermanent(self, isPermanent):
-        self.add_param('isPermanent', isPermanent)

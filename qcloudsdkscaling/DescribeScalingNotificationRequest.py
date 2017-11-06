@@ -8,12 +8,6 @@ class DescribeScalingNotificationRequest(Request):
         super(DescribeScalingNotificationRequest, self).__init__(
             'scaling', 'qcloudcliV1', 'DescribeScalingNotification', 'scaling.api.qcloud.com')
 
-    def get_scalingGroupId(self):
-        return self.get_params().get('scalingGroupId')
-
-    def set_scalingGroupId(self, scalingGroupId):
-        self.add_param('scalingGroupId', scalingGroupId)
-
     def get_notificationIds(self):
         return self.get_params().get('notificationIds')
 
@@ -25,3 +19,9 @@ class DescribeScalingNotificationRequest(Request):
 
     def set_notificationName(self, notificationName):
         self.add_param('notificationName', notificationName)
+
+    def get_scalingGroupId(self):
+        return self.get_params().get('scalingGroupId')
+
+    def set_scalingGroupId(self, scalingGroupId):
+        self.add_param('scalingGroupId', scalingGroupId)

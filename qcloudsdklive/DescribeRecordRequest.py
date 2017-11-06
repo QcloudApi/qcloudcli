@@ -8,6 +8,12 @@ class DescribeRecordRequest(Request):
         super(DescribeRecordRequest, self).__init__(
             'live', 'qcloudcliV1', 'DescribeRecord', 'live.api.qcloud.com')
 
+    def get_channelId(self):
+        return self.get_params().get('channelId')
+
+    def set_channelId(self, channelId):
+        self.add_param('channelId', channelId)
+
     def get_pageNo(self):
         return self.get_params().get('pageNo')
 
@@ -19,12 +25,6 @@ class DescribeRecordRequest(Request):
 
     def set_pageSize(self, pageSize):
         self.add_param('pageSize', pageSize)
-
-    def get_channelId(self):
-        return self.get_params().get('channelId')
-
-    def set_channelId(self, channelId):
-        self.add_param('channelId', channelId)
 
     def get_taskId(self):
         return self.get_params().get('taskId')

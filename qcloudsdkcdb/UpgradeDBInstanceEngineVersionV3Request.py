@@ -8,17 +8,17 @@ class UpgradeDBInstanceEngineVersionV3Request(Request):
         super(UpgradeDBInstanceEngineVersionV3Request, self).__init__(
             'cdb', 'qcloudcliV1', 'UpgradeDBInstanceEngineVersionV3', 'cdb.api.qcloud.com')
 
-    def get_instanceId(self):
-        return self.get_params().get('instanceId')
-
-    def set_instanceId(self, instanceId):
-        self.add_param('instanceId', instanceId)
-
     def get_engineVersion(self):
         return self.get_params().get('engineVersion')
 
     def set_engineVersion(self, engineVersion):
         self.add_param('engineVersion', engineVersion)
+
+    def get_instanceId(self):
+        return self.get_params().get('instanceId')
+
+    def set_instanceId(self, instanceId):
+        self.add_param('instanceId', instanceId)
 
     def get_waitSwitch(self):
         return self.get_params().get('waitSwitch')

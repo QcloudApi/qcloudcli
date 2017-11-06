@@ -14,14 +14,14 @@ class ResetDevicePasswdRequest(Request):
     def set_instanceIds(self, instanceIds):
         self.add_param('instanceIds', instanceIds)
 
-    def get_passwd(self):
-        return self.get_params().get('passwd')
-
-    def set_passwd(self, passwd):
-        self.add_param('passwd', passwd)
-
     def get_opUin(self):
         return self.get_params().get('opUin')
 
     def set_opUin(self, opUin):
         self.add_param('opUin', opUin)
+
+    def get_passwd(self):
+        return self.get_params().get('passwd')
+
+    def set_passwd(self, passwd):
+        self.add_param('passwd', passwd)

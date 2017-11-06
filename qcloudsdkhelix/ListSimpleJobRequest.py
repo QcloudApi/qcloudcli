@@ -8,6 +8,12 @@ class ListSimpleJobRequest(Request):
         super(ListSimpleJobRequest, self).__init__(
             'helix', 'qcloudcliV1', 'ListSimpleJob', 'helix.api.qcloud.com')
 
+    def get_count(self):
+        return self.get_params().get('count')
+
+    def set_count(self, count):
+        self.add_param('count', count)
+
     def get_projectId(self):
         return self.get_params().get('projectId')
 
@@ -19,9 +25,3 @@ class ListSimpleJobRequest(Request):
 
     def set_startIndex(self, startIndex):
         self.add_param('startIndex', startIndex)
-
-    def get_count(self):
-        return self.get_params().get('count')
-
-    def set_count(self, count):
-        self.add_param('count', count)

@@ -14,6 +14,12 @@ class ResizeInstanceHourRequest(Request):
     def set_cpu(self, cpu):
         self.add_param('cpu', cpu)
 
+    def get_instanceId(self):
+        return self.get_params().get('instanceId')
+
+    def set_instanceId(self, instanceId):
+        self.add_param('instanceId', instanceId)
+
     def get_mem(self):
         return self.get_params().get('mem')
 
@@ -25,9 +31,3 @@ class ResizeInstanceHourRequest(Request):
 
     def set_storageSize(self, storageSize):
         self.add_param('storageSize', storageSize)
-
-    def get_instanceId(self):
-        return self.get_params().get('instanceId')
-
-    def set_instanceId(self, instanceId):
-        self.add_param('instanceId', instanceId)

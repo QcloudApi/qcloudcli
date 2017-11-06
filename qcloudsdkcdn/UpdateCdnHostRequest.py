@@ -8,6 +8,12 @@ class UpdateCdnHostRequest(Request):
         super(UpdateCdnHostRequest, self).__init__(
             'cdn', 'qcloudcliV1', 'UpdateCdnHost', 'cdn.api.qcloud.com')
 
+    def get_host(self):
+        return self.get_params().get('host')
+
+    def set_host(self, host):
+        self.add_param('host', host)
+
     def get_hostId(self):
         return self.get_params().get('hostId')
 
@@ -19,9 +25,3 @@ class UpdateCdnHostRequest(Request):
 
     def set_origin(self, origin):
         self.add_param('origin', origin)
-
-    def get_host(self):
-        return self.get_params().get('host')
-
-    def set_host(self, host):
-        self.add_param('host', host)

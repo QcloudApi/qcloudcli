@@ -8,11 +8,29 @@ class DescribeRouteTableRequest(Request):
         super(DescribeRouteTableRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'DescribeRouteTable', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
+    def get_limit(self):
+        return self.get_params().get('limit')
 
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
+    def set_limit(self, limit):
+        self.add_param('limit', limit)
+
+    def get_offset(self):
+        return self.get_params().get('offset')
+
+    def set_offset(self, offset):
+        self.add_param('offset', offset)
+
+    def get_orderDirection(self):
+        return self.get_params().get('orderDirection')
+
+    def set_orderDirection(self, orderDirection):
+        self.add_param('orderDirection', orderDirection)
+
+    def get_orderField(self):
+        return self.get_params().get('orderField')
+
+    def set_orderField(self, orderField):
+        self.add_param('orderField', orderField)
 
     def get_routeTableId(self):
         return self.get_params().get('routeTableId')
@@ -26,26 +44,8 @@ class DescribeRouteTableRequest(Request):
     def set_routeTableName(self, routeTableName):
         self.add_param('routeTableName', routeTableName)
 
-    def get_offset(self):
-        return self.get_params().get('offset')
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
 
-    def set_offset(self, offset):
-        self.add_param('offset', offset)
-
-    def get_limit(self):
-        return self.get_params().get('limit')
-
-    def set_limit(self, limit):
-        self.add_param('limit', limit)
-
-    def get_orderField(self):
-        return self.get_params().get('orderField')
-
-    def set_orderField(self, orderField):
-        self.add_param('orderField', orderField)
-
-    def get_orderDirection(self):
-        return self.get_params().get('orderDirection')
-
-    def set_orderDirection(self, orderDirection):
-        self.add_param('orderDirection', orderDirection)
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

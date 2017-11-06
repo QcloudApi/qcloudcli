@@ -8,6 +8,12 @@ class SealAddRequest(Request):
         super(SealAddRequest, self).__init__(
             'ds', 'qcloudcliV1', 'SealAdd', 'ds.api.qcloud.com')
 
+    def get_imageData(self):
+        return self.get_params().get('imageData')
+
+    def set_imageData(self, imageData):
+        self.add_param('imageData', imageData)
+
     def get_module(self):
         return self.get_params().get('module')
 
@@ -25,9 +31,3 @@ class SealAddRequest(Request):
 
     def set_userId(self, userId):
         self.add_param('userId', userId)
-
-    def get_imageData(self):
-        return self.get_params().get('imageData')
-
-    def set_imageData(self, imageData):
-        self.add_param('imageData', imageData)

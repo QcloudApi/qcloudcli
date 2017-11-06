@@ -8,6 +8,18 @@ class ModifyLBHealthRequest(Request):
         super(ModifyLBHealthRequest, self).__init__(
             'lb', 'qcloudcliV1', 'ModifyLBHealth', 'lb.api.qcloud.com')
 
+    def get_healthNum(self):
+        return self.get_params().get('healthNum')
+
+    def set_healthNum(self, healthNum):
+        self.add_param('healthNum', healthNum)
+
+    def get_intervalTime(self):
+        return self.get_params().get('intervalTime')
+
+    def set_intervalTime(self, intervalTime):
+        self.add_param('intervalTime', intervalTime)
+
     def get_loadBalanceId(self):
         return self.get_params().get('loadBalanceId')
 
@@ -25,18 +37,6 @@ class ModifyLBHealthRequest(Request):
 
     def set_timeOut(self, timeOut):
         self.add_param('timeOut', timeOut)
-
-    def get_intervalTime(self):
-        return self.get_params().get('intervalTime')
-
-    def set_intervalTime(self, intervalTime):
-        self.add_param('intervalTime', intervalTime)
-
-    def get_healthNum(self):
-        return self.get_params().get('healthNum')
-
-    def set_healthNum(self, healthNum):
-        self.add_param('healthNum', healthNum)
 
     def get_unhealthNum(self):
         return self.get_params().get('unhealthNum')

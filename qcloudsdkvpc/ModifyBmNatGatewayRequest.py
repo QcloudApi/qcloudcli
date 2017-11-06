@@ -8,12 +8,6 @@ class ModifyBmNatGatewayRequest(Request):
         super(ModifyBmNatGatewayRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'ModifyBmNatGateway', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_natId(self):
         return self.get_params().get('natId')
 
@@ -25,3 +19,9 @@ class ModifyBmNatGatewayRequest(Request):
 
     def set_natName(self, natName):
         self.add_param('natName', natName)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

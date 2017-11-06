@@ -8,23 +8,11 @@ class ModifyVpnGwRequest(Request):
         super(ModifyVpnGwRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'ModifyVpnGw', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
+    def get_chargeType(self):
+        return self.get_params().get('chargeType')
 
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
-    def get_vpnGwId(self):
-        return self.get_params().get('vpnGwId')
-
-    def set_vpnGwId(self, vpnGwId):
-        self.add_param('vpnGwId', vpnGwId)
-
-    def get_vpnGwName(self):
-        return self.get_params().get('vpnGwName')
-
-    def set_vpnGwName(self, vpnGwName):
-        self.add_param('vpnGwName', vpnGwName)
+    def set_chargeType(self, chargeType):
+        self.add_param('chargeType', chargeType)
 
     def get_isAutoRenewals(self):
         return self.get_params().get('isAutoRenewals')
@@ -44,8 +32,20 @@ class ModifyVpnGwRequest(Request):
     def set_sslVpnPort(self, sslVpnPort):
         self.add_param('sslVpnPort', sslVpnPort)
 
-    def get_chargeType(self):
-        return self.get_params().get('chargeType')
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
 
-    def set_chargeType(self, chargeType):
-        self.add_param('chargeType', chargeType)
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)
+
+    def get_vpnGwId(self):
+        return self.get_params().get('vpnGwId')
+
+    def set_vpnGwId(self, vpnGwId):
+        self.add_param('vpnGwId', vpnGwId)
+
+    def get_vpnGwName(self):
+        return self.get_params().get('vpnGwName')
+
+    def set_vpnGwName(self, vpnGwName):
+        self.add_param('vpnGwName', vpnGwName)

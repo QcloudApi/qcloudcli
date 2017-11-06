@@ -14,14 +14,14 @@ class CdbTdsqlGetLogRequest(Request):
     def set_cdbInstanceId(self, cdbInstanceId):
         self.add_param('cdbInstanceId', cdbInstanceId)
 
-    def get_type(self):
-        return self.get_params().get('type')
-
-    def set_type(self, type):
-        self.add_param('type', type)
-
     def get_dbMode(self):
         return self.get_params().get('dbMode')
 
     def set_dbMode(self, dbMode):
         self.add_param('dbMode', dbMode)
+
+    def get_type(self):
+        return self.get_params().get('type')
+
+    def set_type(self, type):
+        self.add_param('type', type)

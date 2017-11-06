@@ -8,6 +8,12 @@ class ModifyVpcAttributeRequest(Request):
         super(ModifyVpcAttributeRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'ModifyVpcAttribute', 'vpc.api.qcloud.com')
 
+    def get_isMulticast(self):
+        return self.get_params().get('isMulticast')
+
+    def set_isMulticast(self, isMulticast):
+        self.add_param('isMulticast', isMulticast)
+
     def get_vpcId(self):
         return self.get_params().get('vpcId')
 
@@ -19,9 +25,3 @@ class ModifyVpcAttributeRequest(Request):
 
     def set_vpcName(self, vpcName):
         self.add_param('vpcName', vpcName)
-
-    def get_isMulticast(self):
-        return self.get_params().get('isMulticast')
-
-    def set_isMulticast(self, isMulticast):
-        self.add_param('isMulticast', isMulticast)

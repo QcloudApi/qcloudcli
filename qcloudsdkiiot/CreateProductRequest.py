@@ -8,12 +8,6 @@ class CreateProductRequest(Request):
         super(CreateProductRequest, self).__init__(
             'iiot', 'qcloudcliV1', 'CreateProduct', 'iiot.api.qcloud.com')
 
-    def get_productProperties(self):
-        return self.get_params().get('productProperties')
-
-    def set_productProperties(self, productProperties):
-        self.add_param('productProperties', productProperties)
-
     def get_defaultPolicyName(self):
         return self.get_params().get('defaultPolicyName')
 
@@ -25,3 +19,9 @@ class CreateProductRequest(Request):
 
     def set_productName(self, productName):
         self.add_param('productName', productName)
+
+    def get_productProperties(self):
+        return self.get_params().get('productProperties')
+
+    def set_productProperties(self, productProperties):
+        self.add_param('productProperties', productProperties)

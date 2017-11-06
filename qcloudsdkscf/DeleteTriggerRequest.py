@@ -14,6 +14,12 @@ class DeleteTriggerRequest(Request):
     def set_functionName(self, functionName):
         self.add_param('functionName', functionName)
 
+    def get_triggerDesc(self):
+        return self.get_params().get('triggerDesc')
+
+    def set_triggerDesc(self, triggerDesc):
+        self.add_param('triggerDesc', triggerDesc)
+
     def get_triggerName(self):
         return self.get_params().get('triggerName')
 
@@ -25,9 +31,3 @@ class DeleteTriggerRequest(Request):
 
     def set_type(self, type):
         self.add_param('type', type)
-
-    def get_triggerDesc(self):
-        return self.get_params().get('triggerDesc')
-
-    def set_triggerDesc(self, triggerDesc):
-        self.add_param('triggerDesc', triggerDesc)

@@ -14,14 +14,14 @@ class CopyPolicyGroupRequest(Request):
     def set_groupId(self, groupId):
         self.add_param('groupId', groupId)
 
-    def get_projectId(self):
-        return self.get_params().get('projectId')
-
-    def set_projectId(self, projectId):
-        self.add_param('projectId', projectId)
-
     def get_groupName(self):
         return self.get_params().get('groupName')
 
     def set_groupName(self, groupName):
         self.add_param('groupName', groupName)
+
+    def get_projectId(self):
+        return self.get_params().get('projectId')
+
+    def set_projectId(self, projectId):
+        self.add_param('projectId', projectId)

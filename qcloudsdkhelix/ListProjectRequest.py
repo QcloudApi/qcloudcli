@@ -8,14 +8,14 @@ class ListProjectRequest(Request):
         super(ListProjectRequest, self).__init__(
             'helix', 'qcloudcliV1', 'ListProject', 'helix.api.qcloud.com')
 
-    def get_startIndex(self):
-        return self.get_params().get('startIndex')
-
-    def set_startIndex(self, startIndex):
-        self.add_param('startIndex', startIndex)
-
     def get_count(self):
         return self.get_params().get('count')
 
     def set_count(self, count):
         self.add_param('count', count)
+
+    def get_startIndex(self):
+        return self.get_params().get('startIndex')
+
+    def set_startIndex(self, startIndex):
+        self.add_param('startIndex', startIndex)

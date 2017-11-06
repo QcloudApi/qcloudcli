@@ -20,14 +20,14 @@ class DescribeCdbSlowQueryLogRequest(Request):
     def set_date(self, date):
         self.add_param('date', date)
 
-    def get_offset(self):
-        return self.get_params().get('offset')
-
-    def set_offset(self, offset):
-        self.add_param('offset', offset)
-
     def get_limit(self):
         return self.get_params().get('limit')
 
     def set_limit(self, limit):
         self.add_param('limit', limit)
+
+    def get_offset(self):
+        return self.get_params().get('offset')
+
+    def set_offset(self, offset):
+        self.add_param('offset', offset)

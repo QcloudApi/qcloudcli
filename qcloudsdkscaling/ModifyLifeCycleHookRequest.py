@@ -8,11 +8,11 @@ class ModifyLifeCycleHookRequest(Request):
         super(ModifyLifeCycleHookRequest, self).__init__(
             'scaling', 'qcloudcliV1', 'ModifyLifeCycleHook', 'scaling.api.qcloud.com')
 
-    def get_scalingGroupId(self):
-        return self.get_params().get('scalingGroupId')
+    def get_defaultResult(self):
+        return self.get_params().get('defaultResult')
 
-    def set_scalingGroupId(self, scalingGroupId):
-        self.add_param('scalingGroupId', scalingGroupId)
+    def set_defaultResult(self, defaultResult):
+        self.add_param('defaultResult', defaultResult)
 
     def get_lifeCycleHookId(self):
         return self.get_params().get('lifeCycleHookId')
@@ -32,20 +32,20 @@ class ModifyLifeCycleHookRequest(Request):
     def set_lifeCycleHookTimeout(self, lifeCycleHookTimeout):
         self.add_param('lifeCycleHookTimeout', lifeCycleHookTimeout)
 
-    def get_defaultResult(self):
-        return self.get_params().get('defaultResult')
+    def get_notifyIds(self):
+        return self.get_params().get('notifyIds')
 
-    def set_defaultResult(self, defaultResult):
-        self.add_param('defaultResult', defaultResult)
+    def set_notifyIds(self, notifyIds):
+        self.add_param('notifyIds', notifyIds)
+
+    def get_scalingGroupId(self):
+        return self.get_params().get('scalingGroupId')
+
+    def set_scalingGroupId(self, scalingGroupId):
+        self.add_param('scalingGroupId', scalingGroupId)
 
     def get_transition(self):
         return self.get_params().get('transition')
 
     def set_transition(self, transition):
         self.add_param('transition', transition)
-
-    def get_notifyIds(self):
-        return self.get_params().get('notifyIds')
-
-    def set_notifyIds(self, notifyIds):
-        self.add_param('notifyIds', notifyIds)

@@ -8,6 +8,18 @@ class InquiryPriceResetInstancesInternetMaxBandwidthRequest(Request):
         super(InquiryPriceResetInstancesInternetMaxBandwidthRequest, self).__init__(
             'cvm', 'qcloudcliV1', 'InquiryPriceResetInstancesInternetMaxBandwidth', 'cvm.api.qcloud.com')
 
+    def get_DryRun(self):
+        return self.get_params().get('DryRun')
+
+    def set_DryRun(self, DryRun):
+        self.add_param('DryRun', DryRun)
+
+    def get_EndTime(self):
+        return self.get_params().get('EndTime')
+
+    def set_EndTime(self, EndTime):
+        self.add_param('EndTime', EndTime)
+
     def get_InstanceIds(self):
         return self.get_params().get('InstanceIds')
 
@@ -25,15 +37,3 @@ class InquiryPriceResetInstancesInternetMaxBandwidthRequest(Request):
 
     def set_StartTime(self, StartTime):
         self.add_param('StartTime', StartTime)
-
-    def get_EndTime(self):
-        return self.get_params().get('EndTime')
-
-    def set_EndTime(self, EndTime):
-        self.add_param('EndTime', EndTime)
-
-    def get_DryRun(self):
-        return self.get_params().get('DryRun')
-
-    def set_DryRun(self, DryRun):
-        self.add_param('DryRun', DryRun)

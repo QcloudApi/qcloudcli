@@ -8,6 +8,12 @@ class ModifyBmLoadBalancerAttributesRequest(Request):
         super(ModifyBmLoadBalancerAttributesRequest, self).__init__(
             'lb', 'qcloudcliV1', 'ModifyBmLoadBalancerAttributes', 'lb.api.qcloud.com')
 
+    def get_domainPrefix(self):
+        return self.get_params().get('domainPrefix')
+
+    def set_domainPrefix(self, domainPrefix):
+        self.add_param('domainPrefix', domainPrefix)
+
     def get_loadBalancerId(self):
         return self.get_params().get('loadBalancerId')
 
@@ -19,9 +25,3 @@ class ModifyBmLoadBalancerAttributesRequest(Request):
 
     def set_loadBalancerName(self, loadBalancerName):
         self.add_param('loadBalancerName', loadBalancerName)
-
-    def get_domainPrefix(self):
-        return self.get_params().get('domainPrefix')
-
-    def set_domainPrefix(self, domainPrefix):
-        self.add_param('domainPrefix', domainPrefix)

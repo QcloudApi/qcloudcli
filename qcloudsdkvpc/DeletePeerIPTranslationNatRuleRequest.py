@@ -8,12 +8,6 @@ class DeletePeerIPTranslationNatRuleRequest(Request):
         super(DeletePeerIPTranslationNatRuleRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'DeletePeerIPTranslationNatRule', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_directConnectGatewayId(self):
         return self.get_params().get('directConnectGatewayId')
 
@@ -25,3 +19,9 @@ class DeletePeerIPTranslationNatRuleRequest(Request):
 
     def set_peerIPTranslation(self, peerIPTranslation):
         self.add_param('peerIPTranslation', peerIPTranslation)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

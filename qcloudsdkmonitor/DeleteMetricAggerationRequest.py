@@ -8,11 +8,11 @@ class DeleteMetricAggerationRequest(Request):
         super(DeleteMetricAggerationRequest, self).__init__(
             'monitor', 'qcloudcliV1', 'DeleteMetricAggeration', 'monitor.api.qcloud.com')
 
-    def get_namespace(self):
-        return self.get_params().get('namespace')
+    def get_dimensionNames(self):
+        return self.get_params().get('dimensionNames')
 
-    def set_namespace(self, namespace):
-        self.add_param('namespace', namespace)
+    def set_dimensionNames(self, dimensionNames):
+        self.add_param('dimensionNames', dimensionNames)
 
     def get_metricName(self):
         return self.get_params().get('metricName')
@@ -20,8 +20,8 @@ class DeleteMetricAggerationRequest(Request):
     def set_metricName(self, metricName):
         self.add_param('metricName', metricName)
 
-    def get_dimensionNames(self):
-        return self.get_params().get('dimensionNames')
+    def get_namespace(self):
+        return self.get_params().get('namespace')
 
-    def set_dimensionNames(self, dimensionNames):
-        self.add_param('dimensionNames', dimensionNames)
+    def set_namespace(self, namespace):
+        self.add_param('namespace', namespace)

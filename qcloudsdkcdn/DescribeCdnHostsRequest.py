@@ -8,11 +8,17 @@ class DescribeCdnHostsRequest(Request):
         super(DescribeCdnHostsRequest, self).__init__(
             'cdn', 'qcloudcliV1', 'DescribeCdnHosts', 'cdn.api.qcloud.com')
 
-    def get_offset(self):
-        return self.get_params().get('offset')
+    def get_detail(self):
+        return self.get_params().get('detail')
 
-    def set_offset(self, offset):
-        self.add_param('offset', offset)
+    def set_detail(self, detail):
+        self.add_param('detail', detail)
+
+    def get_keyword(self):
+        return self.get_params().get('keyword')
+
+    def set_keyword(self, keyword):
+        self.add_param('keyword', keyword)
 
     def get_limit(self):
         return self.get_params().get('limit')
@@ -26,17 +32,11 @@ class DescribeCdnHostsRequest(Request):
     def set_mode(self, mode):
         self.add_param('mode', mode)
 
-    def get_keyword(self):
-        return self.get_params().get('keyword')
+    def get_offset(self):
+        return self.get_params().get('offset')
 
-    def set_keyword(self, keyword):
-        self.add_param('keyword', keyword)
-
-    def get_detail(self):
-        return self.get_params().get('detail')
-
-    def set_detail(self, detail):
-        self.add_param('detail', detail)
+    def set_offset(self, offset):
+        self.add_param('offset', offset)
 
     def get_projects(self):
         return self.get_params().get('projects')

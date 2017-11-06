@@ -8,6 +8,12 @@ class UpdatePolicyRequest(Request):
         super(UpdatePolicyRequest, self).__init__(
             'iiot', 'qcloudcliV1', 'UpdatePolicy', 'iiot.api.qcloud.com')
 
+    def get_policyDocument(self):
+        return self.get_params().get('policyDocument')
+
+    def set_policyDocument(self, policyDocument):
+        self.add_param('policyDocument', policyDocument)
+
     def get_policyName(self):
         return self.get_params().get('policyName')
 
@@ -19,9 +25,3 @@ class UpdatePolicyRequest(Request):
 
     def set_policyRemark(self, policyRemark):
         self.add_param('policyRemark', policyRemark)
-
-    def get_policyDocument(self):
-        return self.get_params().get('policyDocument')
-
-    def set_policyDocument(self, policyDocument):
-        self.add_param('policyDocument', policyDocument)

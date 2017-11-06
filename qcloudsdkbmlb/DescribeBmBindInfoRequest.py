@@ -8,12 +8,6 @@ class DescribeBmBindInfoRequest(Request):
         super(DescribeBmBindInfoRequest, self).__init__(
             'bmlb', 'qcloudcliV1', 'DescribeBmBindInfo', 'bmlb.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_instanceIds(self):
         return self.get_params().get('instanceIds')
 
@@ -25,3 +19,9 @@ class DescribeBmBindInfoRequest(Request):
 
     def set_unVpcId(self, unVpcId):
         self.add_param('unVpcId', unVpcId)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

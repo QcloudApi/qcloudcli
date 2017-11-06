@@ -14,6 +14,12 @@ class CdbTdsqlGetResourceUsageInfoRequest(Request):
     def set_cdbInstanceId(self, cdbInstanceId):
         self.add_param('cdbInstanceId', cdbInstanceId)
 
+    def get_endTime(self):
+        return self.get_params().get('endTime')
+
+    def set_endTime(self, endTime):
+        self.add_param('endTime', endTime)
+
     def get_shardId(self):
         return self.get_params().get('shardId')
 
@@ -25,9 +31,3 @@ class CdbTdsqlGetResourceUsageInfoRequest(Request):
 
     def set_startTime(self, startTime):
         self.add_param('startTime', startTime)
-
-    def get_endTime(self):
-        return self.get_params().get('endTime')
-
-    def set_endTime(self, endTime):
-        self.add_param('endTime', endTime)

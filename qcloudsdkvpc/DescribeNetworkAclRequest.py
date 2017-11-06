@@ -8,11 +8,11 @@ class DescribeNetworkAclRequest(Request):
         super(DescribeNetworkAclRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'DescribeNetworkAcl', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
+    def get_limit(self):
+        return self.get_params().get('limit')
 
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
+    def set_limit(self, limit):
+        self.add_param('limit', limit)
 
     def get_networkAclId(self):
         return self.get_params().get('networkAclId')
@@ -32,11 +32,11 @@ class DescribeNetworkAclRequest(Request):
     def set_offset(self, offset):
         self.add_param('offset', offset)
 
-    def get_limit(self):
-        return self.get_params().get('limit')
+    def get_orderDirection(self):
+        return self.get_params().get('orderDirection')
 
-    def set_limit(self, limit):
-        self.add_param('limit', limit)
+    def set_orderDirection(self, orderDirection):
+        self.add_param('orderDirection', orderDirection)
 
     def get_orderField(self):
         return self.get_params().get('orderField')
@@ -44,14 +44,14 @@ class DescribeNetworkAclRequest(Request):
     def set_orderField(self, orderField):
         self.add_param('orderField', orderField)
 
-    def get_orderDirection(self):
-        return self.get_params().get('orderDirection')
-
-    def set_orderDirection(self, orderDirection):
-        self.add_param('orderDirection', orderDirection)
-
     def get_ruleDirection(self):
         return self.get_params().get('ruleDirection')
 
     def set_ruleDirection(self, ruleDirection):
         self.add_param('ruleDirection', ruleDirection)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

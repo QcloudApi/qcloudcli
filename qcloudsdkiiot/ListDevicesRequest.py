@@ -8,12 +8,6 @@ class ListDevicesRequest(Request):
         super(ListDevicesRequest, self).__init__(
             'iiot', 'qcloudcliV1', 'ListDevices', 'iiot.api.qcloud.com')
 
-    def get_nextToken(self):
-        return self.get_params().get('nextToken')
-
-    def set_nextToken(self, nextToken):
-        self.add_param('nextToken', nextToken)
-
     def get_attributeName(self):
         return self.get_params().get('attributeName')
 
@@ -31,6 +25,12 @@ class ListDevicesRequest(Request):
 
     def set_maxResults(self, maxResults):
         self.add_param('maxResults', maxResults)
+
+    def get_nextToken(self):
+        return self.get_params().get('nextToken')
+
+    def set_nextToken(self, nextToken):
+        self.add_param('nextToken', nextToken)
 
     def get_productName(self):
         return self.get_params().get('productName')

@@ -8,6 +8,12 @@ class DescribeLoadBalancerBackendsRequest(Request):
         super(DescribeLoadBalancerBackendsRequest, self).__init__(
             'lb', 'qcloudcliV1', 'DescribeLoadBalancerBackends', 'lb.api.qcloud.com')
 
+    def get_limit(self):
+        return self.get_params().get('limit')
+
+    def set_limit(self, limit):
+        self.add_param('limit', limit)
+
     def get_loadBalancerId(self):
         return self.get_params().get('loadBalancerId')
 
@@ -19,9 +25,3 @@ class DescribeLoadBalancerBackendsRequest(Request):
 
     def set_offset(self, offset):
         self.add_param('offset', offset)
-
-    def get_limit(self):
-        return self.get_params().get('limit')
-
-    def set_limit(self, limit):
-        self.add_param('limit', limit)

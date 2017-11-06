@@ -8,17 +8,17 @@ class DescribeLicenseKeyRequest(Request):
         super(DescribeLicenseKeyRequest, self).__init__(
             'cns', 'qcloudcliV1', 'DescribeLicenseKey', 'cns.api.qcloud.com')
 
-    def get_start(self):
-        return self.get_params().get('start')
-
-    def set_start(self, start):
-        self.add_param('start', start)
-
     def get_end(self):
         return self.get_params().get('end')
 
     def set_end(self, end):
         self.add_param('end', end)
+
+    def get_start(self):
+        return self.get_params().get('start')
+
+    def set_start(self, start):
+        self.add_param('start', start)
 
     def get_used(self):
         return self.get_params().get('used')

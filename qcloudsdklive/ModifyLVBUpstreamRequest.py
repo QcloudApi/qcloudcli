@@ -14,6 +14,12 @@ class ModifyLVBUpstreamRequest(Request):
     def set_channelId(self, channelId):
         self.add_param('channelId', channelId)
 
+    def get_sourceAddress(self):
+        return self.get_params().get('sourceAddress')
+
+    def set_sourceAddress(self, sourceAddress):
+        self.add_param('sourceAddress', sourceAddress)
+
     def get_sourceId(self):
         return self.get_params().get('sourceId')
 
@@ -31,9 +37,3 @@ class ModifyLVBUpstreamRequest(Request):
 
     def set_sourceType(self, sourceType):
         self.add_param('sourceType', sourceType)
-
-    def get_sourceAddress(self):
-        return self.get_params().get('sourceAddress')
-
-    def set_sourceAddress(self, sourceAddress):
-        self.add_param('sourceAddress', sourceAddress)

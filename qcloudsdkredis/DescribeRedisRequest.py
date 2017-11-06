@@ -8,18 +8,6 @@ class DescribeRedisRequest(Request):
         super(DescribeRedisRequest, self).__init__(
             'redis', 'qcloudcliV1', 'DescribeRedis', 'redis.api.qcloud.com')
 
-    def get_redisId(self):
-        return self.get_params().get('redisId')
-
-    def set_redisId(self, redisId):
-        self.add_param('redisId', redisId)
-
-    def get_redisName(self):
-        return self.get_params().get('redisName')
-
-    def set_redisName(self, redisName):
-        self.add_param('redisName', redisName)
-
     def get_limit(self):
         return self.get_params().get('limit')
 
@@ -50,11 +38,17 @@ class DescribeRedisRequest(Request):
     def set_projectIds(self, projectIds):
         self.add_param('projectIds', projectIds)
 
-    def get_vpcIds(self):
-        return self.get_params().get('vpcIds')
+    def get_redisId(self):
+        return self.get_params().get('redisId')
 
-    def set_vpcIds(self, vpcIds):
-        self.add_param('vpcIds', vpcIds)
+    def set_redisId(self, redisId):
+        self.add_param('redisId', redisId)
+
+    def get_redisName(self):
+        return self.get_params().get('redisName')
+
+    def set_redisName(self, redisName):
+        self.add_param('redisName', redisName)
 
     def get_subnetIds(self):
         return self.get_params().get('subnetIds')
@@ -62,14 +56,20 @@ class DescribeRedisRequest(Request):
     def set_subnetIds(self, subnetIds):
         self.add_param('subnetIds', subnetIds)
 
+    def get_unSubnetIds(self):
+        return self.get_params().get('unSubnetIds')
+
+    def set_unSubnetIds(self, unSubnetIds):
+        self.add_param('unSubnetIds', unSubnetIds)
+
     def get_unVpcIds(self):
         return self.get_params().get('unVpcIds')
 
     def set_unVpcIds(self, unVpcIds):
         self.add_param('unVpcIds', unVpcIds)
 
-    def get_unSubnetIds(self):
-        return self.get_params().get('unSubnetIds')
+    def get_vpcIds(self):
+        return self.get_params().get('vpcIds')
 
-    def set_unSubnetIds(self, unSubnetIds):
-        self.add_param('unSubnetIds', unSubnetIds)
+    def set_vpcIds(self, vpcIds):
+        self.add_param('vpcIds', vpcIds)

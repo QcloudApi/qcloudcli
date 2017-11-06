@@ -8,11 +8,29 @@ class BgpipRenewPriceRequest(Request):
         super(BgpipRenewPriceRequest, self).__init__(
             'bgpip', 'qcloudcliV1', 'BgpipRenewPrice', 'bgpip.api.qcloud.com')
 
+    def get_bandwidth(self):
+        return self.get_params().get('bandwidth')
+
+    def set_bandwidth(self, bandwidth):
+        self.add_param('bandwidth', bandwidth)
+
+    def get_curDeadline(self):
+        return self.get_params().get('curDeadline')
+
+    def set_curDeadline(self, curDeadline):
+        self.add_param('curDeadline', curDeadline)
+
     def get_region(self):
         return self.get_params().get('region')
 
     def set_region(self, region):
         self.add_param('region', region)
+
+    def get_resourceId(self):
+        return self.get_params().get('resourceId')
+
+    def set_resourceId(self, resourceId):
+        self.add_param('resourceId', resourceId)
 
     def get_timeSpan(self):
         return self.get_params().get('timeSpan')
@@ -25,21 +43,3 @@ class BgpipRenewPriceRequest(Request):
 
     def set_timeUnit(self, timeUnit):
         self.add_param('timeUnit', timeUnit)
-
-    def get_resourceId(self):
-        return self.get_params().get('resourceId')
-
-    def set_resourceId(self, resourceId):
-        self.add_param('resourceId', resourceId)
-
-    def get_curDeadline(self):
-        return self.get_params().get('curDeadline')
-
-    def set_curDeadline(self, curDeadline):
-        self.add_param('curDeadline', curDeadline)
-
-    def get_bandwidth(self):
-        return self.get_params().get('bandwidth')
-
-    def set_bandwidth(self, bandwidth):
-        self.add_param('bandwidth', bandwidth)

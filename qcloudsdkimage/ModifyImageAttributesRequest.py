@@ -8,6 +8,12 @@ class ModifyImageAttributesRequest(Request):
         super(ModifyImageAttributesRequest, self).__init__(
             'image', 'qcloudcliV1', 'ModifyImageAttributes', 'image.api.qcloud.com')
 
+    def get_imageDescription(self):
+        return self.get_params().get('imageDescription')
+
+    def set_imageDescription(self, imageDescription):
+        self.add_param('imageDescription', imageDescription)
+
     def get_imageId(self):
         return self.get_params().get('imageId')
 
@@ -19,9 +25,3 @@ class ModifyImageAttributesRequest(Request):
 
     def set_imageName(self, imageName):
         self.add_param('imageName', imageName)
-
-    def get_imageDescription(self):
-        return self.get_params().get('imageDescription')
-
-    def set_imageDescription(self, imageDescription):
-        self.add_param('imageDescription', imageDescription)

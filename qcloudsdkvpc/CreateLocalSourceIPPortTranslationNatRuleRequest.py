@@ -8,12 +8,6 @@ class CreateLocalSourceIPPortTranslationNatRuleRequest(Request):
         super(CreateLocalSourceIPPortTranslationNatRuleRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'CreateLocalSourceIPPortTranslationNatRule', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_directConnectGatewayId(self):
         return self.get_params().get('directConnectGatewayId')
 
@@ -25,3 +19,9 @@ class CreateLocalSourceIPPortTranslationNatRuleRequest(Request):
 
     def set_localSourceIPPortTranslation(self, localSourceIPPortTranslation):
         self.add_param('localSourceIPPortTranslation', localSourceIPPortTranslation)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

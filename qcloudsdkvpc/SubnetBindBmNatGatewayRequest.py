@@ -14,14 +14,14 @@ class SubnetBindBmNatGatewayRequest(Request):
     def set_natId(self, natId):
         self.add_param('natId', natId)
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_subnetIds(self):
         return self.get_params().get('subnetIds')
 
     def set_subnetIds(self, subnetIds):
         self.add_param('subnetIds', subnetIds)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

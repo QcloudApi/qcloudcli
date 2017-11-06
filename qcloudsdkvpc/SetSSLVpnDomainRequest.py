@@ -8,11 +8,23 @@ class SetSSLVpnDomainRequest(Request):
         super(SetSSLVpnDomainRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'SetSSLVpnDomain', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
+    def get_acl(self):
+        return self.get_params().get('acl')
 
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
+    def set_acl(self, acl):
+        self.add_param('acl', acl)
+
+    def get_groupId(self):
+        return self.get_params().get('groupId')
+
+    def set_groupId(self, groupId):
+        self.add_param('groupId', groupId)
+
+    def get_ipPool(self):
+        return self.get_params().get('ipPool')
+
+    def set_ipPool(self, ipPool):
+        self.add_param('ipPool', ipPool)
 
     def get_sslVpnId(self):
         return self.get_params().get('sslVpnId')
@@ -26,20 +38,8 @@ class SetSSLVpnDomainRequest(Request):
     def set_sslVpnPort(self, sslVpnPort):
         self.add_param('sslVpnPort', sslVpnPort)
 
-    def get_ipPool(self):
-        return self.get_params().get('ipPool')
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
 
-    def set_ipPool(self, ipPool):
-        self.add_param('ipPool', ipPool)
-
-    def get_acl(self):
-        return self.get_params().get('acl')
-
-    def set_acl(self, acl):
-        self.add_param('acl', acl)
-
-    def get_groupId(self):
-        return self.get_params().get('groupId')
-
-    def set_groupId(self, groupId):
-        self.add_param('groupId', groupId)
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

@@ -8,11 +8,17 @@ class DescribeBmLocationBackendsRequest(Request):
         super(DescribeBmLocationBackendsRequest, self).__init__(
             'bmlb', 'qcloudcliV1', 'DescribeBmLocationBackends', 'bmlb.api.qcloud.com')
 
-    def get_loadBalancerId(self):
-        return self.get_params().get('loadBalancerId')
+    def get_domainId(self):
+        return self.get_params().get('domainId')
 
-    def set_loadBalancerId(self, loadBalancerId):
-        self.add_param('loadBalancerId', loadBalancerId)
+    def set_domainId(self, domainId):
+        self.add_param('domainId', domainId)
+
+    def get_limit(self):
+        return self.get_params().get('limit')
+
+    def set_limit(self, limit):
+        self.add_param('limit', limit)
 
     def get_listenerId(self):
         return self.get_params().get('listenerId')
@@ -20,11 +26,11 @@ class DescribeBmLocationBackendsRequest(Request):
     def set_listenerId(self, listenerId):
         self.add_param('listenerId', listenerId)
 
-    def get_domainId(self):
-        return self.get_params().get('domainId')
+    def get_loadBalancerId(self):
+        return self.get_params().get('loadBalancerId')
 
-    def set_domainId(self, domainId):
-        self.add_param('domainId', domainId)
+    def set_loadBalancerId(self, loadBalancerId):
+        self.add_param('loadBalancerId', loadBalancerId)
 
     def get_locationId(self):
         return self.get_params().get('locationId')
@@ -37,9 +43,3 @@ class DescribeBmLocationBackendsRequest(Request):
 
     def set_offset(self, offset):
         self.add_param('offset', offset)
-
-    def get_limit(self):
-        return self.get_params().get('limit')
-
-    def set_limit(self, limit):
-        self.add_param('limit', limit)

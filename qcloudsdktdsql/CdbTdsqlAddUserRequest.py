@@ -14,11 +14,23 @@ class CdbTdsqlAddUserRequest(Request):
     def set_cdbInstanceId(self, cdbInstanceId):
         self.add_param('cdbInstanceId', cdbInstanceId)
 
-    def get_userName(self):
-        return self.get_params().get('userName')
+    def get_dbMode(self):
+        return self.get_params().get('dbMode')
 
-    def set_userName(self, userName):
-        self.add_param('userName', userName)
+    def set_dbMode(self, dbMode):
+        self.add_param('dbMode', dbMode)
+
+    def get_delayThresh(self):
+        return self.get_params().get('delayThresh')
+
+    def set_delayThresh(self, delayThresh):
+        self.add_param('delayThresh', delayThresh)
+
+    def get_description(self):
+        return self.get_params().get('description')
+
+    def set_description(self, description):
+        self.add_param('description', description)
 
     def get_host(self):
         return self.get_params().get('host')
@@ -32,29 +44,11 @@ class CdbTdsqlAddUserRequest(Request):
     def set_password(self, password):
         self.add_param('password', password)
 
-    def get_description(self):
-        return self.get_params().get('description')
-
-    def set_description(self, description):
-        self.add_param('description', description)
-
     def get_readOnly(self):
         return self.get_params().get('readOnly')
 
     def set_readOnly(self, readOnly):
         self.add_param('readOnly', readOnly)
-
-    def get_delayThresh(self):
-        return self.get_params().get('delayThresh')
-
-    def set_delayThresh(self, delayThresh):
-        self.add_param('delayThresh', delayThresh)
-
-    def get_watch(self):
-        return self.get_params().get('watch')
-
-    def set_watch(self, watch):
-        self.add_param('watch', watch)
 
     def get_sameIDC(self):
         return self.get_params().get('sameIDC')
@@ -62,8 +56,14 @@ class CdbTdsqlAddUserRequest(Request):
     def set_sameIDC(self, sameIDC):
         self.add_param('sameIDC', sameIDC)
 
-    def get_dbMode(self):
-        return self.get_params().get('dbMode')
+    def get_userName(self):
+        return self.get_params().get('userName')
 
-    def set_dbMode(self, dbMode):
-        self.add_param('dbMode', dbMode)
+    def set_userName(self, userName):
+        self.add_param('userName', userName)
+
+    def get_watch(self):
+        return self.get_params().get('watch')
+
+    def set_watch(self, watch):
+        self.add_param('watch', watch)

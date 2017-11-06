@@ -14,6 +14,12 @@ class EipBmBindVpcIpRequest(Request):
     def set_eipId(self, eipId):
         self.add_param('eipId', eipId)
 
+    def get_unVpcId(self):
+        return self.get_params().get('unVpcId')
+
+    def set_unVpcId(self, unVpcId):
+        self.add_param('unVpcId', unVpcId)
+
     def get_vpcId(self):
         return self.get_params().get('vpcId')
 
@@ -25,9 +31,3 @@ class EipBmBindVpcIpRequest(Request):
 
     def set_vpcIp(self, vpcIp):
         self.add_param('vpcIp', vpcIp)
-
-    def get_unVpcId(self):
-        return self.get_params().get('unVpcId')
-
-    def set_unVpcId(self, unVpcId):
-        self.add_param('unVpcId', unVpcId)

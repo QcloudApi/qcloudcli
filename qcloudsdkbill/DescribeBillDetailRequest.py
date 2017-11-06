@@ -14,11 +14,11 @@ class DescribeBillDetailRequest(Request):
     def set_billId(self, billId):
         self.add_param('billId', billId)
 
-    def get_startDate(self):
-        return self.get_params().get('startDate')
+    def get_billType(self):
+        return self.get_params().get('billType')
 
-    def set_startDate(self, startDate):
-        self.add_param('startDate', startDate)
+    def set_billType(self, billType):
+        self.add_param('billType', billType)
 
     def get_endDate(self):
         return self.get_params().get('endDate')
@@ -26,8 +26,8 @@ class DescribeBillDetailRequest(Request):
     def set_endDate(self, endDate):
         self.add_param('endDate', endDate)
 
-    def get_billType(self):
-        return self.get_params().get('billType')
+    def get_startDate(self):
+        return self.get_params().get('startDate')
 
-    def set_billType(self, billType):
-        self.add_param('billType', billType)
+    def set_startDate(self, startDate):
+        self.add_param('startDate', startDate)

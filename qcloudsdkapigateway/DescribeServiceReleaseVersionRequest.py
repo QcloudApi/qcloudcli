@@ -8,12 +8,6 @@ class DescribeServiceReleaseVersionRequest(Request):
         super(DescribeServiceReleaseVersionRequest, self).__init__(
             'apigateway', 'qcloudcliV1', 'DescribeServiceReleaseVersion', 'apigateway.api.qcloud.com')
 
-    def get_serviceId(self):
-        return self.get_params().get('serviceId')
-
-    def set_serviceId(self, serviceId):
-        self.add_param('serviceId', serviceId)
-
     def get_limit(self):
         return self.get_params().get('limit')
 
@@ -25,3 +19,9 @@ class DescribeServiceReleaseVersionRequest(Request):
 
     def set_offset(self, offset):
         self.add_param('offset', offset)
+
+    def get_serviceId(self):
+        return self.get_params().get('serviceId')
+
+    def set_serviceId(self, serviceId):
+        self.add_param('serviceId', serviceId)

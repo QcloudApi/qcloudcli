@@ -8,6 +8,12 @@ class ModifyAlarmCallbackRequest(Request):
         super(ModifyAlarmCallbackRequest, self).__init__(
             'monitor', 'qcloudcliV1', 'ModifyAlarmCallback', 'monitor.api.qcloud.com')
 
+    def get_action(self):
+        return self.get_params().get('action')
+
+    def set_action(self, action):
+        self.add_param('action', action)
+
     def get_groupId(self):
         return self.get_params().get('groupId')
 
@@ -19,9 +25,3 @@ class ModifyAlarmCallbackRequest(Request):
 
     def set_url(self, url):
         self.add_param('url', url)
-
-    def get_action(self):
-        return self.get_params().get('action')
-
-    def set_action(self, action):
-        self.add_param('action', action)

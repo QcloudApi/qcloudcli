@@ -8,11 +8,11 @@ class GetDsaHostListRequest(Request):
         super(GetDsaHostListRequest, self).__init__(
             'dsa', 'qcloudcliV1', 'GetDsaHostList', 'dsa.api.qcloud.com')
 
-    def get_offset(self):
-        return self.get_params().get('offset')
+    def get_includeDeleted(self):
+        return self.get_params().get('includeDeleted')
 
-    def set_offset(self, offset):
-        self.add_param('offset', offset)
+    def set_includeDeleted(self, includeDeleted):
+        self.add_param('includeDeleted', includeDeleted)
 
     def get_length(self):
         return self.get_params().get('length')
@@ -20,8 +20,8 @@ class GetDsaHostListRequest(Request):
     def set_length(self, length):
         self.add_param('length', length)
 
-    def get_includeDeleted(self):
-        return self.get_params().get('includeDeleted')
+    def get_offset(self):
+        return self.get_params().get('offset')
 
-    def set_includeDeleted(self, includeDeleted):
-        self.add_param('includeDeleted', includeDeleted)
+    def set_offset(self, offset):
+        self.add_param('offset', offset)

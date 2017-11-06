@@ -20,17 +20,17 @@ class VcodeCheckRequest(Request):
     def set_operation(self, operation):
         self.add_param('operation', operation)
 
-    def get_userId(self):
-        return self.get_params().get('userId')
-
-    def set_userId(self, userId):
-        self.add_param('userId', userId)
-
     def get_projectId(self):
         return self.get_params().get('projectId')
 
     def set_projectId(self, projectId):
         self.add_param('projectId', projectId)
+
+    def get_userId(self):
+        return self.get_params().get('userId')
+
+    def set_userId(self, userId):
+        self.add_param('userId', userId)
 
     def get_verifyCode(self):
         return self.get_params().get('verifyCode')

@@ -8,12 +8,6 @@ class GetHostsTopDataRequest(Request):
         super(GetHostsTopDataRequest, self).__init__(
             'cdn', 'qcloudcliV1', 'GetHostsTopData', 'cdn.api.qcloud.com')
 
-    def get_startDate(self):
-        return self.get_params().get('startDate')
-
-    def set_startDate(self, startDate):
-        self.add_param('startDate', startDate)
-
     def get_endDate(self):
         return self.get_params().get('endDate')
 
@@ -25,6 +19,12 @@ class GetHostsTopDataRequest(Request):
 
     def set_hosts(self, hosts):
         self.add_param('hosts', hosts)
+
+    def get_startDate(self):
+        return self.get_params().get('startDate')
+
+    def set_startDate(self, startDate):
+        self.add_param('startDate', startDate)
 
     def get_statType(self):
         return self.get_params().get('statType')

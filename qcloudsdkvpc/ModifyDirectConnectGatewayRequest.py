@@ -8,12 +8,6 @@ class ModifyDirectConnectGatewayRequest(Request):
         super(ModifyDirectConnectGatewayRequest, self).__init__(
             'vpc', 'qcloudcliV1', 'ModifyDirectConnectGateway', 'vpc.api.qcloud.com')
 
-    def get_vpcId(self):
-        return self.get_params().get('vpcId')
-
-    def set_vpcId(self, vpcId):
-        self.add_param('vpcId', vpcId)
-
     def get_directConnectGatewayId(self):
         return self.get_params().get('directConnectGatewayId')
 
@@ -25,3 +19,9 @@ class ModifyDirectConnectGatewayRequest(Request):
 
     def set_directConnectGatewayName(self, directConnectGatewayName):
         self.add_param('directConnectGatewayName', directConnectGatewayName)
+
+    def get_vpcId(self):
+        return self.get_params().get('vpcId')
+
+    def set_vpcId(self, vpcId):
+        self.add_param('vpcId', vpcId)

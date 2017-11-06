@@ -14,17 +14,17 @@ class CreateRecordRequest(Request):
     def set_channelId(self, channelId):
         self.add_param('channelId', channelId)
 
-    def get_startTime(self):
-        return self.get_params().get('startTime')
-
-    def set_startTime(self, startTime):
-        self.add_param('startTime', startTime)
-
     def get_endTime(self):
         return self.get_params().get('endTime')
 
     def set_endTime(self, endTime):
         self.add_param('endTime', endTime)
+
+    def get_startTime(self):
+        return self.get_params().get('startTime')
+
+    def set_startTime(self, startTime):
+        self.add_param('startTime', startTime)
 
     def get_tapeType(self):
         return self.get_params().get('tapeType')

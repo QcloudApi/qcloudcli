@@ -8,11 +8,11 @@ class CreateNFSFileShareRequest(Request):
         super(CreateNFSFileShareRequest, self).__init__(
             'csg', 'qcloudcliV1', 'CreateNFSFileShare', 'csg.api.qcloud.com')
 
-    def get_GatewayURN(self):
-        return self.get_params().get('GatewayURN')
+    def get_ClientList(self):
+        return self.get_params().get('ClientList')
 
-    def set_GatewayURN(self, GatewayURN):
-        self.add_param('GatewayURN', GatewayURN)
+    def set_ClientList(self, ClientList):
+        self.add_param('ClientList', ClientList)
 
     def get_FileShareName(self):
         return self.get_params().get('FileShareName')
@@ -20,8 +20,8 @@ class CreateNFSFileShareRequest(Request):
     def set_FileShareName(self, FileShareName):
         self.add_param('FileShareName', FileShareName)
 
-    def get_ClientList(self):
-        return self.get_params().get('ClientList')
+    def get_GatewayURN(self):
+        return self.get_params().get('GatewayURN')
 
-    def set_ClientList(self, ClientList):
-        self.add_param('ClientList', ClientList)
+    def set_GatewayURN(self, GatewayURN):
+        self.add_param('GatewayURN', GatewayURN)

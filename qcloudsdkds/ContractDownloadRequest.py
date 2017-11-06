@@ -8,6 +8,12 @@ class ContractDownloadRequest(Request):
         super(ContractDownloadRequest, self).__init__(
             'ds', 'qcloudcliV1', 'ContractDownload', 'ds.api.qcloud.com')
 
+    def get_contractNo(self):
+        return self.get_params().get('contractNo')
+
+    def set_contractNo(self, contractNo):
+        self.add_param('contractNo', contractNo)
+
     def get_module(self):
         return self.get_params().get('module')
 
@@ -19,9 +25,3 @@ class ContractDownloadRequest(Request):
 
     def set_operation(self, operation):
         self.add_param('operation', operation)
-
-    def get_contractNo(self):
-        return self.get_params().get('contractNo')
-
-    def set_contractNo(self, contractNo):
-        self.add_param('contractNo', contractNo)

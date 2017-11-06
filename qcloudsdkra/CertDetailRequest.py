@@ -8,6 +8,18 @@ class CertDetailRequest(Request):
         super(CertDetailRequest, self).__init__(
             'ra', 'qcloudcliV1', 'CertDetail', 'ra.api.qcloud.com')
 
+    def get_certDn(self):
+        return self.get_params().get('certDn')
+
+    def set_certDn(self, certDn):
+        self.add_param('certDn', certDn)
+
+    def get_certSn(self):
+        return self.get_params().get('certSn')
+
+    def set_certSn(self, certSn):
+        self.add_param('certSn', certSn)
+
     def get_module(self):
         return self.get_params().get('module')
 
@@ -19,15 +31,3 @@ class CertDetailRequest(Request):
 
     def set_operation(self, operation):
         self.add_param('operation', operation)
-
-    def get_certSn(self):
-        return self.get_params().get('certSn')
-
-    def set_certSn(self, certSn):
-        self.add_param('certSn', certSn)
-
-    def get_certDn(self):
-        return self.get_params().get('certDn')
-
-    def set_certDn(self, certDn):
-        self.add_param('certDn', certDn)

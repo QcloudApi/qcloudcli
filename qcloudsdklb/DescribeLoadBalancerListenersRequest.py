@@ -8,11 +8,11 @@ class DescribeLoadBalancerListenersRequest(Request):
         super(DescribeLoadBalancerListenersRequest, self).__init__(
             'lb', 'qcloudcliV1', 'DescribeLoadBalancerListeners', 'lb.api.qcloud.com')
 
-    def get_loadBalancerId(self):
-        return self.get_params().get('loadBalancerId')
+    def get_limit(self):
+        return self.get_params().get('limit')
 
-    def set_loadBalancerId(self, loadBalancerId):
-        self.add_param('loadBalancerId', loadBalancerId)
+    def set_limit(self, limit):
+        self.add_param('limit', limit)
 
     def get_listenerIds(self):
         return self.get_params().get('listenerIds')
@@ -20,11 +20,11 @@ class DescribeLoadBalancerListenersRequest(Request):
     def set_listenerIds(self, listenerIds):
         self.add_param('listenerIds', listenerIds)
 
-    def get_protocol(self):
-        return self.get_params().get('protocol')
+    def get_loadBalancerId(self):
+        return self.get_params().get('loadBalancerId')
 
-    def set_protocol(self, protocol):
-        self.add_param('protocol', protocol)
+    def set_loadBalancerId(self, loadBalancerId):
+        self.add_param('loadBalancerId', loadBalancerId)
 
     def get_loadBalancerPort(self):
         return self.get_params().get('loadBalancerPort')
@@ -38,11 +38,11 @@ class DescribeLoadBalancerListenersRequest(Request):
     def set_offset(self, offset):
         self.add_param('offset', offset)
 
-    def get_limit(self):
-        return self.get_params().get('limit')
+    def get_protocol(self):
+        return self.get_params().get('protocol')
 
-    def set_limit(self, limit):
-        self.add_param('limit', limit)
+    def set_protocol(self, protocol):
+        self.add_param('protocol', protocol)
 
     def get_status(self):
         return self.get_params().get('status')
