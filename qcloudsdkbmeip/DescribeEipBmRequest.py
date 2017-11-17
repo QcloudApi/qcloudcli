@@ -8,6 +8,12 @@ class DescribeEipBmRequest(Request):
         super(DescribeEipBmRequest, self).__init__(
             'bmeip', 'qcloudcliV1', 'DescribeEipBm', 'bmeip.api.qcloud.com')
 
+    def get_bindTypes(self):
+        return self.get_params().get('bindTypes')
+
+    def set_bindTypes(self, bindTypes):
+        self.add_param('bindTypes', bindTypes)
+
     def get_eipIds(self):
         return self.get_params().get('eipIds')
 
@@ -19,6 +25,12 @@ class DescribeEipBmRequest(Request):
 
     def set_eips(self, eips):
         self.add_param('eips', eips)
+
+    def get_exclusiveTag(self):
+        return self.get_params().get('exclusiveTag')
+
+    def set_exclusiveTag(self, exclusiveTag):
+        self.add_param('exclusiveTag', exclusiveTag)
 
     def get_limit(self):
         return self.get_params().get('limit')

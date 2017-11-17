@@ -44,11 +44,11 @@ class DescribeVpnGwRequest(Request):
     def set_vpcId(self, vpcId):
         self.add_param('vpcId', vpcId)
 
-    def get_vpnGwAddress(self):
-        return self.get_params().get('vpnGwAddress')
+    def get_vpnGwAddressSet(self):
+        return self.get_params().get('vpnGwAddressSet')
 
-    def set_vpnGwAddress(self, vpnGwAddress):
-        self.add_param('vpnGwAddress', vpnGwAddress)
+    def set_vpnGwAddressSet(self, vpnGwAddressSet):
+        self.add_param('vpnGwAddressSet', vpnGwAddressSet)
 
     def get_vpnGwId(self):
         return self.get_params().get('vpnGwId')
