@@ -65,6 +65,36 @@ qcloudcli cvm DescribeInstances --instanceIds '["qcvmf4b542ad7b4cd49f2db57a73336
 qcloudcli cvm DescribeInstances --Filters '[{"Name":"zone","Values":["ap-guangzhou-2"]}]'
 ```
 
+### 过滤返回字段
+
+我们使用[jmespath](https://github.com/jmespath/jmespath.py)做json路径解析。
+
+对于返回比较复杂的情况，可以使用--filter参数指定返回部分内容。
+
+注意使用前你必须清楚返回的数据的具体结构才能正确引用。
+
+例如查看安全组列表，只获取安全组id列表，由于每个安全组元素是在data字段表示的列表里，如果用具体的下标，则只返回对应的元素，用`*`表示返回所有：
+
+```
+$ qcloudcli dfw DescribeSecurityGroups --filter data[*].sgId
+[
+    "sg-icy671l9",
+    "sg-o9rfv42p",
+    "sg-pknfyaar",
+    "sg-2rjokpt7",
+    "sg-4ehjaoh3"
+]
+```
+
+例如使用CVM API 2017-03-12版本，查看虚拟机，只获取安全组列表字段，这里由于只指定了一台虚拟机，InstanceSet下的第0个元素必定是该虚拟机，则可以如下表示：
+
+```
+$ qcloudcli cvm DescribeInstances --InstanceIds '["ins-od1laqxs"]' --filter Response.InstanceSet[0].SecurityGroupIds
+[
+    "sg-4ehjaoh3"
+]
+```
+
 ### 指定API版本
 
 打开配置文件``~/.qcloudcli/configure``，在对应的profile下增加如下内容
