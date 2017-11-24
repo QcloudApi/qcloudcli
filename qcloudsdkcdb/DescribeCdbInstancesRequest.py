@@ -14,6 +14,12 @@ class DescribeCdbInstancesRequest(Request):
     def set_cdbInstanceIds(self, cdbInstanceIds):
         self.add_param('cdbInstanceIds', cdbInstanceIds)
 
+    def get_cdbInstanceTypes(self):
+        return self.get_params().get('cdbInstanceTypes')
+
+    def set_cdbInstanceTypes(self, cdbInstanceTypes):
+        self.add_param('cdbInstanceTypes', cdbInstanceTypes)
+
     def get_cdbInstanceVips(self):
         return self.get_params().get('cdbInstanceVips')
 

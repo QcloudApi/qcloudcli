@@ -20,11 +20,29 @@ class CreateLoadBalancerRequest(Request):
     def set_forward(self, forward):
         self.add_param('forward', forward)
 
+    def get_internetAccessible(self):
+        return self.get_params().get('internetAccessible')
+
+    def set_internetAccessible(self, internetAccessible):
+        self.add_param('internetAccessible', internetAccessible)
+
     def get_ispId(self):
         return self.get_params().get('ispId')
 
     def set_ispId(self, ispId):
         self.add_param('ispId', ispId)
+
+    def get_lbChargePrepaid(self):
+        return self.get_params().get('lbChargePrepaid')
+
+    def set_lbChargePrepaid(self, lbChargePrepaid):
+        self.add_param('lbChargePrepaid', lbChargePrepaid)
+
+    def get_lbChargeType(self):
+        return self.get_params().get('lbChargeType')
+
+    def set_lbChargeType(self, lbChargeType):
+        self.add_param('lbChargeType', lbChargeType)
 
     def get_loadBalancerName(self):
         return self.get_params().get('loadBalancerName')
