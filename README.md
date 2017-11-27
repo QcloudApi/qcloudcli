@@ -1,3 +1,5 @@
+[![pypi version](https://img.shields.io/pypi/v/qcloudcli.svg)](https://pypi.python.org/pypi/qcloudcli)
+
 # The Qcloud CLI (Command Line Interface)
 
 Qcloud Api的命令行工具。
@@ -109,3 +111,16 @@ api_versions =
 如果指定的版本不存在，则运行任意cvm相关命令后会报错并提示可用版本。
 如无任何可用版本，则不需要设置相关信息，请在配置文件中删除该行。
 如果没有指定任何版本，即配置项为空，则CLI会使用默认版本。
+
+### 使用代理
+
+如果是在代理环境下使用qcloudcli，且`*.api.qlcoud.com`域名不在代理的白名单列表中，则需要配置HTTPS代理才能正常使用。
+目前仅支持不含账户信息的全局代理，仅在Linux和Windows系统上测试过。
+
+在Linux操作系统BASH环境下，使用`export https_proxy=YourProxyRealHost:YourProxyRealPort`设置环境变量后即可。
+注意，将示例中的YourProxyRealHost和YourProxyRealPort替换为代理的实际值。
+你还可以将该行放在BASH配置文件`~/.bashrc`中，以避免每次新开终端都要配置一遍。
+
+在Windows操作系统下，使用`set https_proxy=YourProxyRealHost:YourProxyRealPort`设置环境变量后即可。
+注意，将示例中的YourProxyRealHost和YourProxyRealPort替换为代理的实际值。
+你还可以在“计算机-属性-高级系统设置-环境变量-系统变量”中设置该值，以避免每次新开终端都要配置一遍。
