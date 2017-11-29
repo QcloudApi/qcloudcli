@@ -8,6 +8,12 @@ class CreateComputeEnvRequest(Request):
         super(CreateComputeEnvRequest, self).__init__(
             'batch', 'qcloudcliV1', 'CreateComputeEnv', 'batch.api.qcloud.com')
 
+    def get_ClientToken(self):
+        return self.get_params().get('ClientToken')
+
+    def set_ClientToken(self, ClientToken):
+        self.add_param('ClientToken', ClientToken)
+
     def get_ComputeEnv(self):
         return self.get_params().get('ComputeEnv')
 

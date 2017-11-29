@@ -8,6 +8,12 @@ class SubmitJobRequest(Request):
         super(SubmitJobRequest, self).__init__(
             'batch', 'qcloudcliV1', 'SubmitJob', 'batch.api.qcloud.com')
 
+    def get_ClientToken(self):
+        return self.get_params().get('ClientToken')
+
+    def set_ClientToken(self, ClientToken):
+        self.add_param('ClientToken', ClientToken)
+
     def get_Job(self):
         return self.get_params().get('Job')
 
