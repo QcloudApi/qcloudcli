@@ -1,46 +1,117 @@
+# 腾讯云命令行工具
+
 [![pypi version](https://img.shields.io/pypi/v/qcloudcli.svg)](https://pypi.python.org/pypi/qcloudcli)
 
-# The Qcloud CLI (Command Line Interface)
+For English users, pelase refer to document [README.rst](https://github.com/QcloudApi/qcloudcli/blob/master/README.rst)
 
-Qcloud Api的命令行工具。
+腾讯云命令行工具 qcloudcli 基于腾讯云 API 开发。
 
-CLI支持python 2.6.5到3.6版本环境。
+qcloudcli 支持 Python 2.7.x 到 3.6.x 版本环境。
 
 详细介绍请参考[官网文档](https://www.qcloud.com/document/product/440/6176)。
 
-## 更新历史
-
-* [2017/8/21] 兼容python2和python3版本；支持pip安装使用
-
 ## 安装
-    $ pip install qcloudcli
 
-或者下载源码安装
+推荐使用 [pip](https://pip.pypa.io/en/stable/) 安装：
 
-    $ git clone https://github.com/QcloudApi/qcloudcli.git
-    $ cd qcloudcli
-    $ python setup.py install
+```
+$ pip install --user qcloudcli
+```
+
+`--user` 选项会将 qcloudcli 只安装到当前用户环境中，这意味着不需要 sudo 权限。
+注意：如果是在 virtualenv 环境下，`--user` 选项是不支持的。
+
+升级：
+
+```
+$ pip install --user --upgrade qcloudcli
+```
+
+卸载:
+
+```
+$ pip uninstall --yes qcloudcli
+```
+
+### 命令补全
+
+qcloudcli 为 bash 环境提供了命令补全功能，但是不是默认开启的。开启的方式：
+
+```
+$ complete -C qcloud_completer qcloudcli
+```
+
+将该命令加入 `~/.bashrc` 以默认开启。
 
 ## 使用指南
+
+查看版本号：
+
+```
+$ qcloudcli --version
+```
+
+### 配置系统参数
+
+qcloudcli 需要提供账号信息才能访问腾讯云各服务。登录腾讯云[控制台](https://console.cloud.tencent.com/)，进入[API密钥管理](https://console.cloud.tencent.com/cam/capi)页面查看密钥，如果没有则需要新建密钥。SecretId 相当于账号，SecretKey 相当于密码，为保护你的资产，请不要将 SecretKey 透露给其他人。
+
+执行如下命令，根据提示配置 qcloudcli ：
+
+```
+$ qcloudcli configure
+Qcloud API SecretId [None]: foo
+Qcloud API SecretKey [None]: bar
+Region Id(gz,hk,ca,sh,shjr,bj,sg) [None]: gz
+Output Format(json,table,text) [None]: json
+```
+
+这些信息会放在当前用户的根路径下，例如 Linux 操作系统位于 `~/.qcloudcli/configure` 和 `~/.qcloudcli/credentials` 两个文件中。
+
+`~/.qcloudcli/configure` 内容示例如下：
+
+```
+[default]
+output = json
+region = gz
+```
+
+`~/.qcloudcli/credentials` 内容示例如下：
+
+```
+[default]
+qcloud_secretkey = bar
+qcloud_secretid = for
+```
+
+注意：这些信息是明文存储的，依赖于用户家目录下正确的文件权限设置控制访问。例如：
+
+```
+$ ls -l ~/.qcloudcli/
+total 8
+4 -rw-rw-r-- 1 john john 36 Nov 29 23:35 configure
+4 -rw------- 1 john john 55 Nov 29 23:35 credentials
+```
+
+注意：当前版本中，当卸载 qcloudcli 时，这两个文件并不会自动删除，你需要手动将其删除掉。
 
 ### 获取帮助信息
 
 运行命令，获取qcloudcli的功能列表，其中包含qcloudcli的configure命令，和所有支持的服务模块：
 
 ```
-qcloudcli help
+$ qcloudcli help
 ```
 
 运行命令，获取特定的服务模块的帮助信息，例如获取cvm模块的帮助信息，其中包含了cvm模块下的接口列表：
 
 ```
-qcloudcli cvm help
+$ qcloudcli cvm help
 ```
 
 运行命令，获取特定模块下特定接口的帮助信息，例如获取查询虚拟机列表DescribeInstances接口的帮助信息，其中包含了接口的参数列表：
 
 ```
-qcloudcli cvm DescribeInstances help
+$ qcloudcli cvm DescribeInstances help
 ```
 
 ### 使用复杂结构体的参数
@@ -50,7 +121,7 @@ qcloudcli cvm DescribeInstances help
 例如，查询虚拟机列表，使用默认的API版本，指定参数limit=10，只返回10个虚拟机，则直接输入：
 
 ```
-qcloudcli cvm DescribeInstances --limit 10
+$ qcloudcli cvm DescribeInstances --limit 10
 ```
 
 对于复杂的结构体，例如列表，字典等类型，需要输入json格式的字符串。
@@ -58,13 +129,13 @@ qcloudcli cvm DescribeInstances --limit 10
 例如，查询虚拟机列表，使用默认的API版本，指定instanceIds参数，只返回id为qcvmf4b542ad7b4cd49f2db57a733368d5b1和id为qcvmaf636dd06a816765b4f2c51595f2d84d的两台虚拟机，需要输入：
 
 ```
-qcloudcli cvm DescribeInstances --instanceIds '["qcvmf4b542ad7b4cd49f2db57a733368d5b1", "qcvmaf636dd06a816765b4f2c51595f2d84d"]'
+$ qcloudcli cvm DescribeInstances --instanceIds '["qcvmf4b542ad7b4cd49f2db57a733368d5b1", "qcvmaf636dd06a816765b4f2c51595f2d84d"]'
 ```
 
 例如，查询虚拟机列表，使用2017-03-12 API版本，指定Filters参数，返回部署在zone为ap-guangzhou-2的虚拟机，需要输入：
 
 ```
-qcloudcli cvm DescribeInstances --Filters '[{"Name":"zone","Values":["ap-guangzhou-2"]}]'
+$ qcloudcli cvm DescribeInstances --Filters '[{"Name":"zone","Values":["ap-guangzhou-2"]}]'
 ```
 
 ### 过滤返回字段
