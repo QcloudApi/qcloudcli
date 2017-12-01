@@ -20,11 +20,23 @@ class CreateBmNatGatewayRequest(Request):
     def set_autoAllocEipNum(self, autoAllocEipNum):
         self.add_param('autoAllocEipNum', autoAllocEipNum)
 
+    def get_exclusive(self):
+        return self.get_params().get('exclusive')
+
+    def set_exclusive(self, exclusive):
+        self.add_param('exclusive', exclusive)
+
     def get_ips(self):
         return self.get_params().get('ips')
 
     def set_ips(self, ips):
         self.add_param('ips', ips)
+
+    def get_isBackup(self):
+        return self.get_params().get('isBackup')
+
+    def set_isBackup(self, isBackup):
+        self.add_param('isBackup', isBackup)
 
     def get_maxConcurrent(self):
         return self.get_params().get('maxConcurrent')

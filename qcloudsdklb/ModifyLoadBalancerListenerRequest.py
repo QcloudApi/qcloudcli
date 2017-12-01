@@ -50,6 +50,12 @@ class ModifyLoadBalancerListenerRequest(Request):
     def set_loadBalancerId(self, loadBalancerId):
         self.add_param('loadBalancerId', loadBalancerId)
 
+    def get_scheduler(self):
+        return self.get_params().get('scheduler')
+
+    def set_scheduler(self, scheduler):
+        self.add_param('scheduler', scheduler)
+
     def get_sessionExpire(self):
         return self.get_params().get('sessionExpire')
 

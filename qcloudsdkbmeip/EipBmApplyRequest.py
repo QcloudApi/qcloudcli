@@ -8,6 +8,12 @@ class EipBmApplyRequest(Request):
         super(EipBmApplyRequest, self).__init__(
             'bmeip', 'qcloudcliV1', 'EipBmApply', 'bmeip.api.qcloud.com')
 
+    def get_IpList(self):
+        return self.get_params().get('IpList')
+
+    def set_IpList(self, IpList):
+        self.add_param('IpList', IpList)
+
     def get_bandwidth(self):
         return self.get_params().get('bandwidth')
 
