@@ -1,8 +1,8 @@
-# git ignore file list
-
-# for python
 *.pyc
 
-.venv/
+# twine
 dist/
+
+# tox
+.tox/
 qcloudcli.egg-info/

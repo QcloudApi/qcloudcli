@@ -1,26 +1,23 @@
-
 import sys
 
 
 class handleParameter():
     def __init__(self):
         self.args = sys.argv[1:]
-        pass
 
     def getAction(self):
         if self.args.__len__() >= 2:
             return self.args[1]
 
-
     def _getCommand(self):
-        if self.args.__len__() >=1:
+        if self.args.__len__() >= 1:
             return self.args[0]
 
     def _getOperations(self):
         operations = []
-        i =1
+        i = 1
         _len = self.args.__len__()
-        if _len >=2:
+        if _len >= 2:
             while i < _len:
                 if self.args[i].strip().find('--'):
                     operations.append(self.args[i])
@@ -29,33 +26,31 @@ class handleParameter():
                 i = i+1
         if len(operations):
             return operations
-        else :
+        else:
             return None
-
-
 
     def _getKeyValues(self):
         keyValues = dict()
         len = self.args.__len__()
         if len >= 2:
             current = 1
-            while current <len:
+            while current < len:
                 if self.args[current].strip().startswith('--'):
                     start = current + 1
                     if '=' in self.args[current].strip():
-                        a = self.args[current].strip().split('=',2)[0]
-                        b = self.args[current].strip().split('=',2)[1]
+                        a = self.args[current].strip().split('=', 2)[0]
+                        b = self.args[current].strip().split('=', 2)[1]
                         self.args[current] = a
-                        self.args.insert(current+1,b)
-                    key=self.args[current].strip()
-                    #start=current + 1
-                    values=list()
-                    len = self.args.__len__()
-                    while start <len and not self.args[start].strip().startswith('--'):
-                            values.append(self.args[start].strip())
-                            start=start+1
+                        self.args.insert(current + 1, b)
+                    key = self.args[current].strip()
+                    values = list()
+                    length = len(self.args)
+                    while (start < length and
+                           not self.args[start].strip().startswith('--')):
+                        values.append(self.args[start].strip())
+                        start = start + 1
                     keyValues[key] = values
-                    current=start
+                    current = start
                 else:
                     current = current+1
         keys = list(keyValues.keys())
@@ -83,7 +78,7 @@ class handleParameter():
         if len >= 3:
             for index in range(2, len):
                 currentValue = self.args[index]
-                if currentValue.find('--') >= 0 :
+                if currentValue.find('--') >= 0:
                     index = index+1
                     values = list()
                     while index < len and self.args[index].find('--') < 0:
@@ -96,13 +91,10 @@ class handleParameter():
             _secret = keyValues[secretstr][0]
         return _key, _secret
 
-
-
     def getAllExtensionCommands(self):
         cmds = list()
         cmds = ['help', '-h', '--help', ]
         return cmds
-
 
     def _getOpenApiKeyValues(self, map):
         keys = list(map.keys())
@@ -115,7 +107,3 @@ class handleParameter():
 
     def getExtensionKeyValues(self, map):
         pass
-
-
-
-

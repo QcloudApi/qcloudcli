@@ -8,17 +8,19 @@ import io
 
 PY2 = sys.version_info[0] == 2
 
+
 class Response(object):
-    def __init__(self,args):
+    def __init__(self, args):
         self.args = args
-    def __call__(self, command,response, stream=None):
+
+    def __call__(self, command, response, stream=None):
         if stream is None:
             if not PY2:
-                stream = sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-            else:
-                stream = sys.stdout
+                sys.stdout = io.TextIOWrapper(sys.stdout.buffer,
+                                              encoding='utf-8')
+            stream = sys.stdout
         if _has_filter_param(self.args)[0]:
-            filter_value =_has_filter_param(self.args)[1]
+            filter_value = _has_filter_param(self.args)[1]
             expression = jmespath.compile(filter_value)
             response = expression.search(response)
         try:
@@ -27,6 +29,7 @@ class Response(object):
             pass
         finally:
             self._flush_stream(stream)
+
     def _flush_stream(self, stream):
         try:
             stream.flush()
@@ -35,12 +38,12 @@ class Response(object):
 
 
 class JSONResult(Response):
-    def _format_response (self, command,response,stream=None):
-        if stream is None :
+    def _format_response(self, command, response, stream=None):
+        if stream is None:
             if not PY2:
-                stream = sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-            else:
-                stream = sys.stdout
+                sys.stdout = io.TextIOWrapper(sys.stdout.buffer,
+                                              encoding='utf-8')
+            stream = sys.stdout
         if response:
             ret = json.dumps(response, ensure_ascii=False, indent=4)
             if PY2:
@@ -58,9 +61,9 @@ class TextResult (Response):
     def __call__(self, command, response, stream=None):
         if stream is None:
             if not PY2:
-                stream = sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-            else:
-                stream = sys.stdout
+                sys.stdout = io.TextIOWrapper(sys.stdout.buffer,
+                                              encoding='utf-8')
+            stream = sys.stdout
         try:
             self._format_response(response, stream)
         finally:
@@ -68,16 +71,17 @@ class TextResult (Response):
 
     def _format_response(self, response, stream):
         if _has_filter_param(self.args)[0]:
-            filter_value =_has_filter_param(self.args)[1]
+            filter_value = _has_filter_param(self.args)[1]
             expression = jmespath.compile(filter_value)
             response = expression.search(response)
         text.format_text(response, stream)
+
 
 class TableResult (Response):
     def __init__(self, args, table=None):
         super(TableResult, self).__init__(args)
         self.table = MultiTable(initial_section=False,
-                                    column_separator='|')
+                                column_separator='|')
 
     def _format_response(self, command, response, stream):
         if self._build_table(command, response):
@@ -117,7 +121,8 @@ class TableResult (Response):
             self.table.add_row_header(headers)
             self.table.add_row([current[k] for k in headers])
         for remaining in more:
-            self._build_table(remaining, current[remaining],indent_level=indent_level + 1)
+            self._build_table(remaining, current[remaining],
+                              indent_level=indent_level + 1)
 
     def _build_sub_table_from_list(self, current, indent_level, title):
         headers, more = self._group_scalar_keys_from_list(current)
@@ -130,12 +135,13 @@ class TableResult (Response):
                 self.table.add_row_header(headers)
             first = False
 
-            self.table.add_row([element.get(header, '') for header in headers])
+            self.table.add_row([element.get(header, '')
+                                for header in headers])
             for remaining in more:
 
                 if remaining in element:
                     self._build_table(remaining, element[remaining],
-                                    indent_level=indent_level + 1)
+                                      indent_level=indent_level + 1)
 
     def _scalar_type(self, element):
         return not isinstance(element, (list, dict))
@@ -166,35 +172,32 @@ class TableResult (Response):
 
 def _has_filter_param(args):
     has = False
-    param =None
-    if isinstance(args,dict):
+    param = None
+    if isinstance(args, dict):
         value = args.get('filter')
-        if isinstance(value,list) and len(value)>0:
-            param=value[0]
+        if isinstance(value, list) and len(value) > 0:
+            param = value[0]
             param = param.strip()
-            if len(param) >0:
-                has=True
-    return [has,param]
+            if len(param) > 0:
+                has = True
+    return [has, param]
 
 
-
-def get_result (output_type,result):
-    if output_type == None :
+def get_result(output_type, result):
+    if output_type is None:
         output_type = 'json'
     if output_type == 'json':
         return JSONResult(result)
-    elif output_type  == 'text':
+    elif output_type == 'text':
         return TextResult(result)
     elif output_type == 'table':
         return TableResult(result)
-    raise ValueError("Unknown output type: %s\nCurrently supported output formats: \"json\", \"text\" and \"table\"." % output_type)
+    raise ValueError('Unknown output type: %s\nCurrently supported output '
+                     'formats: "json", "text" and "table".' % output_type)
 
 
-
-def display_result(command, response,output,result=None):
+def display_result(command, response, output, result=None):
     if output is None:
         output = 'JSON'
     formatter = get_result(output, result)
     formatter(command, response)
-
-

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 
 """
 distutils/setuptools install script.
@@ -10,6 +10,7 @@ ROOT = os.path.dirname(__file__)
 PACKAGE = 'qcloudcli'
 VERSION = __import__(PACKAGE).__version__
 
+
 def main():
     setup(
         name='qcloudcli',
@@ -19,11 +20,11 @@ def main():
         author='Qcloud',
         url='https://github.com/QcloudApi/qcloudcli.git',
         maintainer_email="QcloudApi@tencent.com",
-        packages = find_packages(),
+        packages=find_packages(),
         platforms=['unix', 'linux', 'win64'],
-        scripts = ['qcloudcli/shellcomplete.sh'],
+        scripts=['qcloudcli/shellcomplete.sh'],
         py_modules=['qcloudcli'],
-        entry_points = {
+        entry_points={
             'console_scripts': [
                 'qcloudcli = qcloudcli.Qcloudcli:main',
                 'qcloud_completer  = qcloudcli.completer:complete',

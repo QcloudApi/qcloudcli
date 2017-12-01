@@ -3,6 +3,7 @@ import sys
 
 PY2 = sys.version_info[0] == 2
 
+
 def format_text(data, stream):
     _format_text(data, stream)
 

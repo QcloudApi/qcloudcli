@@ -1,6 +1,7 @@
 # 腾讯云命令行工具
 
 [![pypi version](https://img.shields.io/pypi/v/qcloudcli.svg)](https://pypi.python.org/pypi/qcloudcli)
+[![Build Status](https://travis-ci.org/QcloudApi/qcloudcli.svg?branch=master)](https://travis-ci.org/QcloudApi/qcloudcli)
 
 For English users, pelase refer to document [README.rst](https://github.com/QcloudApi/qcloudcli/blob/master/README.rst)
 

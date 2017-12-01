@@ -10,10 +10,11 @@ class Completer(object):
 
     def __init__(self):
         self.handleData = handleData.handleData()
-        self.main_options = ['output', 'SecretId', 'SecretKey', 'RegionId', 'profile']
-        self.main_options_version = ['output', 'SecretId', 'SecretKey', 'RegionId', 'profile','Version']
+        self.main_options = ['output', 'SecretId', 'SecretKey',
+                             'RegionId', 'profile']
+        self.main_options_version = ['output', 'SecretId', 'SecretKey',
+                                     'RegionId', 'profile', 'Version']
         self.qcloudcli = 'qcloudcli'
-
 
     def _complete_option(self, option_name):
         if option_name == '--output':
@@ -25,9 +26,9 @@ class Completer(object):
         retval = []
         if self.current_word.startswith('-'):
             cw = self.current_word.lstrip('-')
-            l = ['--' + n for n in self.main_options
-                 if n.startswith(cw)]
-            retval = l
+            options = ['--' + n for n in self.main_options
+                       if n.startswith(cw)]
+            retval = options
         elif self.current_word == self.qcloudcli:
             retval = self._documented(self.handleData.getAllModules())
         else:
@@ -56,7 +57,8 @@ class Completer(object):
             for item in apiOperations:
                 _operations.add(item)
             if self.handleData.getModuleActions(self.command_name):
-                retval = self._documented(_operations, startswith=self.current_word)
+                retval = self._documented(_operations,
+                                          startswith=self.current_word)
         return retval
 
     def _documented(self, table, startswith=None):
@@ -77,17 +79,20 @@ class Completer(object):
 
     def _find_possible_options(self):
         all_options = copy.copy(self.main_options)
-        cmdInstance = self.handleData.makeInstance(self.command_name, self.operation)
-        mclassname = self.handleData.makeClass(self.command_name, self.operation)
+        cmdInstance = self.handleData.makeInstance(self.command_name,
+                                                   self.operation)
+        mclassname = self.handleData.makeClass(self.command_name,
+                                               self.operation)
         old_arg_list = list()
         if cmdInstance is None:
             from . import commandConfigure
             _configure = commandConfigure.commandConfigure()
-            old_arg_list = _configure.getExtensionOptions(self.command_name, self.operation)
+            old_arg_list = _configure.getExtensionOptions(self.command_name,
+                                                          self.operation)
         else:
             old_arg_list = self.handleData.getSetFuncs(mclassname)
         new_arg_list = set()
-        if not old_arg_list is None:
+        if old_arg_list is not None:
             for item in old_arg_list:
                 if not item.startswith('_'):
                     new_arg_list.add(item)
@@ -110,23 +115,25 @@ class Completer(object):
         old_arg_list_version = self.handleData.getSetFuncs(classnameVersion)
         new_arg_list = set()
         new_arg_list_version = set()
-        if not old_arg_list is None:
+        if old_arg_list is not None:
             for item in old_arg_list:
                 if not item.startswith('_'):
                     new_arg_list.add(item)
             action_options = self._documented(new_arg_list)
-        if not old_arg_list_version is None:
+        if old_arg_list_version is not None:
             for item in old_arg_list_version:
                 if not item.startswith('_'):
                     new_arg_list_version.add(item)
             action_options_version = self._documented(new_arg_list_version)
-        if not action_options_version is None and 'Version' in action_options_version:
+        if (action_options_version is not None
+                and 'Version' in action_options_version):
             action_options_version.remove('Version')
         com_possibles = ['--' + n for n in com_options]
         action_possibles = ['--' + n for n in action_options]
         com_possibles_version = ['--' + n for n in com_options_version]
         action_possibles_version = ['--' + n for n in action_options_version]
-        return com_possibles, action_possibles, com_possibles_version, action_possibles_version
+        return (com_possibles, action_possibles,
+                com_possibles_version, action_possibles_version)
 
     def _process_command_line(self):
         self.command_name = None
@@ -140,10 +147,10 @@ class Completer(object):
         self.non_options = [w for w in self.words if not w.startswith('-')]
         self.options = [w for w in self.words if w.startswith('-')]
         for w in self.non_options:
-            if w in self.handleData.getAllModules(): # cmd check
+            if w in self.handleData.getAllModules():  # cmd check
                 self.command_name = w
                 cmd_obj = self.handleData.getModuleActions(self.command_name)
-                if not cmd_obj is None:
+                if cmd_obj is not None:
                     for w in self.non_options:
                         if w in cmd_obj:
                             self.operation = w

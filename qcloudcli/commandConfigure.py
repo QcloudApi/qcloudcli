@@ -1,9 +1,9 @@
 from . import showHelp
 from . import handleData
 
+
 class commandConfigure:
     def __init__(self):
-
         self.main_options = ['output', 'SecretId', 'SecretKey']
         self.helper = showHelp.showHelp()
         self.open_api_headler = handleData.handleData()
@@ -14,7 +14,6 @@ class commandConfigure:
         if operation in handleData.version_cmds:
             return None
         return None
-
 
     def showExtensionOperationHelp(self, cmd, operation):
         parameterList = list()

@@ -5,6 +5,9 @@ Tencent Cloud (aka QCloud) Command Line Interface
 .. image:: https://img.shields.io/pypi/v/qcloudcli.svg
    :target: https://pypi.python.org/pypi/qcloudcli
    :alt: pypi version
+.. image:: https://travis-ci.org/QcloudApi/qcloudcli.svg?branch=master
+   :target: https://travis-ci.org/QcloudApi/qcloudcli
+   :alt: Build Status
 
 Tencent Cloud (aka QCloud) Command Line Interface qcloudcli is an open source tool built on top of the Tencent Cloud API that provides commands for interacting with Tencent Cloud services.
 
