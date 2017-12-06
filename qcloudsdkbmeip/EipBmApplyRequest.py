@@ -8,12 +8,6 @@ class EipBmApplyRequest(Request):
         super(EipBmApplyRequest, self).__init__(
             'bmeip', 'qcloudcliV1', 'EipBmApply', 'bmeip.api.qcloud.com')
 
-    def get_IpList(self):
-        return self.get_params().get('IpList')
-
-    def set_IpList(self, IpList):
-        self.add_param('IpList', IpList)
-
     def get_bandwidth(self):
         return self.get_params().get('bandwidth')
 
@@ -31,6 +25,12 @@ class EipBmApplyRequest(Request):
 
     def set_goodsNum(self, goodsNum):
         self.add_param('goodsNum', goodsNum)
+
+    def get_ipList(self):
+        return self.get_params().get('ipList')
+
+    def set_ipList(self, ipList):
+        self.add_param('ipList', ipList)
 
     def get_payMode(self):
         return self.get_params().get('payMode')

@@ -19,3 +19,9 @@ class DelJobRequest(Request):
 
     def set_projectId(self, projectId):
         self.add_param('projectId', projectId)
+
+    def get_type(self):
+        return self.get_params().get('type')
+
+    def set_type(self, type):
+        self.add_param('type', type)

@@ -31,10 +31,10 @@ class handleParameter():
 
     def _getKeyValues(self):
         keyValues = dict()
-        len = self.args.__len__()
-        if len >= 2:
+        argslen = len(self.args)
+        if argslen >= 2:
             current = 1
-            while current < len:
+            while current < argslen:
                 if self.args[current].strip().startswith('--'):
                     start = current + 1
                     if '=' in self.args[current].strip():
