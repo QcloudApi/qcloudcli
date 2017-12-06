@@ -317,7 +317,7 @@ class ConfigureCommand(object):
         if 'qcloud_secretkey' in new_values:
             values['qcloud_secretkey'] = new_values.pop('qcloud_secretkey')
         creds_filename = self.qcloudConfig.getCredsFileName()
-        if credential_file_values:
+        if values:
             if profilename is not None:
                 values['__section__'] = ('profile %s' % profilename)
             self._configWriter._updateConfig(values, creds_filename)
