@@ -2,11 +2,11 @@
 
 from qcloudsdkcore.request import Request
 
-class VcodeCheckRequest(Request):
+class ContractRecoveryRequest(Request):
 
     def __init__(self):
-        super(VcodeCheckRequest, self).__init__(
-            'ds', 'qcloudcliV1', 'VcodeCheck', 'ds.api.qcloud.com')
+        super(ContractRecoveryRequest, self).__init__(
+            'ds', 'qcloudcliV1', 'ContractRecovery', 'ds.api.qcloud.com')
 
     def get_contractResId(self):
         return self.get_params().get('contractResId')
@@ -25,15 +25,3 @@ class VcodeCheckRequest(Request):
 
     def set_operation(self, operation):
         self.add_param('operation', operation)
-
-    def get_resid(self):
-        return self.get_params().get('resid')
-
-    def set_resid(self, resid):
-        self.add_param('resid', resid)
-
-    def get_verifyCode(self):
-        return self.get_params().get('verifyCode')
-
-    def set_verifyCode(self, verifyCode):
-        self.add_param('verifyCode', verifyCode)

@@ -8,6 +8,30 @@ class ContractListRequest(Request):
         super(ContractListRequest, self).__init__(
             'ds', 'qcloudcliV1', 'ContractList', 'ds.api.qcloud.com')
 
+    def get_beginTime(self):
+        return self.get_params().get('beginTime')
+
+    def set_beginTime(self, beginTime):
+        self.add_param('beginTime', beginTime)
+
+    def get_download(self):
+        return self.get_params().get('download')
+
+    def set_download(self, download):
+        self.add_param('download', download)
+
+    def get_endTime(self):
+        return self.get_params().get('endTime')
+
+    def set_endTime(self, endTime):
+        self.add_param('endTime', endTime)
+
+    def get_filtering(self):
+        return self.get_params().get('filtering')
+
+    def set_filtering(self, filtering):
+        self.add_param('filtering', filtering)
+
     def get_module(self):
         return self.get_params().get('module')
 
@@ -20,20 +44,14 @@ class ContractListRequest(Request):
     def set_operation(self, operation):
         self.add_param('operation', operation)
 
-    def get_pageIndex(self):
-        return self.get_params().get('pageIndex')
+    def get_paging(self):
+        return self.get_params().get('paging')
 
-    def set_pageIndex(self, pageIndex):
-        self.add_param('pageIndex', pageIndex)
+    def set_paging(self, paging):
+        self.add_param('paging', paging)
 
-    def get_pageSize(self):
-        return self.get_params().get('pageSize')
+    def get_sorting(self):
+        return self.get_params().get('sorting')
 
-    def set_pageSize(self, pageSize):
-        self.add_param('pageSize', pageSize)
-
-    def get_search(self):
-        return self.get_params().get('search')
-
-    def set_search(self, search):
-        self.add_param('search', search)
+    def set_sorting(self, sorting):
+        self.add_param('sorting', sorting)

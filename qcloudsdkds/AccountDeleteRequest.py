@@ -2,17 +2,17 @@
 
 from qcloudsdkcore.request import Request
 
-class ContractQueryRequest(Request):
+class AccountDeleteRequest(Request):
 
     def __init__(self):
-        super(ContractQueryRequest, self).__init__(
-            'ds', 'qcloudcliV1', 'ContractQuery', 'ds.api.qcloud.com')
+        super(AccountDeleteRequest, self).__init__(
+            'ds', 'qcloudcliV1', 'AccountDelete', 'ds.api.qcloud.com')
 
-    def get_contractResId(self):
-        return self.get_params().get('contractResId')
+    def get_accountList(self):
+        return self.get_params().get('accountList')
 
-    def set_contractResId(self, contractResId):
-        self.add_param('contractResId', contractResId)
+    def set_accountList(self, accountList):
+        self.add_param('accountList', accountList)
 
     def get_module(self):
         return self.get_params().get('module')

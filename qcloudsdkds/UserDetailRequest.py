@@ -20,8 +20,8 @@ class UserDetailRequest(Request):
     def set_operation(self, operation):
         self.add_param('operation', operation)
 
-    def get_search(self):
-        return self.get_params().get('search')
+    def get_resid(self):
+        return self.get_params().get('resid')
 
-    def set_search(self, search):
-        self.add_param('search', search)
+    def set_resid(self, resid):
+        self.add_param('resid', resid)

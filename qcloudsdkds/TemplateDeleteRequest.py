@@ -2,17 +2,11 @@
 
 from qcloudsdkcore.request import Request
 
-class ContractQueryRequest(Request):
+class TemplateDeleteRequest(Request):
 
     def __init__(self):
-        super(ContractQueryRequest, self).__init__(
-            'ds', 'qcloudcliV1', 'ContractQuery', 'ds.api.qcloud.com')
-
-    def get_contractResId(self):
-        return self.get_params().get('contractResId')
-
-    def set_contractResId(self, contractResId):
-        self.add_param('contractResId', contractResId)
+        super(TemplateDeleteRequest, self).__init__(
+            'ds', 'qcloudcliV1', 'TemplateDelete', 'ds.api.qcloud.com')
 
     def get_module(self):
         return self.get_params().get('module')
@@ -25,3 +19,9 @@ class ContractQueryRequest(Request):
 
     def set_operation(self, operation):
         self.add_param('operation', operation)
+
+    def get_templateList(self):
+        return self.get_params().get('templateList')
+
+    def set_templateList(self, templateList):
+        self.add_param('templateList', templateList)

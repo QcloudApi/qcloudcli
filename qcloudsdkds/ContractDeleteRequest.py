@@ -8,11 +8,11 @@ class ContractDeleteRequest(Request):
         super(ContractDeleteRequest, self).__init__(
             'ds', 'qcloudcliV1', 'ContractDelete', 'ds.api.qcloud.com')
 
-    def get_contractNo(self):
-        return self.get_params().get('contractNo')
+    def get_contractList(self):
+        return self.get_params().get('contractList')
 
-    def set_contractNo(self, contractNo):
-        self.add_param('contractNo', contractNo)
+    def set_contractList(self, contractList):
+        self.add_param('contractList', contractList)
 
     def get_module(self):
         return self.get_params().get('module')

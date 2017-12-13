@@ -2,11 +2,11 @@
 
 from qcloudsdkcore.request import Request
 
-class EnterpriseAccountOpenRequest(Request):
+class SubplatOpenRequest(Request):
 
     def __init__(self):
-        super(EnterpriseAccountOpenRequest, self).__init__(
-            'ds', 'qcloudcliV1', 'EnterpriseAccountOpen', 'ds.api.qcloud.com')
+        super(SubplatOpenRequest, self).__init__(
+            'ds', 'qcloudcliV1', 'SubplatOpen', 'ds.api.qcloud.com')
 
     def get_email(self):
         return self.get_params().get('email')

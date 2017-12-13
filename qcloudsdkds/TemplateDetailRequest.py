@@ -20,8 +20,8 @@ class TemplateDetailRequest(Request):
     def set_operation(self, operation):
         self.add_param('operation', operation)
 
-    def get_tplResId(self):
-        return self.get_params().get('tplResId')
+    def get_templateResId(self):
+        return self.get_params().get('templateResId')
 
-    def set_tplResId(self, tplResId):
-        self.add_param('tplResId', tplResId)
+    def set_templateResId(self, templateResId):
+        self.add_param('templateResId', templateResId)

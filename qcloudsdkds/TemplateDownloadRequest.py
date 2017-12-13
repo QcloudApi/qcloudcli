@@ -2,17 +2,11 @@
 
 from qcloudsdkcore.request import Request
 
-class ContractQueryRequest(Request):
+class TemplateDownloadRequest(Request):
 
     def __init__(self):
-        super(ContractQueryRequest, self).__init__(
-            'ds', 'qcloudcliV1', 'ContractQuery', 'ds.api.qcloud.com')
-
-    def get_contractResId(self):
-        return self.get_params().get('contractResId')
-
-    def set_contractResId(self, contractResId):
-        self.add_param('contractResId', contractResId)
+        super(TemplateDownloadRequest, self).__init__(
+            'ds', 'qcloudcliV1', 'TemplateDownload', 'ds.api.qcloud.com')
 
     def get_module(self):
         return self.get_params().get('module')
@@ -25,3 +19,9 @@ class ContractQueryRequest(Request):
 
     def set_operation(self, operation):
         self.add_param('operation', operation)
+
+    def get_templateResId(self):
+        return self.get_params().get('templateResId')
+
+    def set_templateResId(self, templateResId):
+        self.add_param('templateResId', templateResId)

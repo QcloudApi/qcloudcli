@@ -14,6 +14,12 @@ class ContractCreateRequest(Request):
     def set_contractName(self, contractName):
         self.add_param('contractName', contractName)
 
+    def get_contractTextValue(self):
+        return self.get_params().get('contractTextValue')
+
+    def set_contractTextValue(self, contractTextValue):
+        self.add_param('contractTextValue', contractTextValue)
+
     def get_module(self):
         return self.get_params().get('module')
 
@@ -32,8 +38,8 @@ class ContractCreateRequest(Request):
     def set_signInfos(self, signInfos):
         self.add_param('signInfos', signInfos)
 
-    def get_templateId(self):
-        return self.get_params().get('templateId')
+    def get_templateResId(self):
+        return self.get_params().get('templateResId')
 
-    def set_templateId(self, templateId):
-        self.add_param('templateId', templateId)
+    def set_templateResId(self, templateResId):
+        self.add_param('templateResId', templateResId)

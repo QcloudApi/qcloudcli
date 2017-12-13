@@ -8,11 +8,11 @@ class VcodeSendRequest(Request):
         super(VcodeSendRequest, self).__init__(
             'ds', 'qcloudcliV1', 'VcodeSend', 'ds.api.qcloud.com')
 
-    def get_isSendVoice(self):
-        return self.get_params().get('isSendVoice')
+    def get_contractResId(self):
+        return self.get_params().get('contractResId')
 
-    def set_isSendVoice(self, isSendVoice):
-        self.add_param('isSendVoice', isSendVoice)
+    def set_contractResId(self, contractResId):
+        self.add_param('contractResId', contractResId)
 
     def get_module(self):
         return self.get_params().get('module')
@@ -26,14 +26,8 @@ class VcodeSendRequest(Request):
     def set_operation(self, operation):
         self.add_param('operation', operation)
 
-    def get_projectId(self):
-        return self.get_params().get('projectId')
+    def get_resid(self):
+        return self.get_params().get('resid')
 
-    def set_projectId(self, projectId):
-        self.add_param('projectId', projectId)
-
-    def get_userId(self):
-        return self.get_params().get('userId')
-
-    def set_userId(self, userId):
-        self.add_param('userId', userId)
+    def set_resid(self, resid):
+        self.add_param('resid', resid)

@@ -2,17 +2,11 @@
 
 from qcloudsdkcore.request import Request
 
-class VcodeCheckRequest(Request):
+class SealDeleteRequest(Request):
 
     def __init__(self):
-        super(VcodeCheckRequest, self).__init__(
-            'ds', 'qcloudcliV1', 'VcodeCheck', 'ds.api.qcloud.com')
-
-    def get_contractResId(self):
-        return self.get_params().get('contractResId')
-
-    def set_contractResId(self, contractResId):
-        self.add_param('contractResId', contractResId)
+        super(SealDeleteRequest, self).__init__(
+            'ds', 'qcloudcliV1', 'SealDelete', 'ds.api.qcloud.com')
 
     def get_module(self):
         return self.get_params().get('module')
@@ -32,8 +26,8 @@ class VcodeCheckRequest(Request):
     def set_resid(self, resid):
         self.add_param('resid', resid)
 
-    def get_verifyCode(self):
-        return self.get_params().get('verifyCode')
+    def get_sealId(self):
+        return self.get_params().get('sealId')
 
-    def set_verifyCode(self, verifyCode):
-        self.add_param('verifyCode', verifyCode)
+    def set_sealId(self, sealId):
+        self.add_param('sealId', sealId)

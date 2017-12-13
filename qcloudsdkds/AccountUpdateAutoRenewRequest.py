@@ -8,6 +8,12 @@ class AccountUpdateAutoRenewRequest(Request):
         super(AccountUpdateAutoRenewRequest, self).__init__(
             'ds', 'qcloudcliV1', 'AccountUpdateAutoRenew', 'ds.api.qcloud.com')
 
+    def get_accountList(self):
+        return self.get_params().get('accountList')
+
+    def set_accountList(self, accountList):
+        self.add_param('accountList', accountList)
+
     def get_isAutoRenew(self):
         return self.get_params().get('isAutoRenew')
 
@@ -25,9 +31,3 @@ class AccountUpdateAutoRenewRequest(Request):
 
     def set_operation(self, operation):
         self.add_param('operation', operation)
-
-    def get_userId(self):
-        return self.get_params().get('userId')
-
-    def set_userId(self, userId):
-        self.add_param('userId', userId)

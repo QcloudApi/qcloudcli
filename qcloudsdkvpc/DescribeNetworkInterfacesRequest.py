@@ -68,6 +68,12 @@ class DescribeNetworkInterfacesRequest(Request):
     def set_orderField(self, orderField):
         self.add_param('orderField', orderField)
 
+    def get_sgId(self):
+        return self.get_params().get('sgId')
+
+    def set_sgId(self, sgId):
+        self.add_param('sgId', sgId)
+
     def get_showInt(self):
         return self.get_params().get('showInt')
 

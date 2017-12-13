@@ -2,11 +2,17 @@
 
 from qcloudsdkcore.request import Request
 
-class TemplateQueryRequest(Request):
+class ContractMngLogQueryRequest(Request):
 
     def __init__(self):
-        super(TemplateQueryRequest, self).__init__(
-            'ds', 'qcloudcliV1', 'TemplateQuery', 'ds.api.qcloud.com')
+        super(ContractMngLogQueryRequest, self).__init__(
+            'ds', 'qcloudcliV1', 'ContractMngLogQuery', 'ds.api.qcloud.com')
+
+    def get_contractResId(self):
+        return self.get_params().get('contractResId')
+
+    def set_contractResId(self, contractResId):
+        self.add_param('contractResId', contractResId)
 
     def get_download(self):
         return self.get_params().get('download')
