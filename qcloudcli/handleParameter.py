@@ -3,7 +3,11 @@ import sys
 
 class handleParameter():
     def __init__(self):
-        self.args = sys.argv[1:]
+        self.args = []
+        for arg in sys.argv[1:]:
+            if sys.platform == 'win32' and sys.stdin.encoding == 'cp936':
+                arg = arg.decode('gbk')
+            self.args.append(arg)
 
     def getAction(self):
         if self.args.__len__() >= 2:
