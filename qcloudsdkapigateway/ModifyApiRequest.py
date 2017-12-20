@@ -26,6 +26,12 @@ class ModifyApiRequest(Request):
     def set_authRequired(self, authRequired):
         self.add_param('authRequired', authRequired)
 
+    def get_constantParameters(self):
+        return self.get_params().get('constantParameters')
+
+    def set_constantParameters(self, constantParameters):
+        self.add_param('constantParameters', constantParameters)
+
     def get_requestConfig(self):
         return self.get_params().get('requestConfig')
 
