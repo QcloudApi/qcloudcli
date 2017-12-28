@@ -8,6 +8,12 @@ class InquiryStoragePriceRequest(Request):
         super(InquiryStoragePriceRequest, self).__init__(
             'cbs', 'qcloudcliV1', 'InquiryStoragePrice', 'cbs.api.qcloud.com')
 
+    def get_chargeSet(self):
+        return self.get_params().get('chargeSet')
+
+    def set_chargeSet(self, chargeSet):
+        self.add_param('chargeSet', chargeSet)
+
     def get_goodsNum(self):
         return self.get_params().get('goodsNum')
 

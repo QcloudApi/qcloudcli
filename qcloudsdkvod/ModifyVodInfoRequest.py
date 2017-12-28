@@ -8,6 +8,12 @@ class ModifyVodInfoRequest(Request):
         super(ModifyVodInfoRequest, self).__init__(
             'vod', 'qcloudcliV1', 'ModifyVodInfo', 'vod.api.qcloud.com')
 
+    def get_SubAppId(self):
+        return self.get_params().get('SubAppId')
+
+    def set_SubAppId(self, SubAppId):
+        self.add_param('SubAppId', SubAppId)
+
     def get_classId(self):
         return self.get_params().get('classId')
 

@@ -8,11 +8,23 @@ class AddCdnHostRequest(Request):
         super(AddCdnHostRequest, self).__init__(
             'cdn', 'qcloudcliV1', 'AddCdnHost', 'cdn.api.qcloud.com')
 
+    def get_accessIp(self):
+        return self.get_params().get('accessIp')
+
+    def set_accessIp(self, accessIp):
+        self.add_param('accessIp', accessIp)
+
     def get_advancedCache(self):
         return self.get_params().get('advancedCache')
 
     def set_advancedCache(self, advancedCache):
         self.add_param('advancedCache', advancedCache)
+
+    def get_backupOrigin(self):
+        return self.get_params().get('backupOrigin')
+
+    def set_backupOrigin(self, backupOrigin):
+        self.add_param('backupOrigin', backupOrigin)
 
     def get_cache(self):
         return self.get_params().get('cache')
@@ -31,6 +43,12 @@ class AddCdnHostRequest(Request):
 
     def set_cnameHost(self, cnameHost):
         self.add_param('cnameHost', cnameHost)
+
+    def get_fullUrl(self):
+        return self.get_params().get('fullUrl')
+
+    def set_fullUrl(self, fullUrl):
+        self.add_param('fullUrl', fullUrl)
 
     def get_fwdHost(self):
         return self.get_params().get('fwdHost')
@@ -61,6 +79,12 @@ class AddCdnHostRequest(Request):
 
     def set_projectId(self, projectId):
         self.add_param('projectId', projectId)
+
+    def get_refer(self):
+        return self.get_params().get('refer')
+
+    def set_refer(self, refer):
+        self.add_param('refer', refer)
 
     def get_serviceType(self):
         return self.get_params().get('serviceType')

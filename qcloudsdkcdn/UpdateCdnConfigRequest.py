@@ -74,6 +74,12 @@ class UpdateCdnConfigRequest(Request):
     def set_detailRspHeader(self, detailRspHeader):
         self.add_param('detailRspHeader', detailRspHeader)
 
+    def get_follow302(self):
+        return self.get_params().get('follow302')
+
+    def set_follow302(self, follow302):
+        self.add_param('follow302', follow302)
+
     def get_fullUrl(self):
         return self.get_params().get('fullUrl')
 
@@ -116,6 +122,12 @@ class UpdateCdnConfigRequest(Request):
     def set_ignoreSetCookie(self, ignoreSetCookie):
         self.add_param('ignoreSetCookie', ignoreSetCookie)
 
+    def get_ipFrequenceLimit(self):
+        return self.get_params().get('ipFrequenceLimit')
+
+    def set_ipFrequenceLimit(self, ipFrequenceLimit):
+        self.add_param('ipFrequenceLimit', ipFrequenceLimit)
+
     def get_middleResource(self):
         return self.get_params().get('middleResource')
 
@@ -140,6 +152,12 @@ class UpdateCdnConfigRequest(Request):
     def set_projectId(self, projectId):
         self.add_param('projectId', projectId)
 
+    def get_rangeOrigin(self):
+        return self.get_params().get('rangeOrigin')
+
+    def set_rangeOrigin(self, rangeOrigin):
+        self.add_param('rangeOrigin', rangeOrigin)
+
     def get_refer(self):
         return self.get_params().get('refer')
 
@@ -157,6 +175,12 @@ class UpdateCdnConfigRequest(Request):
 
     def set_rspHeader(self, rspHeader):
         self.add_param('rspHeader', rspHeader)
+
+    def get_seo(self):
+        return self.get_params().get('seo')
+
+    def set_seo(self, seo):
+        self.add_param('seo', seo)
 
     def get_statusCache(self):
         return self.get_params().get('statusCache')

@@ -8,6 +8,12 @@ class DescribeVodPlayInfoRequest(Request):
         super(DescribeVodPlayInfoRequest, self).__init__(
             'vod', 'qcloudcliV1', 'DescribeVodPlayInfo', 'vod.api.qcloud.com')
 
+    def get_SubAppId(self):
+        return self.get_params().get('SubAppId')
+
+    def set_SubAppId(self, SubAppId):
+        self.add_param('SubAppId', SubAppId)
+
     def get_fileName(self):
         return self.get_params().get('fileName')
 
