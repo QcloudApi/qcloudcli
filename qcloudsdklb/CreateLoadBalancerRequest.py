@@ -74,6 +74,12 @@ class CreateLoadBalancerRequest(Request):
     def set_subnetId(self, subnetId):
         self.add_param('subnetId', subnetId)
 
+    def get_vips(self):
+        return self.get_params().get('vips')
+
+    def set_vips(self, vips):
+        self.add_param('vips', vips)
+
     def get_vpcId(self):
         return self.get_params().get('vpcId')
 

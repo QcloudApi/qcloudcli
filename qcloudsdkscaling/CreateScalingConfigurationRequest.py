@@ -38,24 +38,6 @@ class CreateScalingConfigurationRequest(Request):
     def set_dataSnapshotId(self, dataSnapshotId):
         self.add_param('dataSnapshotId', dataSnapshotId)
 
-    def get_graphicsCount(self):
-        return self.get_params().get('graphicsCount')
-
-    def set_graphicsCount(self, graphicsCount):
-        self.add_param('graphicsCount', graphicsCount)
-
-    def get_graphicsDeviceId(self):
-        return self.get_params().get('graphicsDeviceId')
-
-    def set_graphicsDeviceId(self, graphicsDeviceId):
-        self.add_param('graphicsDeviceId', graphicsDeviceId)
-
-    def get_graphicsVendorId(self):
-        return self.get_params().get('graphicsVendorId')
-
-    def set_graphicsVendorId(self, graphicsVendorId):
-        self.add_param('graphicsVendorId', graphicsVendorId)
-
     def get_imageId(self):
         return self.get_params().get('imageId')
 

@@ -14,6 +14,12 @@ class RunApiRequest(Request):
     def set_apiId(self, apiId):
         self.add_param('apiId', apiId)
 
+    def get_contentType(self):
+        return self.get_params().get('contentType')
+
+    def set_contentType(self, contentType):
+        self.add_param('contentType', contentType)
+
     def get_requestBody(self):
         return self.get_params().get('requestBody')
 
