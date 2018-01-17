@@ -26,6 +26,12 @@ class StartSimpleJobRequest(Request):
     def set_dataDiskSize(self, dataDiskSize):
         self.add_param('dataDiskSize', dataDiskSize)
 
+    def get_dataDiskType(self):
+        return self.get_params().get('dataDiskType')
+
+    def set_dataDiskType(self, dataDiskType):
+        self.add_param('dataDiskType', dataDiskType)
+
     def get_desc(self):
         return self.get_params().get('desc')
 

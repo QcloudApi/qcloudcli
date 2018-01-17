@@ -25,3 +25,9 @@ class WxPublishRequest(Request):
 
     def set_fileUrl(self, fileUrl):
         self.add_param('fileUrl', fileUrl)
+
+    def get_videoUin(self):
+        return self.get_params().get('videoUin')
+
+    def set_videoUin(self, videoUin):
+        self.add_param('videoUin', videoUin)

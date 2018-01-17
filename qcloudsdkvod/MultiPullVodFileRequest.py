@@ -8,6 +8,12 @@ class MultiPullVodFileRequest(Request):
         super(MultiPullVodFileRequest, self).__init__(
             'vod', 'qcloudcliV1', 'MultiPullVodFile', 'vod.api.qcloud.com')
 
+    def get_SubAppId(self):
+        return self.get_params().get('SubAppId')
+
+    def set_SubAppId(self, SubAppId):
+        self.add_param('SubAppId', SubAppId)
+
     def get_pullset(self):
         return self.get_params().get('pullset')
 

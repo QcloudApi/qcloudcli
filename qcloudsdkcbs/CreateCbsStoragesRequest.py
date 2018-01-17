@@ -8,6 +8,12 @@ class CreateCbsStoragesRequest(Request):
         super(CreateCbsStoragesRequest, self).__init__(
             'cbs', 'qcloudcliV1', 'CreateCbsStorages', 'cbs.api.qcloud.com')
 
+    def get_encrypt(self):
+        return self.get_params().get('encrypt')
+
+    def set_encrypt(self, encrypt):
+        self.add_param('encrypt', encrypt)
+
     def get_goodsNum(self):
         return self.get_params().get('goodsNum')
 

@@ -38,6 +38,12 @@ class CreateBmLoadBalancerRequest(Request):
     def set_projectId(self, projectId):
         self.add_param('projectId', projectId)
 
+    def get_specifiedVips(self):
+        return self.get_params().get('specifiedVips')
+
+    def set_specifiedVips(self, specifiedVips):
+        self.add_param('specifiedVips', specifiedVips)
+
     def get_tgwSetType(self):
         return self.get_params().get('tgwSetType')
 

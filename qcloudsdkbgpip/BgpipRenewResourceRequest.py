@@ -8,6 +8,12 @@ class BgpipRenewResourceRequest(Request):
         super(BgpipRenewResourceRequest, self).__init__(
             'bgpip', 'qcloudcliV1', 'BgpipRenewResource', 'bgpip.api.qcloud.com')
 
+    def get_bandwidth(self):
+        return self.get_params().get('bandwidth')
+
+    def set_bandwidth(self, bandwidth):
+        self.add_param('bandwidth', bandwidth)
+
     def get_curDeadline(self):
         return self.get_params().get('curDeadline')
 
