@@ -14,6 +14,18 @@ class BindSubDomainRequest(Request):
     def set_certificateId(self, certificateId):
         self.add_param('certificateId', certificateId)
 
+    def get_isDefaultMapping(self):
+        return self.get_params().get('isDefaultMapping')
+
+    def set_isDefaultMapping(self, isDefaultMapping):
+        self.add_param('isDefaultMapping', isDefaultMapping)
+
+    def get_pathMappingSet(self):
+        return self.get_params().get('pathMappingSet')
+
+    def set_pathMappingSet(self, pathMappingSet):
+        self.add_param('pathMappingSet', pathMappingSet)
+
     def get_serviceId(self):
         return self.get_params().get('serviceId')
 

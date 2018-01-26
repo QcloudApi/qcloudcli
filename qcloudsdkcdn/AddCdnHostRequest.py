@@ -68,11 +68,23 @@ class AddCdnHostRequest(Request):
     def set_hostType(self, hostType):
         self.add_param('hostType', hostType)
 
+    def get_ipFrequenceLimit(self):
+        return self.get_params().get('ipFrequenceLimit')
+
+    def set_ipFrequenceLimit(self, ipFrequenceLimit):
+        self.add_param('ipFrequenceLimit', ipFrequenceLimit)
+
     def get_origin(self):
         return self.get_params().get('origin')
 
     def set_origin(self, origin):
         self.add_param('origin', origin)
+
+    def get_pathOrigin(self):
+        return self.get_params().get('pathOrigin')
+
+    def set_pathOrigin(self, pathOrigin):
+        self.add_param('pathOrigin', pathOrigin)
 
     def get_projectId(self):
         return self.get_params().get('projectId')
@@ -85,6 +97,12 @@ class AddCdnHostRequest(Request):
 
     def set_refer(self, refer):
         self.add_param('refer', refer)
+
+    def get_rspHeader(self):
+        return self.get_params().get('rspHeader')
+
+    def set_rspHeader(self, rspHeader):
+        self.add_param('rspHeader', rspHeader)
 
     def get_serviceType(self):
         return self.get_params().get('serviceType')

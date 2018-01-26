@@ -26,6 +26,12 @@ class CreateFunctionRequest(Request):
     def set_description(self, description):
         self.add_param('description', description)
 
+    def get_environment(self):
+        return self.get_params().get('environment')
+
+    def set_environment(self, environment):
+        self.add_param('environment', environment)
+
     def get_functionName(self):
         return self.get_params().get('functionName')
 
@@ -55,3 +61,9 @@ class CreateFunctionRequest(Request):
 
     def set_timeout(self, timeout):
         self.add_param('timeout', timeout)
+
+    def get_vpc(self):
+        return self.get_params().get('vpc')
+
+    def set_vpc(self, vpc):
+        self.add_param('vpc', vpc)

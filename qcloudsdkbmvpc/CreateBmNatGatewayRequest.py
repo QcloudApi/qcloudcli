@@ -26,6 +26,12 @@ class CreateBmNatGatewayRequest(Request):
     def set_exclusive(self, exclusive):
         self.add_param('exclusive', exclusive)
 
+    def get_forwardMode(self):
+        return self.get_params().get('forwardMode')
+
+    def set_forwardMode(self, forwardMode):
+        self.add_param('forwardMode', forwardMode)
+
     def get_ips(self):
         return self.get_params().get('ips')
 
@@ -49,12 +55,6 @@ class CreateBmNatGatewayRequest(Request):
 
     def set_natName(self, natName):
         self.add_param('natName', natName)
-
-    def get_subnetAll(self):
-        return self.get_params().get('subnetAll')
-
-    def set_subnetAll(self, subnetAll):
-        self.add_param('subnetAll', subnetAll)
 
     def get_subnetIds(self):
         return self.get_params().get('subnetIds')
