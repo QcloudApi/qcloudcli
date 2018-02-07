@@ -17,6 +17,7 @@ warnings.filterwarnings("ignore")
 from .sign import Sign
 from .userInfo import UserInfo
 
+import qcloudcli
 from qcloudcli import configure
 from . import enum
 from .base import BaseModule
@@ -90,7 +91,7 @@ def _fix_params(prefix, params):
 
 class Request(UserInfo):
     timeout = 10
-    version = 'qcloudcliV1'
+    version = 'qcloudcli_%s' % qcloudcli.__version__
     def __init__(self, product, version, action_name, requestHost):
         UserInfo.__init__(self, secret_id='123', secret_key='123', method='GET', region_id='gz', auto_retry=True, max_retry_time=3, user_agent=None, port=80)
         #self, secret_id = '123', secret_key = '123', method = 'GET', region_id = 'gz', auto_retry = True, max_retry_time = 3, user_agent = None, port = 80
@@ -98,7 +99,6 @@ class Request(UserInfo):
         self.__requestUri = '/v2/index.php'
         self.__params = {}
         self.__product = product
-        self.__version = version
         self.api_version = configure.QcloudConfig().getConfig().get(product, '')
         self.__action_name = action_name
         self.__debug = 0
@@ -120,10 +120,10 @@ class Request(UserInfo):
         return self.__product
 
     def set_version(self, version):
-        self.__version = version
+        self.version = version
 
     def get_version(self):
-        return self.__version
+        return self.version
 
     def set_action_name(self, action_name):
         self.__action_name = action_name
@@ -135,7 +135,7 @@ class Request(UserInfo):
         self.checkParams(self.__action_name, self.__params)
         if self.api_version:
             self.__params['Version'] = self.api_version
-        self.__params['RequestSource'] = self.__version
+        self.__params['RequestSource'] = self.version
         sign = Sign(self.secret_id, self.secret_key)
         self.__params['Signature'] = sign.make(self.__requestHost, self.__requestUri, self.__params, self.request_method)
         params = urlencode(self.__params)
@@ -149,7 +149,7 @@ class Request(UserInfo):
         self.checkParams(self.__action_name, self.__params)
         if self.api_version:
             self.__params['Version'] = self.api_version
-        self.__params['RequestSource'] = self.__version
+        self.__params['RequestSource'] = self.version
         sign = Sign(self.secret_id, self.secret_key)
         self.__params['Signature'] = sign.make(self.__requestHost, self.__requestUri, self.__params, self.request_method)
         params = urlencode(self.__params)
