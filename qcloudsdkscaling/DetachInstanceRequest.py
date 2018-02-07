@@ -14,6 +14,12 @@ class DetachInstanceRequest(Request):
     def set_instanceIds(self, instanceIds):
         self.add_param('instanceIds', instanceIds)
 
+    def get_keepInstance(self):
+        return self.get_params().get('keepInstance')
+
+    def set_keepInstance(self, keepInstance):
+        self.add_param('keepInstance', keepInstance)
+
     def get_scalingGroupId(self):
         return self.get_params().get('scalingGroupId')
 

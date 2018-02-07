@@ -14,11 +14,11 @@ class DescribeDeviceInventoryRequest(Request):
     def set_cpuId(self, cpuId):
         self.add_param('cpuId', cpuId)
 
-    def get_deviceClass(self):
-        return self.get_params().get('deviceClass')
+    def get_deviceClassCode(self):
+        return self.get_params().get('deviceClassCode')
 
-    def set_deviceClass(self, deviceClass):
-        self.add_param('deviceClass', deviceClass)
+    def set_deviceClassCode(self, deviceClassCode):
+        self.add_param('deviceClassCode', deviceClassCode)
 
     def get_diskNum1(self):
         return self.get_params().get('diskNum1')
@@ -55,6 +55,18 @@ class DescribeDeviceInventoryRequest(Request):
 
     def set_subnetId(self, subnetId):
         self.add_param('subnetId', subnetId)
+
+    def get_unSubnetId(self):
+        return self.get_params().get('unSubnetId')
+
+    def set_unSubnetId(self, unSubnetId):
+        self.add_param('unSubnetId', unSubnetId)
+
+    def get_unVpcId(self):
+        return self.get_params().get('unVpcId')
+
+    def set_unVpcId(self, unVpcId):
+        self.add_param('unVpcId', unVpcId)
 
     def get_vpcId(self):
         return self.get_params().get('vpcId')

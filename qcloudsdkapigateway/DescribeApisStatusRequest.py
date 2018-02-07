@@ -14,6 +14,12 @@ class DescribeApisStatusRequest(Request):
     def set_apiIds(self, apiIds):
         self.add_param('apiIds', apiIds)
 
+    def get_apiType(self):
+        return self.get_params().get('apiType')
+
+    def set_apiType(self, apiType):
+        self.add_param('apiType', apiType)
+
     def get_limit(self):
         return self.get_params().get('limit')
 
