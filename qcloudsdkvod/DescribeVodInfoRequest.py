@@ -29,8 +29,8 @@ class DescribeVodInfoRequest(Request):
     def get_from(self):
         return self.get_params().get('from')
 
-    def set_from(self, from):
-        self.add_param('from', from)
+    def set_from(self, _from):
+        self.add_param('from', _from)
 
     def get_orderby(self):
         return self.get_params().get('orderby')
