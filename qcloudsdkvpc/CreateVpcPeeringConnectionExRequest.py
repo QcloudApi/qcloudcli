@@ -14,6 +14,12 @@ class CreateVpcPeeringConnectionExRequest(Request):
     def set_bandwidth(self, bandwidth):
         self.add_param('bandwidth', bandwidth)
 
+    def get_chargeType(self):
+        return self.get_params().get('chargeType')
+
+    def set_chargeType(self, chargeType):
+        self.add_param('chargeType', chargeType)
+
     def get_peerRegion(self):
         return self.get_params().get('peerRegion')
 

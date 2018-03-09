@@ -13,3 +13,9 @@ class AttachGroupPolicyRequest(Request):
 
     def set_groupId(self, groupId):
         self.add_param('groupId', groupId)
+
+    def get_policyId(self):
+        return self.get_params().get('policyId')
+
+    def set_policyId(self, policyId):
+        self.add_param('policyId', policyId)
