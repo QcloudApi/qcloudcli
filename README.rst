@@ -32,6 +32,12 @@ The recommended way to install qcloudcli is to use `pip <https://pip.pypa.io/en/
 
     If you are in a ``virtualenv`` environment, the ``--user`` option should be removed.
 
+Get the version of qcloudcli:
+
+.. code-block:: sh
+
+    $ qcloudcli --version
+
 to upgrade:
 
 .. code-block:: sh
@@ -59,12 +65,6 @@ Add it to your ``~/.bashrc`` to enable it by default.
 -----------
 Usage Guide
 -----------
-
-Get the version of qcloudcli:
-
-.. code-block:: sh
-
-    $ qcloudcli --version
 
 ^^^^^^^^^^^^^
 Configuration
@@ -149,6 +149,13 @@ For example, to get instance list, use API version 2017-03-12, with ``Filters`` 
 
     $ qcloudcli cvm DescribeInstances --Filters '[{"Name":"zone","Values":["ap-guangzhou-2"]}]'
 
+For example, to create new instances, use API version 2017-03-12, a complex example might be::
+
+
+    $ qcloudcli cvm RunInstances --Placement '{"Zone":"ap-beijing-3"}' --InstanceChargeType PREPAID --InstanceChargePrepaid '{"Period":1,"RenewFlag":"NOTIFY_AND_AUTO_RENEW"}' --ImageId img-dkwyg6sr --InstanceType S2.SMALL1 --SystemDisk '{"DiskType":"CLOUD_BASIC","DiskSize":50}' --InternetAccessible '{"InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR","InternetMaxBandwidthOut":2,"PublicIpAssigned":"TRUE"}' --InstanceName prod-jumpserver-01 --EnhancedService '{"SecurityService":{"Enabled":"TRUE"},"MonitorService":{"Enabled":"TRUE"}}' --InstanceCount 1 --VirtualPrivateCloud '{"VpcId":"vpc-njkwg482","SubnetId":"subnet-6rs8ienn"}'
+
+NOTE: Here ``Placement`` has specify availability zone to be ``ap-beijing-3``, so the region value in ``~/.qcloudcli/configure`` must be ``bj``, or you can specify global parameter ``--RegionId ap-beijing`` to override configured value.
+
 ^^^^^^^^^^^
 Filter Data
 ^^^^^^^^^^^
@@ -181,6 +188,8 @@ The index ``0`` means get the first instance.
 Specify API Version
 ^^^^^^^^^^^^^^^^^^^
 
+NOTE: New in version 1.9.0
+
 Some services of Tencent Cloud have multiple API versions, for example, CVM has a API version 2017-03-12, to use it, open ``~/.qcloudcli/configure`` and add the following content in profile section::
 
     api_versions =
@@ -193,6 +202,8 @@ If the service has multiple versions, and there is no such configuration, then t
 ^^^^^^^^^^^^^^^
 Use HTTPS Proxy
 ^^^^^^^^^^^^^^^
+
+NOTE: New in version 1.8.9
 
 If you are in an environment behinds a proxy, and ``*.api.qcloud.com`` is not in the proxy white list, then you will need to configure HTTPS proxy to get qcloudcli work.
 

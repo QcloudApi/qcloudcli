@@ -22,13 +22,19 @@ $ pip install --user qcloudcli
 `--user` 选项会将 qcloudcli 只安装到当前用户环境中，这意味着不需要 sudo 权限。
 注意：如果是在 virtualenv 环境下，`--user` 选项是不支持的。
 
-升级：
+### 查看版本号
+
+```
+$ qcloudcli --version
+```
+
+### 升级
 
 ```
 $ pip install --user --upgrade qcloudcli
 ```
 
-卸载:
+### 卸载
 
 ```
 $ pip uninstall --yes qcloudcli
@@ -45,12 +51,6 @@ $ complete -C qcloud_completer qcloudcli
 将该命令加入 `~/.bashrc` 以默认开启。
 
 ## 使用指南
-
-查看版本号：
-
-```
-$ qcloudcli --version
-```
 
 ### 配置系统参数
 
@@ -139,6 +139,14 @@ $ qcloudcli cvm DescribeInstances --instanceIds '["qcvmf4b542ad7b4cd49f2db57a733
 $ qcloudcli cvm DescribeInstances --Filters '[{"Name":"zone","Values":["ap-guangzhou-2"]}]'
 ```
 
+例如，创建虚拟机，使用 2017-03-12 API 版本，各项参数不再详解：
+
+```
+$ qcloudcli cvm RunInstances --Placement '{"Zone":"ap-beijing-3"}' --InstanceChargeType PREPAID --InstanceChargePrepaid '{"Period":1,"RenewFlag":"NOTIFY_AND_AUTO_RENEW"}' --ImageId img-dkwyg6sr --InstanceType S2.SMALL1 --SystemDisk '{"DiskType":"CLOUD_BASIC","DiskSize":50}' --InternetAccessible '{"InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR","InternetMaxBandwidthOut":2,"PublicIpAssigned":"TRUE"}' --InstanceName prod-jumpserver-01 --EnhancedService '{"SecurityService":{"Enabled":"TRUE"},"MonitorService":{"Enabled":"TRUE"}}' --InstanceCount 1 --VirtualPrivateCloud '{"VpcId":"vpc-njkwg482","SubnetId":"subnet-6rs8ienn"}'
+```
+
+注意，这里由于 Placement 字段里指定了 Zone 是北京三区，因此在配置文件中的 region 需要指定为 bj。如果不想修改配置文件，可以在命令中指定 --RegionId ap-beijing 来覆盖配置。
+
 ### 过滤返回字段
 
 我们使用[jmespath](https://github.com/jmespath/jmespath.py)做json路径解析。
@@ -171,6 +179,8 @@ $ qcloudcli cvm DescribeInstances --InstanceIds '["ins-od1laqxs"]' --filter Resp
 
 ### 指定API版本
 
+注意：该功能自 1.9.0 版本加入。
+
 打开配置文件``~/.qcloudcli/configure``，在对应的profile下增加如下内容
 
 ```
@@ -185,6 +195,8 @@ api_versions =
 如果没有指定任何版本，即配置项为空，则CLI会使用默认版本。
 
 ### 使用代理
+
+注意：该功能自 1.8.9 版本加入。
 
 如果是在代理环境下使用qcloudcli，且`*.api.qlcoud.com`域名不在代理的白名单列表中，则需要配置HTTPS代理才能正常使用。
 目前仅支持不含账户信息的全局代理，仅在Linux和Windows系统上测试过。
