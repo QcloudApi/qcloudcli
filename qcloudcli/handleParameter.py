@@ -46,6 +46,7 @@ class handleParameter():
                         b = self.args[current].strip().split('=', 2)[1]
                         self.args[current] = a
                         self.args.insert(current + 1, b)
+                        argslen = len(self.args)
                     key = self.args[current].strip()
                     values = list()
                     length = len(self.args)
