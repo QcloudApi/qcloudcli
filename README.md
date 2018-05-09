@@ -5,11 +5,11 @@
 
 For English users, pelase refer to document [README.rst](https://github.com/QcloudApi/qcloudcli/blob/master/README.rst)
 
-腾讯云命令行工具 qcloudcli 基于腾讯云 API 开发。
+腾讯云命令行工具 qcloudcli 基于腾讯云 API 开发。能够调用部分域名在 api.qcloud.com 下的接口。
 
 qcloudcli 支持 Python 2.7.x 到 3.6.x 版本环境。
 
-详细介绍请参考[官网文档](https://www.qcloud.com/document/product/440/6176)。
+由于 API 进行了一次大的升级至 3.0 ，新版 API 的命令行工具由 [tccli](https://github.com/TencentCloud/tencentcloud-cli) 代替，详细介绍请参考[官网文档](https://www.qcloud.com/document/product/440/6176)。
 
 ## 安装
 
