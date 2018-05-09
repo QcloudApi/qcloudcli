@@ -5,6 +5,12 @@ CHANGELOG
 latest (now)
 ============
 
+1.9.17 (2018-05-09)
+===================
+
+* update interfaces
+* Fix a bug in parsing arguments with equal sign: --param=value
+
 1.9.16 (2018-03-09)
 ===================
 
