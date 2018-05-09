@@ -8,6 +8,18 @@ class DescribeEipBmRequest(Request):
         super(DescribeEipBmRequest, self).__init__(
             'bmeip', 'qcloudcliV1', 'DescribeEipBm', 'bmeip.api.qcloud.com')
 
+    def get_aclId(self):
+        return self.get_params().get('aclId')
+
+    def set_aclId(self, aclId):
+        self.add_param('aclId', aclId)
+
+    def get_bindAcl(self):
+        return self.get_params().get('bindAcl')
+
+    def set_bindAcl(self, bindAcl):
+        self.add_param('bindAcl', bindAcl)
+
     def get_bindTypes(self):
         return self.get_params().get('bindTypes')
 

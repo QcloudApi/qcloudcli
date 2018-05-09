@@ -8,6 +8,12 @@ class UpdateDsaHostInfoRequest(Request):
         super(UpdateDsaHostInfoRequest, self).__init__(
             'dsa', 'qcloudcliV1', 'UpdateDsaHostInfo', 'dsa.api.qcloud.com')
 
+    def get_area(self):
+        return self.get_params().get('area')
+
+    def set_area(self, area):
+        self.add_param('area', area)
+
     def get_hostId(self):
         return self.get_params().get('hostId')
 
@@ -19,6 +25,18 @@ class UpdateDsaHostInfoRequest(Request):
 
     def set_https(self, https):
         self.add_param('https', https)
+
+    def get_ipAccess(self):
+        return self.get_params().get('ipAccess')
+
+    def set_ipAccess(self, ipAccess):
+        self.add_param('ipAccess', ipAccess)
+
+    def get_ipFreqLimit(self):
+        return self.get_params().get('ipFreqLimit')
+
+    def set_ipFreqLimit(self, ipFreqLimit):
+        self.add_param('ipFreqLimit', ipFreqLimit)
 
     def get_origin(self):
         return self.get_params().get('origin')

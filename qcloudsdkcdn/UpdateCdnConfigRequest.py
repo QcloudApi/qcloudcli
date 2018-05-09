@@ -176,6 +176,12 @@ class UpdateCdnConfigRequest(Request):
     def set_rspHeader(self, rspHeader):
         self.add_param('rspHeader', rspHeader)
 
+    def get_safetyChain(self):
+        return self.get_params().get('safetyChain')
+
+    def set_safetyChain(self, safetyChain):
+        self.add_param('safetyChain', safetyChain)
+
     def get_seo(self):
         return self.get_params().get('seo')
 
@@ -187,6 +193,12 @@ class UpdateCdnConfigRequest(Request):
 
     def set_statusCache(self, statusCache):
         self.add_param('statusCache', statusCache)
+
+    def get_statusCodeCache(self):
+        return self.get_params().get('statusCodeCache')
+
+    def set_statusCodeCache(self, statusCodeCache):
+        self.add_param('statusCodeCache', statusCodeCache)
 
     def get_videoSwitch(self):
         return self.get_params().get('videoSwitch')

@@ -26,6 +26,12 @@ class RunApiRequest(Request):
     def set_requestBody(self, requestBody):
         self.add_param('requestBody', requestBody)
 
+    def get_requestBodyDict(self):
+        return self.get_params().get('requestBodyDict')
+
+    def set_requestBodyDict(self, requestBodyDict):
+        self.add_param('requestBodyDict', requestBodyDict)
+
     def get_requestHeader(self):
         return self.get_params().get('requestHeader')
 

@@ -104,6 +104,12 @@ class DescribeLoadBalancersRequest(Request):
     def set_securityGroupId(self, securityGroupId):
         self.add_param('securityGroupId', securityGroupId)
 
+    def get_special(self):
+        return self.get_params().get('special')
+
+    def set_special(self, special):
+        self.add_param('special', special)
+
     def get_vpcId(self):
         return self.get_params().get('vpcId')
 

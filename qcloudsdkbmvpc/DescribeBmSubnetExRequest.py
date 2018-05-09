@@ -44,6 +44,12 @@ class DescribeBmSubnetExRequest(Request):
     def set_subnetName(self, subnetName):
         self.add_param('subnetName', subnetName)
 
+    def get_type(self):
+        return self.get_params().get('type')
+
+    def set_type(self, type):
+        self.add_param('type', type)
+
     def get_unSubnetId(self):
         return self.get_params().get('unSubnetId')
 

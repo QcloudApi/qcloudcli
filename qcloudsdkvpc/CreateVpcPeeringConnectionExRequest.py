@@ -44,6 +44,12 @@ class CreateVpcPeeringConnectionExRequest(Request):
     def set_peeringConnectionName(self, peeringConnectionName):
         self.add_param('peeringConnectionName', peeringConnectionName)
 
+    def get_qosLevel(self):
+        return self.get_params().get('qosLevel')
+
+    def set_qosLevel(self, qosLevel):
+        self.add_param('qosLevel', qosLevel)
+
     def get_type(self):
         return self.get_params().get('type')
 

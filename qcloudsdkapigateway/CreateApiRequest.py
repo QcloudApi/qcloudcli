@@ -38,11 +38,23 @@ class CreateApiRequest(Request):
     def set_constantParameters(self, constantParameters):
         self.add_param('constantParameters', constantParameters)
 
+    def get_enableCORS(self):
+        return self.get_params().get('enableCORS')
+
+    def set_enableCORS(self, enableCORS):
+        self.add_param('enableCORS', enableCORS)
+
     def get_microServices(self):
         return self.get_params().get('microServices')
 
     def set_microServices(self, microServices):
         self.add_param('microServices', microServices)
+
+    def get_protocol(self):
+        return self.get_params().get('protocol')
+
+    def set_protocol(self, protocol):
+        self.add_param('protocol', protocol)
 
     def get_requestConfig(self):
         return self.get_params().get('requestConfig')
@@ -133,3 +145,21 @@ class CreateApiRequest(Request):
 
     def set_serviceType(self, serviceType):
         self.add_param('serviceType', serviceType)
+
+    def get_serviceWebsocketCleanupFunctionName(self):
+        return self.get_params().get('serviceWebsocketCleanupFunctionName')
+
+    def set_serviceWebsocketCleanupFunctionName(self, serviceWebsocketCleanupFunctionName):
+        self.add_param('serviceWebsocketCleanupFunctionName', serviceWebsocketCleanupFunctionName)
+
+    def get_serviceWebsocketRegisterFunctionName(self):
+        return self.get_params().get('serviceWebsocketRegisterFunctionName')
+
+    def set_serviceWebsocketRegisterFunctionName(self, serviceWebsocketRegisterFunctionName):
+        self.add_param('serviceWebsocketRegisterFunctionName', serviceWebsocketRegisterFunctionName)
+
+    def get_serviceWebsocketTransportFunctionName(self):
+        return self.get_params().get('serviceWebsocketTransportFunctionName')
+
+    def set_serviceWebsocketTransportFunctionName(self, serviceWebsocketTransportFunctionName):
+        self.add_param('serviceWebsocketTransportFunctionName', serviceWebsocketTransportFunctionName)

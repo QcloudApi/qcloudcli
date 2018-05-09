@@ -32,11 +32,11 @@ class DescribeDeviceRequest(Request):
     def set_deadlineStartTime(self, deadlineStartTime):
         self.add_param('deadlineStartTime', deadlineStartTime)
 
-    def get_deviceClass(self):
-        return self.get_params().get('deviceClass')
+    def get_deviceClassCode(self):
+        return self.get_params().get('deviceClassCode')
 
-    def set_deviceClass(self, deviceClass):
-        self.add_param('deviceClass', deviceClass)
+    def set_deviceClassCode(self, deviceClassCode):
+        self.add_param('deviceClassCode', deviceClassCode)
 
     def get_instanceIds(self):
         return self.get_params().get('instanceIds')
@@ -98,11 +98,17 @@ class DescribeDeviceRequest(Request):
     def set_subnetId(self, subnetId):
         self.add_param('subnetId', subnetId)
 
-    def get_unSubnetId(self):
-        return self.get_params().get('unSubnetId')
+    def get_subnetIds(self):
+        return self.get_params().get('subnetIds')
 
-    def set_unSubnetId(self, unSubnetId):
-        self.add_param('unSubnetId', unSubnetId)
+    def set_subnetIds(self, subnetIds):
+        self.add_param('subnetIds', subnetIds)
+
+    def get_unSubnetIds(self):
+        return self.get_params().get('unSubnetIds')
+
+    def set_unSubnetIds(self, unSubnetIds):
+        self.add_param('unSubnetIds', unSubnetIds)
 
     def get_unVpcId(self):
         return self.get_params().get('unVpcId')

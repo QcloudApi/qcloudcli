@@ -8,6 +8,12 @@ class CreateRedisRequest(Request):
         super(CreateRedisRequest, self).__init__(
             'redis', 'qcloudcliV1', 'CreateRedis', 'redis.api.qcloud.com')
 
+    def get_autoRenewFlag(self):
+        return self.get_params().get('autoRenewFlag')
+
+    def set_autoRenewFlag(self, autoRenewFlag):
+        self.add_param('autoRenewFlag', autoRenewFlag)
+
     def get_goodsNum(self):
         return self.get_params().get('goodsNum')
 
@@ -37,6 +43,12 @@ class CreateRedisRequest(Request):
 
     def set_projectId(self, projectId):
         self.add_param('projectId', projectId)
+
+    def get_securityGroupList(self):
+        return self.get_params().get('securityGroupList')
+
+    def set_securityGroupList(self, securityGroupList):
+        self.add_param('securityGroupList', securityGroupList)
 
     def get_subnetId(self):
         return self.get_params().get('subnetId')
@@ -73,3 +85,9 @@ class CreateRedisRequest(Request):
 
     def set_zoneId(self, zoneId):
         self.add_param('zoneId', zoneId)
+
+    def get_zoneName(self):
+        return self.get_params().get('zoneName')
+
+    def set_zoneName(self, zoneName):
+        self.add_param('zoneName', zoneName)

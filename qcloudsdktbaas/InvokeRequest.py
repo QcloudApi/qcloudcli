@@ -14,6 +14,12 @@ class InvokeRequest(Request):
     def set_Args(self, Args):
         self.add_param('Args', Args)
 
+    def get_AsyncFlag(self):
+        return self.get_params().get('AsyncFlag')
+
+    def set_AsyncFlag(self, AsyncFlag):
+        self.add_param('AsyncFlag', AsyncFlag)
+
     def get_Chaincode(self):
         return self.get_params().get('Chaincode')
 

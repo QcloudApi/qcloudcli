@@ -31,3 +31,9 @@ class DeleteTriggerRequest(Request):
 
     def set_type(self, type):
         self.add_param('type', type)
+
+    def get_version(self):
+        return self.get_params().get('version')
+
+    def set_version(self, version):
+        self.add_param('version', version)

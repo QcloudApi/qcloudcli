@@ -8,6 +8,12 @@ class DescribeRedisRequest(Request):
         super(DescribeRedisRequest, self).__init__(
             'redis', 'qcloudcliV1', 'DescribeRedis', 'redis.api.qcloud.com')
 
+    def get_crsInstanceVips(self):
+        return self.get_params().get('crsInstanceVips')
+
+    def set_crsInstanceVips(self, crsInstanceVips):
+        self.add_param('crsInstanceVips', crsInstanceVips)
+
     def get_limit(self):
         return self.get_params().get('limit')
 

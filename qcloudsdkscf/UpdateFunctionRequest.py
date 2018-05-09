@@ -68,6 +68,12 @@ class UpdateFunctionRequest(Request):
     def set_timeout(self, timeout):
         self.add_param('timeout', timeout)
 
+    def get_useGpu(self):
+        return self.get_params().get('useGpu')
+
+    def set_useGpu(self, useGpu):
+        self.add_param('useGpu', useGpu)
+
     def get_version(self):
         return self.get_params().get('version')
 

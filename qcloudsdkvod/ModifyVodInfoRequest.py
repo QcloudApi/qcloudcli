@@ -32,6 +32,12 @@ class ModifyVodInfoRequest(Request):
     def set_expireTime(self, expireTime):
         self.add_param('expireTime', expireTime)
 
+    def get_expireTimeStamp(self):
+        return self.get_params().get('expireTimeStamp')
+
+    def set_expireTimeStamp(self, expireTimeStamp):
+        self.add_param('expireTimeStamp', expireTimeStamp)
+
     def get_fileId(self):
         return self.get_params().get('fileId')
 

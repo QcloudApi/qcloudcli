@@ -25,3 +25,9 @@ class CreateNFSFileShareRequest(Request):
 
     def set_GatewayURN(self, GatewayURN):
         self.add_param('GatewayURN', GatewayURN)
+
+    def get_SnapshotURN(self):
+        return self.get_params().get('SnapshotURN')
+
+    def set_SnapshotURN(self, SnapshotURN):
+        self.add_param('SnapshotURN', SnapshotURN)

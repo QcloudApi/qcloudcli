@@ -50,6 +50,12 @@ class ModifyApiRequest(Request):
     def set_isDeleteResponseErrorCodes(self, isDeleteResponseErrorCodes):
         self.add_param('isDeleteResponseErrorCodes', isDeleteResponseErrorCodes)
 
+    def get_protocol(self):
+        return self.get_params().get('protocol')
+
+    def set_protocol(self, protocol):
+        self.add_param('protocol', protocol)
+
     def get_requestConfig(self):
         return self.get_params().get('requestConfig')
 
@@ -151,3 +157,21 @@ class ModifyApiRequest(Request):
 
     def set_serviceType(self, serviceType):
         self.add_param('serviceType', serviceType)
+
+    def get_serviceWebsocketCleanupFunctionName(self):
+        return self.get_params().get('serviceWebsocketCleanupFunctionName')
+
+    def set_serviceWebsocketCleanupFunctionName(self, serviceWebsocketCleanupFunctionName):
+        self.add_param('serviceWebsocketCleanupFunctionName', serviceWebsocketCleanupFunctionName)
+
+    def get_serviceWebsocketRegisterFunctionName(self):
+        return self.get_params().get('serviceWebsocketRegisterFunctionName')
+
+    def set_serviceWebsocketRegisterFunctionName(self, serviceWebsocketRegisterFunctionName):
+        self.add_param('serviceWebsocketRegisterFunctionName', serviceWebsocketRegisterFunctionName)
+
+    def get_serviceWebsocketTransportFunctionName(self):
+        return self.get_params().get('serviceWebsocketTransportFunctionName')
+
+    def set_serviceWebsocketTransportFunctionName(self, serviceWebsocketTransportFunctionName):
+        self.add_param('serviceWebsocketTransportFunctionName', serviceWebsocketTransportFunctionName)

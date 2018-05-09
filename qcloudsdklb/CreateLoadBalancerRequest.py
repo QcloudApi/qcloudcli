@@ -68,6 +68,12 @@ class CreateLoadBalancerRequest(Request):
     def set_projectId(self, projectId):
         self.add_param('projectId', projectId)
 
+    def get_special(self):
+        return self.get_params().get('special')
+
+    def set_special(self, special):
+        self.add_param('special', special)
+
     def get_subnetId(self):
         return self.get_params().get('subnetId')
 
