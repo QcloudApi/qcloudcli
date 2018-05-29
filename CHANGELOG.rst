@@ -5,6 +5,8 @@ CHANGELOG
 latest (now)
 ============
 
+* configure cvm api in interactive mode
+
 1.9.17 (2018-05-09)
 ===================
 

@@ -285,6 +285,7 @@ class ConfigureCommand(object):
         ('qcloud_secretkey', "Qcloud API SecretKey"),
         ('region', "Region Id(gz,hk,ca,sh,shjr,bj,sg)"),
         ('output', "Output Format(json,table,text)"),
+        ('cvm', "Use CVM API Version 2017-03-12? (Yes/No)"),
     ]
 
     def _run(self):
@@ -300,6 +301,11 @@ class ConfigureCommand(object):
         for name, prompt in self.name2prompt:
             value = config.get(name)
             new_value = self._prompter.get_value(value, name, prompt)
+            if name == "cvm":
+                if new_value is None or new_value.strip().lower() in ["", "y", "yes"]:
+                    new_value = "2017-03-12"
+                else:
+                    new_value = ""
             if new_value is not None and new_value != value:
                 new_values[name] = new_value
         config_filename = self.qcloudConfig.getConfigFileName()
