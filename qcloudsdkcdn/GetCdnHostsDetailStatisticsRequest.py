@@ -32,6 +32,12 @@ class GetCdnHostsDetailStatisticsRequest(Request):
     def set_projects(self, projects):
         self.add_param('projects', projects)
 
+    def get_protocol(self):
+        return self.get_params().get('protocol')
+
+    def set_protocol(self, protocol):
+        self.add_param('protocol', protocol)
+
     def get_startTime(self):
         return self.get_params().get('startTime')
 

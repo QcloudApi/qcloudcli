@@ -14,6 +14,12 @@ class DeleteFunctionRequest(Request):
     def set_functionName(self, functionName):
         self.add_param('functionName', functionName)
 
+    def get_namespace(self):
+        return self.get_params().get('namespace')
+
+    def set_namespace(self, namespace):
+        self.add_param('namespace', namespace)
+
     def get_version(self):
         return self.get_params().get('version')
 

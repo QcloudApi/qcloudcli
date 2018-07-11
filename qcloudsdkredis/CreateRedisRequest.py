@@ -74,6 +74,12 @@ class CreateRedisRequest(Request):
     def set_unVpcId(self, unVpcId):
         self.add_param('unVpcId', unVpcId)
 
+    def get_vPort(self):
+        return self.get_params().get('vPort')
+
+    def set_vPort(self, vPort):
+        self.add_param('vPort', vPort)
+
     def get_vpcId(self):
         return self.get_params().get('vpcId')
 

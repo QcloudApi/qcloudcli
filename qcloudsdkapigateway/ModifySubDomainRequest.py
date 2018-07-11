@@ -2,11 +2,11 @@
 
 from qcloudsdkcore.request import Request
 
-class BindSubDomainRequest(Request):
+class ModifySubDomainRequest(Request):
 
     def __init__(self):
-        super(BindSubDomainRequest, self).__init__(
-            'apigateway', 'qcloudcliV1', 'BindSubDomain', 'apigateway.api.qcloud.com')
+        super(ModifySubDomainRequest, self).__init__(
+            'apigateway', 'qcloudcliV1', 'ModifySubDomain', 'apigateway.api.qcloud.com')
 
     def get_certificateId(self):
         return self.get_params().get('certificateId')

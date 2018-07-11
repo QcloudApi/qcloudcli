@@ -14,6 +14,12 @@ class DescribeDealsByCondRequest(Request):
     def set_dealId(self, dealId):
         self.add_param('dealId', dealId)
 
+    def get_dealName(self):
+        return self.get_params().get('dealName')
+
+    def set_dealName(self, dealName):
+        self.add_param('dealName', dealName)
+
     def get_endTime(self):
         return self.get_params().get('endTime')
 

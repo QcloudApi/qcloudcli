@@ -43,3 +43,9 @@ class DescribeBmLocationBackendsRequest(Request):
 
     def set_offset(self, offset):
         self.add_param('offset', offset)
+
+    def get_queryType(self):
+        return self.get_params().get('queryType')
+
+    def set_queryType(self, queryType):
+        self.add_param('queryType', queryType)

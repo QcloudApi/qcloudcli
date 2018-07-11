@@ -56,6 +56,12 @@ class UpdateFunctionRequest(Request):
     def set_memorySize(self, memorySize):
         self.add_param('memorySize', memorySize)
 
+    def get_namespace(self):
+        return self.get_params().get('namespace')
+
+    def set_namespace(self, namespace):
+        self.add_param('namespace', namespace)
+
     def get_runtime(self):
         return self.get_params().get('runtime')
 

@@ -80,6 +80,12 @@ class CreateLoadBalancerRequest(Request):
     def set_subnetId(self, subnetId):
         self.add_param('subnetId', subnetId)
 
+    def get_tagInfo(self):
+        return self.get_params().get('tagInfo')
+
+    def set_tagInfo(self, tagInfo):
+        self.add_param('tagInfo', tagInfo)
+
     def get_tgwGroup(self):
         return self.get_params().get('tgwGroup')
 

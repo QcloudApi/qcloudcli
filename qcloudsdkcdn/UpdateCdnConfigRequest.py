@@ -32,6 +32,12 @@ class UpdateCdnConfigRequest(Request):
     def set_backupOrigin(self, backupOrigin):
         self.add_param('backupOrigin', backupOrigin)
 
+    def get_builderRules(self):
+        return self.get_params().get('builderRules')
+
+    def set_builderRules(self, builderRules):
+        self.add_param('builderRules', builderRules)
+
     def get_cache(self):
         return self.get_params().get('cache')
 
@@ -56,6 +62,18 @@ class UpdateCdnConfigRequest(Request):
     def set_compression(self, compression):
         self.add_param('compression', compression)
 
+    def get_cosOriginAuthorization(self):
+        return self.get_params().get('cosOriginAuthorization')
+
+    def set_cosOriginAuthorization(self, cosOriginAuthorization):
+        self.add_param('cosOriginAuthorization', cosOriginAuthorization)
+
+    def get_cosSpecialSign(self):
+        return self.get_params().get('cosSpecialSign')
+
+    def set_cosSpecialSign(self, cosSpecialSign):
+        self.add_param('cosSpecialSign', cosSpecialSign)
+
     def get_dedicateLine(self):
         return self.get_params().get('dedicateLine')
 
@@ -73,6 +91,12 @@ class UpdateCdnConfigRequest(Request):
 
     def set_detailRspHeader(self, detailRspHeader):
         self.add_param('detailRspHeader', detailRspHeader)
+
+    def get_errorPage(self):
+        return self.get_params().get('errorPage')
+
+    def set_errorPage(self, errorPage):
+        self.add_param('errorPage', errorPage)
 
     def get_follow302(self):
         return self.get_params().get('follow302')
@@ -109,6 +133,12 @@ class UpdateCdnConfigRequest(Request):
 
     def set_hostId(self, hostId):
         self.add_param('hostId', hostId)
+
+    def get_hostType(self):
+        return self.get_params().get('hostType')
+
+    def set_hostType(self, hostType):
+        self.add_param('hostType', hostType)
 
     def get_ignoreCacheControl(self):
         return self.get_params().get('ignoreCacheControl')
@@ -175,6 +205,12 @@ class UpdateCdnConfigRequest(Request):
 
     def set_rspHeader(self, rspHeader):
         self.add_param('rspHeader', rspHeader)
+
+    def get_rulesBuilder(self):
+        return self.get_params().get('rulesBuilder')
+
+    def set_rulesBuilder(self, rulesBuilder):
+        self.add_param('rulesBuilder', rulesBuilder)
 
     def get_safetyChain(self):
         return self.get_params().get('safetyChain')

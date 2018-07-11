@@ -50,11 +50,23 @@ class CreateFunctionRequest(Request):
     def set_memorySize(self, memorySize):
         self.add_param('memorySize', memorySize)
 
+    def get_namespace(self):
+        return self.get_params().get('namespace')
+
+    def set_namespace(self, namespace):
+        self.add_param('namespace', namespace)
+
     def get_runtime(self):
         return self.get_params().get('runtime')
 
     def set_runtime(self, runtime):
         self.add_param('runtime', runtime)
+
+    def get_stamp(self):
+        return self.get_params().get('stamp')
+
+    def set_stamp(self, stamp):
+        self.add_param('stamp', stamp)
 
     def get_timeout(self):
         return self.get_params().get('timeout')

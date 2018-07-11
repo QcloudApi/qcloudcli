@@ -44,6 +44,12 @@ class CreateApiRequest(Request):
     def set_enableCORS(self, enableCORS):
         self.add_param('enableCORS', enableCORS)
 
+    def get_isDebugAfterCharge(self):
+        return self.get_params().get('isDebugAfterCharge')
+
+    def set_isDebugAfterCharge(self, isDebugAfterCharge):
+        self.add_param('isDebugAfterCharge', isDebugAfterCharge)
+
     def get_microServices(self):
         return self.get_params().get('microServices')
 
@@ -121,6 +127,12 @@ class CreateApiRequest(Request):
 
     def set_serviceScfFunctionName(self, serviceScfFunctionName):
         self.add_param('serviceScfFunctionName', serviceScfFunctionName)
+
+    def get_serviceScfIsIntegratedResponse(self):
+        return self.get_params().get('serviceScfIsIntegratedResponse')
+
+    def set_serviceScfIsIntegratedResponse(self, serviceScfIsIntegratedResponse):
+        self.add_param('serviceScfIsIntegratedResponse', serviceScfIsIntegratedResponse)
 
     def get_serviceTimeout(self):
         return self.get_params().get('serviceTimeout')

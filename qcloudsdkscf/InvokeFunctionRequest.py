@@ -26,6 +26,12 @@ class InvokeFunctionRequest(Request):
     def set_logType(self, logType):
         self.add_param('logType', logType)
 
+    def get_namespace(self):
+        return self.get_params().get('namespace')
+
+    def set_namespace(self, namespace):
+        self.add_param('namespace', namespace)
+
     def get_param(self):
         return self.get_params().get('param')
 

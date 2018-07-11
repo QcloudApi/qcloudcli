@@ -13,3 +13,9 @@ class RefreshCdnDirRequest(Request):
 
     def set_dirs(self, dirs):
         self.add_param('dirs', dirs)
+
+    def get_type(self):
+        return self.get_params().get('type')
+
+    def set_type(self, type):
+        self.add_param('type', type)

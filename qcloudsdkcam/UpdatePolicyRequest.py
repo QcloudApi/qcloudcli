@@ -8,6 +8,12 @@ class UpdatePolicyRequest(Request):
         super(UpdatePolicyRequest, self).__init__(
             'cam', 'qcloudcliV1', 'UpdatePolicy', 'cam.api.qcloud.com')
 
+    def get_alias(self):
+        return self.get_params().get('alias')
+
+    def set_alias(self, alias):
+        self.add_param('alias', alias)
+
     def get_description(self):
         return self.get_params().get('description')
 

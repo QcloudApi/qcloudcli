@@ -49,3 +49,9 @@ class InvokeRequest(Request):
 
     def set_Peers(self, Peers):
         self.add_param('Peers', Peers)
+
+    def get_TransientMap(self):
+        return self.get_params().get('TransientMap')
+
+    def set_TransientMap(self, TransientMap):
+        self.add_param('TransientMap', TransientMap)

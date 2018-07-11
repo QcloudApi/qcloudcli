@@ -2,17 +2,11 @@
 
 from qcloudsdkcore.request import Request
 
-class ModifyBmForwardListenerRequest(Request):
+class ModifyForwardLBSeventhListenerRequest(Request):
 
     def __init__(self):
-        super(ModifyBmForwardListenerRequest, self).__init__(
-            'bmlb', 'qcloudcliV1', 'ModifyBmForwardListener', 'bmlb.api.qcloud.com')
-
-    def get_bandwidth(self):
-        return self.get_params().get('bandwidth')
-
-    def set_bandwidth(self, bandwidth):
-        self.add_param('bandwidth', bandwidth)
+        super(ModifyForwardLBSeventhListenerRequest, self).__init__(
+            'lb', 'qcloudcliV1', 'ModifyForwardLBSeventhListener', 'lb.api.qcloud.com')
 
     def get_certCaContent(self):
         return self.get_params().get('certCaContent')
@@ -56,12 +50,6 @@ class ModifyBmForwardListenerRequest(Request):
     def set_certName(self, certName):
         self.add_param('certName', certName)
 
-    def get_forwardProtocol(self):
-        return self.get_params().get('forwardProtocol')
-
-    def set_forwardProtocol(self, forwardProtocol):
-        self.add_param('forwardProtocol', forwardProtocol)
-
     def get_listenerId(self):
         return self.get_params().get('listenerId')
 
@@ -79,9 +67,3 @@ class ModifyBmForwardListenerRequest(Request):
 
     def set_loadBalancerId(self, loadBalancerId):
         self.add_param('loadBalancerId', loadBalancerId)
-
-    def get_sslMode(self):
-        return self.get_params().get('sslMode')
-
-    def set_sslMode(self, sslMode):
-        self.add_param('sslMode', sslMode)

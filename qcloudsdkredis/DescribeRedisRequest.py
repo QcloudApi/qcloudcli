@@ -56,6 +56,12 @@ class DescribeRedisRequest(Request):
     def set_redisName(self, redisName):
         self.add_param('redisName', redisName)
 
+    def get_redisNameFuzzeySearch(self):
+        return self.get_params().get('redisNameFuzzeySearch')
+
+    def set_redisNameFuzzeySearch(self, redisNameFuzzeySearch):
+        self.add_param('redisNameFuzzeySearch', redisNameFuzzeySearch)
+
     def get_subnetIds(self):
         return self.get_params().get('subnetIds')
 
