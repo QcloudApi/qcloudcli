@@ -302,7 +302,8 @@ class ConfigureCommand(object):
             value = config.get(name)
             new_value = self._prompter.get_value(value, name, prompt)
             if name == "cvm":
-                if new_value is None or new_value.strip().lower() in ["", "y", "yes"]:
+                if (new_value is None or
+                        new_value.strip().lower() in ["", "y", "yes"]):
                     new_value = "2017-03-12"
                 else:
                     new_value = ""
